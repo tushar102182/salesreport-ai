@@ -1,6 +1,6 @@
 {
   "name": "salesreport-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SalesReport AI — upload sales data, get AI summaries, download beautiful Bangla & English PDF reports and invoices.",
   "private": true,
   "type": "module",
