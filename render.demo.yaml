@@ -1,0 +1,23 @@
+# Render Blueprint for a PUBLIC LIVE DEMO (free plan, no disk).
+# DEMO_MODE re-seeds the demo company on every start and wipes data daily.
+services:
+  - type: web
+    name: salesreport-ai-demo
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:/app/data/salesreport.db
+      - key: TRUST_PROXY
+        value: '1'
+      - key: APP_URL
+        sync: false # e.g. https://salesreport-ai-demo.onrender.com
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        sync: false # openssl rand -hex 32
+      - key: DEMO_MODE
+        value: 'true'

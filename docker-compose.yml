@@ -1,0 +1,32 @@
+# One-command run:  cp .env.example .env  (fill secrets)  →  docker compose up -d --build
+# App: http://localhost:4000   Demo login (DEMO_MODE=true or after seeding): demo@example.com / Demo@12345
+services:
+  app:
+    build: .
+    image: salesreport-ai:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: file:/app/data/salesreport.db
+      APP_URL: ${APP_URL:-http://localhost:4000}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:4000}
+      TRUST_PROXY: ${TRUST_PROXY:-1}
+    ports:
+      - '${PORT:-4000}:4000'
+    volumes:
+      - app-data:/app/data
+
+  # Optional: seed demo data once →  docker compose run --rm seed
+  seed:
+    image: salesreport-ai:latest
+    profiles: ['tools']
+    env_file: .env
+    environment:
+      DATABASE_URL: file:/app/data/salesreport.db
+    volumes:
+      - app-data:/app/data
+    command: ['sh', '-c', 'npx prisma migrate deploy && node dist/seed.js']
+
+volumes:
+  app-data:

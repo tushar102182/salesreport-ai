@@ -1,0 +1,31 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploys the Docker image with a persistent disk for SQLite.
+services:
+  - type: web
+    name: salesreport-ai
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    disk:
+      name: data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:/app/data/salesreport.db
+      - key: TRUST_PROXY
+        value: '1'
+      - key: APP_URL
+        sync: false # e.g. https://salesreport-ai.onrender.com
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        sync: false # openssl rand -hex 32
+      - key: LLM_PROVIDER
+        value: openai
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: SEED_DEMO_DATA
+        value: 'true'

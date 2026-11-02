@@ -1,0 +1,22 @@
+{
+  "name": "@salesreport/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared TypeScript types, zod schemas and pure business logic used by both server and web.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^5.1.0"
+  }
+}

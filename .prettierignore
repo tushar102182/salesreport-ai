@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+*.db
+package-lock.json
+apps/server/prisma/migrations
+apps/web/public/samples
+sample-data
+docs/screenshots

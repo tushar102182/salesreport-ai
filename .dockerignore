@@ -1,0 +1,12 @@
+**/node_modules
+**/dist
+**/coverage
+**/*.db
+**/*.db-journal
+.env
+.env.*
+!.env.example
+.git
+docs/screenshots
+apps/web/public/samples
+*.log

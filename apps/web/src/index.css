@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource/noto-sans-bengali/400.css';
+@import '@fontsource/noto-sans-bengali/500.css';
+@import '@fontsource/noto-sans-bengali/600.css';
+@import '@fontsource/noto-sans-bengali/700.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark {
+  color-scheme: dark;
+}
+
+@theme {
+  --font-sans: 'Inter Variable', 'Noto Sans Bengali', ui-sans-serif, system-ui, sans-serif;
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+  --animate-fade-in: fade-in 0.2s ease-out;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Bangla text reads better slightly larger with more line height. */
+html:lang(bn) body {
+  font-family: 'Noto Sans Bengali', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900;
+  }
+  .input {
+    @apply block w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-xs placeholder:text-slate-400
+      focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60
+      dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300;
+  }
+  .table-th {
+    @apply px-4 py-3 text-left text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-slate-400;
+  }
+  .table-td {
+    @apply px-4 py-3 text-sm text-slate-700 dark:text-slate-300;
+  }
+}
+
+.recharts-cartesian-axis-tick-value {
+  @apply fill-slate-500 text-xs dark:fill-slate-400;
+}
+.recharts-cartesian-grid line {
+  @apply stroke-slate-200 dark:stroke-slate-800;
+}

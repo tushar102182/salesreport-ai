@@ -1,0 +1,50 @@
+{
+  "name": "salesreport-ai",
+  "version": "1.0.0",
+  "description": "SalesReport AI — upload sales data, get AI summaries, download beautiful Bangla & English PDF reports and invoices.",
+  "private": true,
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "setup": "node scripts/init-env.mjs && npm install && npm run db:migrate && npm run db:seed",
+    "dev": "concurrently -k -n api,web -c blue,magenta \"npm:dev -w @salesreport/server\" \"npm:dev -w @salesreport/web\"",
+    "build": "npm run build -w @salesreport/web && npm run build -w @salesreport/server",
+    "start": "npm run start -w @salesreport/server",
+    "test": "npm run test -w @salesreport/shared && npm run test -w @salesreport/server",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:migrate": "npm run db:migrate -w @salesreport/server",
+    "db:seed": "npm run db:seed -w @salesreport/server",
+    "db:reset": "npm run db:reset -w @salesreport/server",
+    "db:studio": "npm run db:studio -w @salesreport/server",
+    "sample-data": "npm run sample-data -w @salesreport/server",
+    "env:init": "node scripts/init-env.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^9.2.0",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.72.1"
+  },
+  "overrides": {
+    "minimatch": "^11.0.4",
+    "deepmerge-ts": "^8.0.2",
+    "esbuild": "^0.28.2"
+  }
+}

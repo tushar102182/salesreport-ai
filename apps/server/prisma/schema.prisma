@@ -1,0 +1,228 @@
+// SalesReport AI — Prisma schema
+//
+// Default database: SQLite (zero-config). To switch to PostgreSQL run
+//   npm run db:use-postgres -w @salesreport/server
+// (or change `provider` below to "postgresql") and set DATABASE_URL.
+// See docs/CUSTOMIZATION.md → "Switching to PostgreSQL".
+//
+// Notes
+// - Enumerations (role, invoice status, …) are stored as strings and validated
+//   with zod in @salesreport/shared so the schema stays portable across providers.
+// - Every tenant-owned table carries `organizationId`; all queries are scoped by it.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id                String   @id @default(cuid())
+  name              String
+  address           String?
+  phone             String?
+  email             String?
+  website           String?
+  taxId             String?
+  currency          String   @default("BDT")
+  defaultLanguage   String   @default("en")
+  invoicePrefix     String   @default("INV-")
+  nextInvoiceNumber Int      @default(1)
+  defaultTaxRate    Float    @default(0)
+  invoiceFooter     String?
+  invoiceNotes      String?
+  logo              Bytes?
+  logoMime          String?
+  logoUpdatedAt     DateTime?
+  // AI settings (admin override of the env provider). The API key is AES-256-GCM encrypted.
+  llmProvider       String?
+  llmModel          String?
+  llmApiKeyEnc      String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  users     User[]
+  customers Customer[]
+  products  Product[]
+  invoices  Invoice[]
+  datasets  Dataset[]
+}
+
+model User {
+  id               String    @id @default(cuid())
+  email            String    @unique
+  name             String
+  passwordHash     String
+  role             String    @default("staff") // admin | staff
+  organizationId   String
+  failedLoginCount Int       @default(0)
+  lockedUntil      DateTime?
+  lastLoginAt      DateTime?
+  passwordChangedAt DateTime @default(now())
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  organization  Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  refreshTokens RefreshToken[]
+  datasets      Dataset[]
+
+  @@index([organizationId])
+}
+
+model RefreshToken {
+  id         String    @id @default(cuid())
+  userId     String
+  familyId   String
+  tokenHash  String    @unique
+  expiresAt  DateTime
+  revokedAt  DateTime?
+  replacedBy String?
+  userAgent  String?
+  ip         String?
+  createdAt  DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([familyId])
+}
+
+model Customer {
+  id             String   @id @default(cuid())
+  organizationId String
+  name           String
+  email          String?
+  phone          String?
+  address        String?
+  notes          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  invoices     Invoice[]
+
+  @@index([organizationId, name])
+}
+
+model Product {
+  id             String   @id @default(cuid())
+  organizationId String
+  name           String
+  sku            String?
+  description    String?
+  unitPrice      Float
+  unit           String?
+  active         Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  invoiceItems InvoiceItem[]
+
+  @@unique([organizationId, sku])
+  @@index([organizationId, name])
+}
+
+model Invoice {
+  id             String   @id @default(cuid())
+  organizationId String
+  customerId     String
+  number         String
+  status         String   @default("draft") // draft | sent | paid | overdue
+  issueDate      DateTime
+  dueDate        DateTime?
+  currency       String
+  language       String   @default("en")
+  taxRate        Float    @default(0)
+  discountType   String   @default("fixed") // fixed | percent
+  discountValue  Float    @default(0)
+  subtotal       Float
+  discountTotal  Float
+  taxTotal       Float
+  total          Float
+  notes          String?
+  paidAt         DateTime?
+  createdById    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  customer     Customer      @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  items        InvoiceItem[]
+
+  @@unique([organizationId, number])
+  @@index([organizationId, status])
+  @@index([organizationId, issueDate])
+}
+
+model InvoiceItem {
+  id          String  @id @default(cuid())
+  invoiceId   String
+  productId   String?
+  description String
+  quantity    Float
+  unitPrice   Float
+  lineTotal   Float
+  position    Int     @default(0)
+
+  invoice Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  product Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([invoiceId])
+}
+
+model Dataset {
+  id               String   @id @default(cuid())
+  organizationId   String
+  createdById      String?
+  name             String
+  originalFilename String
+  fileType         String // csv | xlsx
+  rowCount         Int
+  skippedRows      Int      @default(0)
+  columnMapping    String // JSON: ColumnMapping
+  currency         String
+  periodStart      DateTime?
+  periodEnd        DateTime?
+  createdAt        DateTime @default(now())
+
+  organization Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  createdBy    User?            @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  records      SalesRecord[]
+  summaries    DatasetSummary[]
+
+  @@index([organizationId, createdAt])
+}
+
+model SalesRecord {
+  id        String   @id @default(cuid())
+  datasetId String
+  date      DateTime
+  product   String
+  quantity  Float
+  unitPrice Float
+  total     Float
+  customer  String?
+
+  dataset Dataset @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+
+  @@index([datasetId, date])
+}
+
+model DatasetSummary {
+  id        String   @id @default(cuid())
+  datasetId String
+  language  String // en | bn
+  provider  String // openai | gemini | anthropic | rule-based
+  model     String?
+  content   String // JSON: AiSummary
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  dataset Dataset @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+
+  @@unique([datasetId, language])
+}
