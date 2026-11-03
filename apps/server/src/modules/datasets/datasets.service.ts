@@ -56,7 +56,7 @@ export async function importDataset(
   orgId: string,
   userId: string,
   file: Express.Multer.File,
-  opts: { name: string; mapping: ColumnMapping; dateFormat: DateFormat },
+  opts: { name: string; mapping: ColumnMapping; dateFormat: DateFormat; currency?: string },
 ): Promise<ImportResultDto> {
   const fileType = detectSpreadsheetType(file.buffer, file.originalname);
   const { headers, rows } = parseSpreadsheet(file.buffer, fileType);
@@ -85,7 +85,7 @@ export async function importDataset(
       rowCount: records.length,
       skippedRows: skipped,
       columnMapping: JSON.stringify(opts.mapping),
-      currency: org.currency,
+      currency: opts.currency ?? org.currency,
       periodStart: new Date(minT),
       periodEnd: new Date(maxT),
     },

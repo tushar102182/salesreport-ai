@@ -1,0 +1,491 @@
+{
+  "app": {
+    "name": "SalesReport AI",
+    "tagline": "Transforme planilhas de vendas em análises, relatórios e faturas, em bengali e inglês.",
+    "demoBanner": "Demonstração pública: os dados são redefinidos todos os dias. Salvar chaves de API está desativado."
+  },
+  "nav": {
+    "dashboard": "Painel",
+    "datasets": "Dados de vendas",
+    "upload": "Enviar dados",
+    "invoices": "Faturas",
+    "customers": "Clientes",
+    "products": "Produtos",
+    "settings": "Configurações",
+    "logout": "Sair",
+    "profile": "Perfil",
+    "menu": "Menu",
+    "close": "Fechar"
+  },
+  "common": {
+    "save": "Salvar",
+    "saving": "Salvando…",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "create": "Criar",
+    "add": "Adicionar",
+    "new": "Novo",
+    "back": "Voltar",
+    "next": "Próximo",
+    "search": "Pesquisar…",
+    "actions": "Ações",
+    "loading": "Carregando…",
+    "retry": "Tentar novamente",
+    "view": "Ver",
+    "download": "Baixar",
+    "export": "Exportar CSV",
+    "all": "Todos",
+    "none": "Nenhum",
+    "yes": "Sim",
+    "no": "Não",
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "address": "Endereço",
+    "notes": "Observações",
+    "optional": "opcional",
+    "createdAt": "Criado em",
+    "noResults": "Nada por aqui ainda",
+    "noResultsHint": "Tente outra pesquisa ou adicione seu primeiro item.",
+    "confirmDelete": "Tem certeza? Esta ação não pode ser desfeita.",
+    "deleted": "Excluído",
+    "saved": "Salvo com sucesso",
+    "page": "Página {{page}} de {{total}}",
+    "previous": "Anterior",
+    "showing": "{{n}} no total",
+    "language": "Idioma",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "required": "Obrigatório",
+    "english": "Inglês",
+    "bangla": "বাংলা",
+    "languageNames": {
+      "en": "English",
+      "bn": "বাংলা",
+      "es": "Español",
+      "fr": "Français",
+      "ar": "العربية",
+      "hi": "हिन्दी",
+      "pt": "Português"
+    }
+  },
+  "auth": {
+    "signIn": "Entrar",
+    "signingIn": "Entrando…",
+    "signUp": "Criar conta",
+    "signingUp": "Criando conta…",
+    "welcomeBack": "Bem-vindo de volta",
+    "signInSubtitle": "Entre no seu espaço do SalesReport AI",
+    "createAccount": "Crie seu espaço de trabalho",
+    "createSubtitle": "Comece a analisar suas vendas em minutos. Sem cartão de crédito.",
+    "email": "Endereço de e-mail",
+    "password": "Senha",
+    "name": "Seu nome",
+    "companyName": "Nome da empresa",
+    "noAccount": "Não tem uma conta?",
+    "haveAccount": "Já tem uma conta?",
+    "demoHint": "Acesso de demonstração",
+    "useDemo": "Usar conta de demonstração",
+    "passwordHint": "Pelo menos 10 caracteres com letras maiúsculas e minúsculas, um número e um símbolo.",
+    "sessionExpired": "Sua sessão expirou. Entre novamente.",
+    "heroTitle": "Suas vendas, explicadas.",
+    "heroPoints": [
+      "Envie CSV ou Excel: as colunas são detectadas automaticamente",
+      "Resumos com IA e insights em bengali ou inglês",
+      "Relatórios e faturas em PDF caprichados com um clique"
+    ]
+  },
+  "dashboard": {
+    "title": "Painel",
+    "subtitle": "Visão geral do desempenho do seu negócio",
+    "totalRevenue": "Receita total",
+    "orders": "Pedidos",
+    "aov": "Ticket médio",
+    "unitsSold": "Unidades vendidas",
+    "growth": "Crescimento (mensal)",
+    "vsPrev": "{{current}} vs. {{previous}}",
+    "bestProduct": "Produto mais vendido",
+    "bestDay": "Melhor dia da semana",
+    "bestDate": "Melhor data",
+    "dailySales": "Vendas diárias",
+    "monthlySales": "Vendas mensais",
+    "topProducts": "Principais produtos",
+    "byRevenue": "Por receita",
+    "byQuantity": "Por quantidade",
+    "weekday": "Vendas por dia da semana",
+    "invoicesOverview": "Faturas",
+    "outstanding": "Em aberto",
+    "paid": "Pagas",
+    "overdue": "Vencidas",
+    "recentInvoices": "Faturas recentes",
+    "viewAll": "Ver todas",
+    "noData": "Ainda não há dados de vendas",
+    "noDataHint": "Envie um arquivo CSV ou Excel para ver análises, insights de IA e relatórios.",
+    "datasetSelect": "Conjunto de dados",
+    "units": "unidades",
+    "customers": "Clientes",
+    "products": "Produtos"
+  },
+  "datasets": {
+    "title": "Dados de vendas",
+    "subtitle": "Conjuntos de dados enviados e suas análises",
+    "upload": "Enviar dados",
+    "name": "Conjunto de dados",
+    "rows": "linhas",
+    "period": "Período",
+    "revenue": "Receita",
+    "file": "Arquivo",
+    "empty": "Ainda não há conjuntos de dados",
+    "emptyHint": "Envie seu primeiro arquivo de vendas para começar.",
+    "downloadReport": "Relatório em PDF",
+    "deleteConfirm": "Excluir este conjunto de dados e todos os seus registros?",
+    "analytics": "Análises",
+    "skipped": "{{n}} linhas ignoradas"
+  },
+  "upload": {
+    "title": "Enviar dados de vendas",
+    "subtitle": "CSV ou Excel (.xlsx), até 10 MB / 100.000 linhas",
+    "step1": "Escolher arquivo",
+    "step2": "Mapear colunas",
+    "step3": "Revisar e importar",
+    "dropHere": "Arraste e solte seu arquivo aqui",
+    "or": "ou",
+    "browse": "Procurar arquivos",
+    "supported": "Formatos: .csv, .xlsx. Recomenda-se CSV em UTF-8 (suporta bengali)",
+    "sampleFiles": "Precisa de um exemplo? Baixe:",
+    "parsing": "Lendo arquivo…",
+    "importing": "Importando…",
+    "mappingTitle": "Associe suas colunas",
+    "mappingHint": "Detectamos estas automaticamente. Data e produto são obrigatórios, além de Total ou Quantidade + Preço unitário.",
+    "field": {
+      "date": "Data",
+      "product": "Produto",
+      "quantity": "Quantidade",
+      "unitPrice": "Preço unitário",
+      "total": "Total",
+      "customer": "Cliente"
+    },
+    "notMapped": "— Não está no arquivo —",
+    "dateFormat": "Formato de data",
+    "dateFormatAuto": "Detecção automática",
+    "datasetName": "Nome do conjunto de dados",
+    "preview": "Prévia (primeiras {{n}} linhas de {{total}})",
+    "import": "Importar {{n}} linhas",
+    "success": "{{imported}} linhas importadas",
+    "successSkipped": "{{imported}} linhas importadas, {{skipped}} ignoradas",
+    "rowErrors": "Algumas linhas foram ignoradas",
+    "row": "Linha {{row}}",
+    "changeFile": "Escolher outro arquivo"
+  },
+  "analytics": {
+    "title": "Análises",
+    "kpis": "Métricas principais",
+    "period": "{{start}} – {{end}}",
+    "productsCount": "{{n}} produtos",
+    "customersCount": "{{n}} clientes",
+    "share": "Participação",
+    "revenue": "Receita",
+    "quantity": "Quantidade",
+    "orders": "Pedidos",
+    "topCustomers": "Principais clientes"
+  },
+  "summary": {
+    "title": "Resumo com IA",
+    "generate": "Gerar resumo",
+    "regenerate": "Gerar novamente",
+    "generating": "Analisando seus dados…",
+    "insights": "Principais insights",
+    "recommendations": "Recomendações",
+    "provider": "Gerado por {{provider}}",
+    "ruleBased": "mecanismo de análise integrado",
+    "fallback": "O provedor de IA estava indisponível, então foi usado o mecanismo integrado: {{reason}}",
+    "empty": "Receba um resumo escrito com insights e recomendações.",
+    "language": "Idioma do resumo",
+    "configureHint": "Adicione uma chave da OpenAI, Gemini ou Anthropic em Configurações → IA para resumos mais completos."
+  },
+  "report": {
+    "download": "Baixar relatório em PDF",
+    "downloading": "Preparando PDF…",
+    "english": "PDF em inglês",
+    "bangla": "বাংলা PDF"
+  },
+  "invoices": {
+    "title": "Faturas",
+    "subtitle": "Crie, envie e acompanhe faturas",
+    "new": "Nova fatura",
+    "edit": "Editar fatura",
+    "number": "Nº da fatura",
+    "customer": "Cliente",
+    "selectCustomer": "Selecione um cliente…",
+    "issueDate": "Data de emissão",
+    "dueDate": "Data de vencimento",
+    "status": "Status",
+    "total": "Total",
+    "amount": "Valor",
+    "items": "Itens",
+    "addItem": "Adicionar item",
+    "product": "Produto",
+    "pickProduct": "Escolha um produto (opcional)",
+    "description": "Descrição",
+    "quantity": "Qtd.",
+    "unitPrice": "Preço unitário",
+    "lineTotal": "Total do item",
+    "subtotal": "Subtotal",
+    "discount": "Desconto",
+    "discountType": "Tipo de desconto",
+    "fixed": "Valor fixo",
+    "percent": "Percentual (%)",
+    "tax": "Imposto",
+    "taxRate": "Alíquota (%)",
+    "grandTotal": "Total geral",
+    "currency": "Moeda",
+    "language": "Idioma da fatura",
+    "notes": "Observações para o cliente",
+    "billTo": "Faturar para",
+    "from": "De",
+    "markAs": "Marcar como",
+    "downloadPdf": "Baixar PDF",
+    "allStatuses": "Todos os status",
+    "deleteConfirm": "Excluir esta fatura?",
+    "created": "Fatura {{number}} criada",
+    "updated": "Fatura atualizada",
+    "empty": "Ainda não há faturas",
+    "emptyHint": "Crie sua primeira fatura em segundos.",
+    "paidOn": "Paga em {{date}}",
+    "noCustomers": "Adicione um cliente primeiro",
+    "details": "Detalhes da fatura",
+    "removeItem": "Remover item"
+  },
+  "status": {
+    "draft": "Rascunho",
+    "sent": "Enviada",
+    "paid": "Paga",
+    "overdue": "Vencida"
+  },
+  "customers": {
+    "title": "Clientes",
+    "subtitle": "Pessoas e empresas para quem você vende",
+    "new": "Novo cliente",
+    "edit": "Editar cliente",
+    "invoices": "Faturas",
+    "empty": "Ainda não há clientes",
+    "deleteConfirm": "Excluir este cliente?"
+  },
+  "products": {
+    "title": "Produtos",
+    "subtitle": "Seu catálogo para faturamento",
+    "new": "Novo produto",
+    "edit": "Editar produto",
+    "sku": "SKU",
+    "unit": "Unidade",
+    "unitPrice": "Preço unitário",
+    "description": "Descrição",
+    "active": "Ativo",
+    "inactive": "Inativo",
+    "empty": "Ainda não há produtos",
+    "deleteConfirm": "Excluir este produto?"
+  },
+  "settings": {
+    "title": "Configurações",
+    "subtitle": "Perfil da empresa, provedor de IA, equipe e conta",
+    "company": "Empresa",
+    "ai": "Provedor de IA",
+    "users": "Equipe",
+    "profile": "Minha conta",
+    "companyName": "Nome da empresa",
+    "website": "Site",
+    "taxId": "CNPJ / BIN",
+    "currency": "Moeda",
+    "defaultLanguage": "Idioma padrão dos documentos",
+    "invoicePrefix": "Prefixo do número da fatura",
+    "nextNumber": "Próximo número de fatura: {{number}}",
+    "defaultTaxRate": "Alíquota padrão (%)",
+    "invoiceFooter": "Rodapé da fatura (ex.: dados bancários / bKash)",
+    "invoiceNotes": "Observações / termos padrão da fatura",
+    "logo": "Logotipo",
+    "logoHint": "PNG ou JPEG, máx. 1 MB. Usado em faturas e relatórios.",
+    "uploadLogo": "Enviar logotipo",
+    "removeLogo": "Remover",
+    "aiTitle": "Provedor de IA",
+    "aiSubtitle": "Escolha qual LLM escreve seus resumos. As chaves são criptografadas (AES-256-GCM) e nunca são exibidas novamente.",
+    "provider": "Provedor",
+    "useEnv": "Usar o padrão do servidor (.env)",
+    "model": "Modelo (opcional)",
+    "modelPlaceholder": "Padrão: {{model}}",
+    "apiKey": "Chave de API",
+    "apiKeyPlaceholder": "Cole uma nova chave para substituir a salva",
+    "storedKey": "Chave salva",
+    "removeKey": "Remover chave salva",
+    "testConnection": "Testar conexão",
+    "testing": "Testando…",
+    "effective": "Em uso no momento",
+    "sourceOrganization": "das Configurações",
+    "sourceEnvironment": "do .env do servidor",
+    "sourceNone": "nenhuma chave configurada: mecanismo integrado",
+    "getKey": "Onde consigo uma chave?",
+    "usersTitle": "Membros da equipe",
+    "addUser": "Adicionar membro",
+    "role": "Função",
+    "admin": "Administrador",
+    "staff": "Equipe",
+    "lastLogin": "Último acesso",
+    "never": "Nunca",
+    "you": "Você",
+    "changePassword": "Alterar senha",
+    "currentPassword": "Senha atual",
+    "newPassword": "Nova senha",
+    "passwordChanged": "Senha alterada. As outras sessões foram encerradas.",
+    "adminOnly": "Somente administradores podem alterar estas configurações.",
+    "newUserPassword": "Senha inicial"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "email": {
+      "invalid": "Digite um endereço de e-mail válido"
+    },
+    "name": {
+      "tooShort": "Muito curto"
+    },
+    "password": {
+      "tooShort": "Pelo menos 10 caracteres",
+      "tooLong": "Muito longa",
+      "lower": "Adicione uma letra minúscula",
+      "upper": "Adicione uma letra maiúscula",
+      "digit": "Adicione um número",
+      "symbol": "Adicione um símbolo (ex.: @ # !)",
+      "sameAsOld": "A nova senha deve ser diferente",
+      "incorrect": "A senha atual está incorreta"
+    },
+    "number": {
+      "min0": "Deve ser 0 ou mais",
+      "positive": "Deve ser maior que 0"
+    },
+    "date": {
+      "invalid": "Data inválida"
+    },
+    "invoice": {
+      "itemsRequired": "Adicione pelo menos um item",
+      "dueBeforeIssue": "A data de vencimento não pode ser anterior à data de emissão",
+      "discountPercentMax": "O desconto percentual não pode passar de 100",
+      "prefixInvalid": "Apenas letras, números, / _ -",
+      "customerNotFound": "Cliente não encontrado"
+    },
+    "mapping": {
+      "required": "Obrigatório",
+      "totalOrQtyPrice": "Mapeie Total, ou Quantidade e Preço unitário"
+    },
+    "ai": {
+      "keyTooShort": "Essa chave parece curta demais"
+    }
+  },
+  "errors": {
+    "generic": "Algo deu errado. Tente novamente.",
+    "network": "Erro de rede: verifique sua conexão.",
+    "notFound": "Página não encontrada",
+    "notFoundHint": "A página que você procura não existe.",
+    "goHome": "Ir para o painel",
+    "forbidden": "Você não tem permissão para fazer isso."
+  },
+  "landing": {
+    "badge": "Análise de vendas com IA",
+    "heroTitle": "Transforme suas planilhas de vendas em relatórios claros em minutos",
+    "heroSubtitle": "Envie um arquivo CSV ou Excel e obtenha painéis, um resumo escrito por IA, relatórios em PDF caprichados e faturas, em 7 idiomas e mais de 40 moedas.",
+    "liveDemo": "Demo ao vivo",
+    "seeFeatures": "Ver recursos",
+    "demoNote": "Sem cadastro. O acesso de demonstração já vem preenchido.",
+    "navFeatures": "Recursos",
+    "navScreens": "Capturas de tela",
+    "navBenefits": "Vantagens",
+    "stats": [
+      {
+        "value": "7",
+        "label": "Idiomas"
+      },
+      {
+        "value": "40+",
+        "label": "Moedas"
+      },
+      {
+        "value": "100k",
+        "label": "Linhas por envio"
+      },
+      {
+        "value": "3",
+        "label": "Provedores de IA"
+      }
+    ],
+    "featuresTitle": "Tudo o que você precisa para entender suas vendas",
+    "featuresSubtitle": "Uma única ferramenta para análise, relatórios e faturamento, feita para pequenas empresas e agências.",
+    "features": [
+      {
+        "title": "Envio de CSV e Excel",
+        "body": "Arraste e solte um arquivo; as colunas são detectadas e mapeadas automaticamente."
+      },
+      {
+        "title": "Resumo de vendas com IA",
+        "body": "Insights em linguagem simples da OpenAI, Gemini ou Claude, com uma alternativa gratuita baseada em regras."
+      },
+      {
+        "title": "Gráficos interativos",
+        "body": "Tendências diárias e mensais, principais produtos, melhores dias da semana e principais clientes."
+      },
+      {
+        "title": "Relatórios em PDF",
+        "body": "Relatórios de vendas prontos para impressão, com seu logotipo e suas cores."
+      },
+      {
+        "title": "Faturas",
+        "body": "Crie, acompanhe e baixe faturas profissionais em PDF em qualquer moeda."
+      },
+      {
+        "title": "Vários idiomas e moedas",
+        "body": "Inglês, bengali, espanhol, francês, árabe, hindi e português, com mais de 40 moedas."
+      },
+      {
+        "title": "Clientes e produtos",
+        "body": "Um painel administrativo simples para gerenciar seu catálogo e sua lista de clientes."
+      },
+      {
+        "title": "Seguro por padrão",
+        "body": "Funções, proteção CSRF, limite de requisições, chaves de API criptografadas e bloqueio de conta."
+      }
+    ],
+    "screensTitle": "Veja na prática",
+    "screensSubtitle": "Telas reais da demo ao vivo.",
+    "shots": {
+      "dashboard": "Painel de vendas",
+      "summary": "Resumo escrito por IA",
+      "charts": "Tendências e principais produtos",
+      "invoices": "Lista de faturas",
+      "invoice": "Detalhes da fatura e PDF",
+      "dark": "Modo escuro em bengali"
+    },
+    "benefitsTitle": "Por que as equipes escolhem o SalesReport AI",
+    "benefits": [
+      "Economize horas de trabalho manual com planilhas todo mês",
+      "Compartilhe relatórios claros e com sua marca com clientes e gestores",
+      "Fature seus clientes na moeda deles",
+      "Use sua própria chave de IA, sem assinatura extra",
+      "Hospede onde quiser: Render, um VPS ou Docker",
+      "Código TypeScript limpo e documentado, fácil de personalizar"
+    ],
+    "steps": [
+      {
+        "title": "Envie seu arquivo de vendas",
+        "body": "CSV ou XLSX, até 100.000 linhas."
+      },
+      {
+        "title": "Confira os painéis e o resumo com IA",
+        "body": "Identifique na hora seus melhores produtos, dias e clientes."
+      },
+      {
+        "title": "Baixe o PDF ou envie uma fatura",
+        "body": "Documentos com sua marca, prontos para compartilhar."
+      }
+    ],
+    "ctaTitle": "Experimente o SalesReport AI agora",
+    "ctaSubtitle": "Explore o aplicativo completo com dados de exemplo na demo ao vivo."
+  }
+}

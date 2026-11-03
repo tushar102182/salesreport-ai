@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## 1.1.0 - 2026-11-04
+
+### Added
+- Premium landing page at `/welcome` (hero, features, screenshots, benefits, steps) with a **Live Demo** button; anonymous visitors to `/` land here.
+- UI in 7 languages: English, Bangla, Spanish, French, Arabic (right-to-left), Hindi and Portuguese, via a language dropdown.
+- 44 currencies (was 11), incl. JPY/KWD/BHD/OMR with correct decimals; per-upload currency selection on the import wizard.
+
+### Changed
+- Removed a stale release zip from the repository.
+
 ## 1.0.1 - 2026-11-03
 
 - Added `database/schema.sql` (full schema export), `database/seed.sql` (demo data), `database/migrations/` mirror and `docs/ERD.md`.

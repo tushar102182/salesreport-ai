@@ -1,6 +1,6 @@
 # SalesReport AI
 
-**Upload sales data → get an AI summary → download beautiful PDF reports and invoices. In Bangla and English.**
+**Upload sales data → get an AI summary → download beautiful PDF reports and invoices. UI in 7 languages (English, বাংলা, Español, Français, العربية, हिन्दी, Português) and 44 currencies.**
 
 SalesReport AI is a production-ready, self-hosted SaaS starter for small businesses, distributors and shops. Drop in a CSV or Excel file, map the columns once, and get KPIs, charts, an AI-written narrative with insights and recommendations, and a branded PDF report — in **বাংলা** or **English**. A full invoicing module (customers, products, invoices with tax/discount and PDF) is included.
 
@@ -51,13 +51,14 @@ SalesReport AI is a production-ready, self-hosted SaaS starter for small busines
 
 - Customers, products and invoices CRUD with search, filters and pagination.
 - Invoices: line items (pick from catalogue or free text), tax, discount, status (draft/sent/paid/overdue — sent invoices past due become overdue automatically), sequential numbering with a custom prefix (`INV-000001`), CSV export.
-- Company settings: logo upload, name, address, phone, e-mail, website, tax ID/BIN, currency (BDT ৳ default; USD, EUR, GBP, INR, AED, SAR, MYR, SGD, CAD, AUD), default document language, default tax rate, invoice notes & footer.
+- Company settings: logo upload, name, address, phone, e-mail, website, tax ID/BIN, currency (BDT ৳ default; 44 currencies incl. USD, EUR, GBP, INR, AED, SAR, JPY, CNY, BRL, NGN — see `packages/shared/src/constants.ts`), per-upload and per-invoice currency, default document language, default tax rate, invoice notes & footer.
 - Team: admin & staff roles, invite users, change roles.
 - Dashboard with KPI cards, daily/monthly charts, top products, weekday chart, invoice totals and recent invoices.
 
 **UX**
 
-- Full Bangla and English UI with a one-click language toggle (persisted), Bangla digits and lakh/crore grouping (`৳১২,৩৪,৫৬৭.০০`).
+- Landing page at `/welcome` with a Live Demo button.
+- UI in English, Bangla, Spanish, French, Arabic (RTL), Hindi and Portuguese with a persisted language dropdown; PDF reports and AI summaries in English or Bangla, Bangla digits and lakh/crore grouping (`৳১২,৩৪,৫৬৭.০০`).
 - Dark / light mode (persisted, no flash), responsive layout (mobile drawer), accessible components, skeleton loaders, toasts.
 
 **Production & security** (see [Security](#security))

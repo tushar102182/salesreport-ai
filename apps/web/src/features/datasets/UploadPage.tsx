@@ -12,7 +12,9 @@ import {
   type MappableField,
   type UploadPreviewDto,
 } from '@salesreport/shared';
+import { CURRENCIES } from '@salesreport/shared';
 import { api } from '../../lib/api';
+import { useOrganization } from '../../lib/queries';
 import { errorMessage } from '../../lib/errors';
 import { useToast } from '../../lib/toast';
 import { useFieldError, useFormat } from '../../lib/format';
@@ -69,6 +71,8 @@ export function UploadPage() {
   const [mapping, setMapping] = useState<Mapping>({});
   const [name, setName] = useState('');
   const [dateFormat, setDateFormat] = useState<'auto' | 'YMD' | 'DMY' | 'MDY'>('auto');
+  const { data: org } = useOrganization();
+  const [currency, setCurrency] = useState('');
   const [drag, setDrag] = useState(false);
   const [result, setResult] = useState<ImportResultDto | null>(null);
 
@@ -95,6 +99,7 @@ export function UploadPage() {
       form.append('name', name.trim() || 'Sales data');
       form.append('mapping', JSON.stringify(Object.fromEntries(Object.entries(mapping).filter(([, v]) => v))));
       form.append('dateFormat', dateFormat);
+      if (currency) form.append('currency', currency);
       form.append('file', file!);
       return api<ImportResultDto>('/datasets', { method: 'POST', form });
     },
@@ -242,6 +247,17 @@ export function UploadPage() {
                 <option value="DMY">DD/MM/YYYY</option>
                 <option value="MDY">MM/DD/YYYY</option>
                 <option value="YMD">YYYY-MM-DD</option>
+              </Select>
+              <Select
+                label={t('invoices.currency')}
+                value={currency || org?.currency || ''}
+                onChange={(e) => setCurrency(e.target.value)}
+              >
+                {CURRENCIES.map((c) => (
+                  <option key={c.code} value={c.code}>
+                    {c.code} — {c.name}
+                  </option>
+                ))}
               </Select>
               <Input
                 label={t('upload.datasetName')}

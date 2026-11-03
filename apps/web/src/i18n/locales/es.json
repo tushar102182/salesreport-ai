@@ -1,0 +1,491 @@
+{
+  "app": {
+    "name": "SalesReport AI",
+    "tagline": "Convierte tus hojas de ventas en análisis, informes y facturas, en bengalí e inglés.",
+    "demoBanner": "Demo pública: los datos se restablecen cada día. Guardar claves de API está desactivado."
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "datasets": "Datos de ventas",
+    "upload": "Subir datos",
+    "invoices": "Facturas",
+    "customers": "Clientes",
+    "products": "Productos",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión",
+    "profile": "Perfil",
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "common": {
+    "save": "Guardar",
+    "saving": "Guardando…",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "add": "Añadir",
+    "new": "Nuevo",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "search": "Buscar…",
+    "actions": "Acciones",
+    "loading": "Cargando…",
+    "retry": "Reintentar",
+    "view": "Ver",
+    "download": "Descargar",
+    "export": "Exportar CSV",
+    "all": "Todos",
+    "none": "Ninguno",
+    "yes": "Sí",
+    "no": "No",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "notes": "Notas",
+    "optional": "opcional",
+    "createdAt": "Creado",
+    "noResults": "Aún no hay nada aquí",
+    "noResultsHint": "Prueba con otra búsqueda o añade tu primer elemento.",
+    "confirmDelete": "¿Seguro? Esta acción no se puede deshacer.",
+    "deleted": "Eliminado",
+    "saved": "Guardado correctamente",
+    "page": "Página {{page}} de {{total}}",
+    "previous": "Anterior",
+    "showing": "{{n}} en total",
+    "language": "Idioma",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "required": "Obligatorio",
+    "english": "Inglés",
+    "bangla": "বাংলা",
+    "languageNames": {
+      "en": "English",
+      "bn": "বাংলা",
+      "es": "Español",
+      "fr": "Français",
+      "ar": "العربية",
+      "hi": "हिन्दी",
+      "pt": "Português"
+    }
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signingIn": "Iniciando sesión…",
+    "signUp": "Crear cuenta",
+    "signingUp": "Creando cuenta…",
+    "welcomeBack": "Bienvenido de nuevo",
+    "signInSubtitle": "Inicia sesión en tu espacio de SalesReport AI",
+    "createAccount": "Crea tu espacio de trabajo",
+    "createSubtitle": "Empieza a analizar tus ventas en minutos. Sin tarjeta de crédito.",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "name": "Tu nombre",
+    "companyName": "Nombre de la empresa",
+    "noAccount": "¿No tienes cuenta?",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "demoHint": "Acceso de demostración",
+    "useDemo": "Usar cuenta de demostración",
+    "passwordHint": "Al menos 10 caracteres con mayúsculas y minúsculas, un número y un símbolo.",
+    "sessionExpired": "Tu sesión ha caducado. Vuelve a iniciar sesión.",
+    "heroTitle": "Tus ventas, explicadas.",
+    "heroPoints": [
+      "Sube CSV o Excel: las columnas se detectan automáticamente",
+      "Resúmenes con IA y análisis en bengalí o inglés",
+      "Informes y facturas en PDF impecables con un clic"
+    ]
+  },
+  "dashboard": {
+    "title": "Panel",
+    "subtitle": "Resumen del rendimiento de tu negocio",
+    "totalRevenue": "Ingresos totales",
+    "orders": "Pedidos",
+    "aov": "Valor medio del pedido",
+    "unitsSold": "Unidades vendidas",
+    "growth": "Crecimiento (mensual)",
+    "vsPrev": "{{current}} frente a {{previous}}",
+    "bestProduct": "Producto más vendido",
+    "bestDay": "Mejor día de la semana",
+    "bestDate": "Mejor fecha",
+    "dailySales": "Ventas diarias",
+    "monthlySales": "Ventas mensuales",
+    "topProducts": "Productos principales",
+    "byRevenue": "Por ingresos",
+    "byQuantity": "Por cantidad",
+    "weekday": "Ventas por día de la semana",
+    "invoicesOverview": "Facturas",
+    "outstanding": "Pendiente",
+    "paid": "Pagado",
+    "overdue": "Vencido",
+    "recentInvoices": "Facturas recientes",
+    "viewAll": "Ver todo",
+    "noData": "Aún no hay datos de ventas",
+    "noDataHint": "Sube un archivo CSV o Excel para ver análisis, información de IA e informes.",
+    "datasetSelect": "Conjunto de datos",
+    "units": "unidades",
+    "customers": "Clientes",
+    "products": "Productos"
+  },
+  "datasets": {
+    "title": "Datos de ventas",
+    "subtitle": "Conjuntos de datos subidos y sus análisis",
+    "upload": "Subir datos",
+    "name": "Conjunto de datos",
+    "rows": "filas",
+    "period": "Periodo",
+    "revenue": "Ingresos",
+    "file": "Archivo",
+    "empty": "Aún no hay conjuntos de datos",
+    "emptyHint": "Sube tu primer archivo de ventas para empezar.",
+    "downloadReport": "Informe PDF",
+    "deleteConfirm": "¿Eliminar este conjunto de datos y todos sus registros?",
+    "analytics": "Análisis",
+    "skipped": "{{n}} filas omitidas"
+  },
+  "upload": {
+    "title": "Subir datos de ventas",
+    "subtitle": "CSV o Excel (.xlsx), hasta 10 MB / 100.000 filas",
+    "step1": "Elegir archivo",
+    "step2": "Asignar columnas",
+    "step3": "Revisar e importar",
+    "dropHere": "Arrastra y suelta tu archivo aquí",
+    "or": "o",
+    "browse": "Buscar archivos",
+    "supported": "Formatos: .csv, .xlsx. Se recomienda CSV en UTF-8 (admite bengalí)",
+    "sampleFiles": "¿Necesitas un ejemplo? Descarga:",
+    "parsing": "Leyendo archivo…",
+    "importing": "Importando…",
+    "mappingTitle": "Asigna tus columnas",
+    "mappingHint": "Las hemos detectado automáticamente. La fecha y el producto son obligatorios, además del Total o de Cantidad + Precio unitario.",
+    "field": {
+      "date": "Fecha",
+      "product": "Producto",
+      "quantity": "Cantidad",
+      "unitPrice": "Precio unitario",
+      "total": "Total",
+      "customer": "Cliente"
+    },
+    "notMapped": "— No está en el archivo —",
+    "dateFormat": "Formato de fecha",
+    "dateFormatAuto": "Detección automática",
+    "datasetName": "Nombre del conjunto de datos",
+    "preview": "Vista previa (primeras {{n}} filas de {{total}})",
+    "import": "Importar {{n}} filas",
+    "success": "{{imported}} filas importadas",
+    "successSkipped": "{{imported}} filas importadas, {{skipped}} omitidas",
+    "rowErrors": "Se omitieron algunas filas",
+    "row": "Fila {{row}}",
+    "changeFile": "Elegir otro archivo"
+  },
+  "analytics": {
+    "title": "Análisis",
+    "kpis": "Métricas clave",
+    "period": "{{start}} – {{end}}",
+    "productsCount": "{{n}} productos",
+    "customersCount": "{{n}} clientes",
+    "share": "Cuota",
+    "revenue": "Ingresos",
+    "quantity": "Cantidad",
+    "orders": "Pedidos",
+    "topCustomers": "Mejores clientes"
+  },
+  "summary": {
+    "title": "Resumen con IA",
+    "generate": "Generar resumen",
+    "regenerate": "Regenerar",
+    "generating": "Analizando tus datos…",
+    "insights": "Conclusiones clave",
+    "recommendations": "Recomendaciones",
+    "provider": "Generado por {{provider}}",
+    "ruleBased": "motor de análisis integrado",
+    "fallback": "El proveedor de IA no estaba disponible, así que se usó el motor integrado: {{reason}}",
+    "empty": "Obtén un resumen escrito con conclusiones y recomendaciones.",
+    "language": "Idioma del resumen",
+    "configureHint": "Añade una clave de OpenAI, Gemini o Anthropic en Configuración → IA para obtener resúmenes más completos."
+  },
+  "report": {
+    "download": "Descargar informe PDF",
+    "downloading": "Preparando PDF…",
+    "english": "PDF en inglés",
+    "bangla": "বাংলা PDF"
+  },
+  "invoices": {
+    "title": "Facturas",
+    "subtitle": "Crea, envía y controla tus facturas",
+    "new": "Nueva factura",
+    "edit": "Editar factura",
+    "number": "N.º de factura",
+    "customer": "Cliente",
+    "selectCustomer": "Selecciona un cliente…",
+    "issueDate": "Fecha de emisión",
+    "dueDate": "Fecha de vencimiento",
+    "status": "Estado",
+    "total": "Total",
+    "amount": "Importe",
+    "items": "Líneas",
+    "addItem": "Añadir línea",
+    "product": "Producto",
+    "pickProduct": "Elige un producto (opcional)",
+    "description": "Descripción",
+    "quantity": "Cant.",
+    "unitPrice": "Precio unitario",
+    "lineTotal": "Total de línea",
+    "subtotal": "Subtotal",
+    "discount": "Descuento",
+    "discountType": "Tipo de descuento",
+    "fixed": "Importe fijo",
+    "percent": "Porcentaje (%)",
+    "tax": "Impuesto",
+    "taxRate": "Tipo impositivo (%)",
+    "grandTotal": "Total general",
+    "currency": "Moneda",
+    "language": "Idioma de la factura",
+    "notes": "Notas para el cliente",
+    "billTo": "Facturar a",
+    "from": "De",
+    "markAs": "Marcar como",
+    "downloadPdf": "Descargar PDF",
+    "allStatuses": "Todos los estados",
+    "deleteConfirm": "¿Eliminar esta factura?",
+    "created": "Factura {{number}} creada",
+    "updated": "Factura actualizada",
+    "empty": "Aún no hay facturas",
+    "emptyHint": "Crea tu primera factura en segundos.",
+    "paidOn": "Pagada el {{date}}",
+    "noCustomers": "Primero añade un cliente",
+    "details": "Detalles de la factura",
+    "removeItem": "Quitar línea"
+  },
+  "status": {
+    "draft": "Borrador",
+    "sent": "Enviada",
+    "paid": "Pagada",
+    "overdue": "Vencida"
+  },
+  "customers": {
+    "title": "Clientes",
+    "subtitle": "Personas y empresas a las que vendes",
+    "new": "Nuevo cliente",
+    "edit": "Editar cliente",
+    "invoices": "Facturas",
+    "empty": "Aún no hay clientes",
+    "deleteConfirm": "¿Eliminar este cliente?"
+  },
+  "products": {
+    "title": "Productos",
+    "subtitle": "Tu catálogo para facturar",
+    "new": "Nuevo producto",
+    "edit": "Editar producto",
+    "sku": "SKU",
+    "unit": "Unidad",
+    "unitPrice": "Precio unitario",
+    "description": "Descripción",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "empty": "Aún no hay productos",
+    "deleteConfirm": "¿Eliminar este producto?"
+  },
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Perfil de empresa, proveedor de IA, equipo y cuenta",
+    "company": "Empresa",
+    "ai": "Proveedor de IA",
+    "users": "Equipo",
+    "profile": "Mi cuenta",
+    "companyName": "Nombre de la empresa",
+    "website": "Sitio web",
+    "taxId": "NIF / BIN",
+    "currency": "Moneda",
+    "defaultLanguage": "Idioma predeterminado de los documentos",
+    "invoicePrefix": "Prefijo del número de factura",
+    "nextNumber": "Próximo número de factura: {{number}}",
+    "defaultTaxRate": "Tipo impositivo predeterminado (%)",
+    "invoiceFooter": "Pie de factura (p. ej., datos bancarios / bKash)",
+    "invoiceNotes": "Notas / condiciones predeterminadas de la factura",
+    "logo": "Logotipo",
+    "logoHint": "PNG o JPEG, máx. 1 MB. Se usa en facturas e informes.",
+    "uploadLogo": "Subir logotipo",
+    "removeLogo": "Quitar",
+    "aiTitle": "Proveedor de IA",
+    "aiSubtitle": "Elige qué LLM redacta tus resúmenes. Las claves se cifran (AES-256-GCM) y no se vuelven a mostrar.",
+    "provider": "Proveedor",
+    "useEnv": "Usar el valor predeterminado del servidor (.env)",
+    "model": "Modelo (opcional)",
+    "modelPlaceholder": "Predeterminado: {{model}}",
+    "apiKey": "Clave de API",
+    "apiKeyPlaceholder": "Pega una clave nueva para sustituir la guardada",
+    "storedKey": "Clave guardada",
+    "removeKey": "Eliminar clave guardada",
+    "testConnection": "Probar conexión",
+    "testing": "Probando…",
+    "effective": "En uso actualmente",
+    "sourceOrganization": "desde Configuración",
+    "sourceEnvironment": "desde el .env del servidor",
+    "sourceNone": "sin clave configurada: motor integrado",
+    "getKey": "¿Dónde consigo una clave?",
+    "usersTitle": "Miembros del equipo",
+    "addUser": "Añadir miembro",
+    "role": "Rol",
+    "admin": "Administrador",
+    "staff": "Personal",
+    "lastLogin": "Último acceso",
+    "never": "Nunca",
+    "you": "Tú",
+    "changePassword": "Cambiar contraseña",
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Nueva contraseña",
+    "passwordChanged": "Contraseña cambiada. Se cerraron las demás sesiones.",
+    "adminOnly": "Solo los administradores pueden cambiar esta configuración.",
+    "newUserPassword": "Contraseña inicial"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": {
+      "invalid": "Introduce un correo electrónico válido"
+    },
+    "name": {
+      "tooShort": "Demasiado corto"
+    },
+    "password": {
+      "tooShort": "Al menos 10 caracteres",
+      "tooLong": "Demasiado larga",
+      "lower": "Añade una letra minúscula",
+      "upper": "Añade una letra mayúscula",
+      "digit": "Añade un número",
+      "symbol": "Añade un símbolo (p. ej., @ # !)",
+      "sameAsOld": "La nueva contraseña debe ser distinta",
+      "incorrect": "La contraseña actual es incorrecta"
+    },
+    "number": {
+      "min0": "Debe ser 0 o más",
+      "positive": "Debe ser mayor que 0"
+    },
+    "date": {
+      "invalid": "Fecha no válida"
+    },
+    "invoice": {
+      "itemsRequired": "Añade al menos una línea",
+      "dueBeforeIssue": "La fecha de vencimiento no puede ser anterior a la de emisión",
+      "discountPercentMax": "El descuento porcentual no puede superar 100",
+      "prefixInvalid": "Solo letras, números, / _ -",
+      "customerNotFound": "Cliente no encontrado"
+    },
+    "mapping": {
+      "required": "Obligatorio",
+      "totalOrQtyPrice": "Asigna Total, o bien Cantidad y Precio unitario"
+    },
+    "ai": {
+      "keyTooShort": "Esa clave parece demasiado corta"
+    }
+  },
+  "errors": {
+    "generic": "Algo salió mal. Inténtalo de nuevo.",
+    "network": "Error de red: comprueba tu conexión.",
+    "notFound": "Página no encontrada",
+    "notFoundHint": "La página que buscas no existe.",
+    "goHome": "Ir al panel",
+    "forbidden": "No tienes permiso para hacer eso."
+  },
+  "landing": {
+    "badge": "Análisis de ventas con IA",
+    "heroTitle": "Convierte tus hojas de ventas en informes claros en minutos",
+    "heroSubtitle": "Sube un archivo CSV o Excel y obtén paneles, un resumen redactado por IA e informes y facturas en PDF impecables, en 7 idiomas y más de 40 monedas.",
+    "liveDemo": "Demo en vivo",
+    "seeFeatures": "Ver funciones",
+    "demoNote": "Sin registro. El acceso de demostración ya viene rellenado.",
+    "navFeatures": "Funciones",
+    "navScreens": "Capturas",
+    "navBenefits": "Ventajas",
+    "stats": [
+      {
+        "value": "7",
+        "label": "Idiomas"
+      },
+      {
+        "value": "40+",
+        "label": "Monedas"
+      },
+      {
+        "value": "100k",
+        "label": "Filas por carga"
+      },
+      {
+        "value": "3",
+        "label": "Proveedores de IA"
+      }
+    ],
+    "featuresTitle": "Todo lo que necesitas para entender tus ventas",
+    "featuresSubtitle": "Una sola herramienta para análisis, informes y facturación, pensada para pequeñas empresas y agencias.",
+    "features": [
+      {
+        "title": "Carga de CSV y Excel",
+        "body": "Arrastra y suelta un archivo; las columnas se detectan y asignan automáticamente."
+      },
+      {
+        "title": "Resumen de ventas con IA",
+        "body": "Conclusiones en lenguaje claro de OpenAI, Gemini o Claude, con una alternativa gratuita basada en reglas."
+      },
+      {
+        "title": "Gráficos interactivos",
+        "body": "Tendencias diarias y mensuales, productos principales, mejores días de la semana y mejores clientes."
+      },
+      {
+        "title": "Informes PDF",
+        "body": "Informes de ventas listos para imprimir, con tu logotipo y tus colores."
+      },
+      {
+        "title": "Facturas",
+        "body": "Crea, controla y descarga facturas PDF profesionales en cualquier moneda."
+      },
+      {
+        "title": "Multilingüe y multimoneda",
+        "body": "Inglés, bengalí, español, francés, árabe, hindi y portugués, con más de 40 monedas."
+      },
+      {
+        "title": "Clientes y productos",
+        "body": "Un panel de administración sencillo para gestionar tu catálogo y tu lista de clientes."
+      },
+      {
+        "title": "Seguro por defecto",
+        "body": "Roles, protección CSRF, limitación de solicitudes, claves de API cifradas y bloqueo de cuentas."
+      }
+    ],
+    "screensTitle": "Míralo en acción",
+    "screensSubtitle": "Pantallas reales de la demo en vivo.",
+    "shots": {
+      "dashboard": "Panel de ventas",
+      "summary": "Resumen redactado por IA",
+      "charts": "Tendencias y productos principales",
+      "invoices": "Lista de facturas",
+      "invoice": "Detalle de factura y PDF",
+      "dark": "Modo oscuro en bengalí"
+    },
+    "benefitsTitle": "Por qué los equipos eligen SalesReport AI",
+    "benefits": [
+      "Ahorra horas de trabajo manual con hojas de cálculo cada mes",
+      "Comparte informes claros y con tu marca con clientes y responsables",
+      "Factura a tus clientes en su propia moneda",
+      "Usa tu propia clave de IA, sin suscripciones adicionales",
+      "Alójalo donde quieras: Render, un VPS o Docker",
+      "Código TypeScript limpio y documentado, fácil de personalizar"
+    ],
+    "steps": [
+      {
+        "title": "Sube tu archivo de ventas",
+        "body": "CSV o XLSX, hasta 100.000 filas."
+      },
+      {
+        "title": "Revisa los paneles y el resumen con IA",
+        "body": "Detecta al instante tus mejores productos, días y clientes."
+      },
+      {
+        "title": "Descarga el PDF o envía una factura",
+        "body": "Documentos con tu marca, listos para compartir."
+      }
+    ],
+    "ctaTitle": "Prueba SalesReport AI ahora",
+    "ctaSubtitle": "Explora la aplicación completa con datos de ejemplo en la demo en vivo."
+  }
+}

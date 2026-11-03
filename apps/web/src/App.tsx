@@ -7,6 +7,8 @@ import { Button, FullPageSpinner } from './components/ui';
 import { LoginPage } from './features/auth/LoginPage';
 import { RegisterPage } from './features/auth/RegisterPage';
 
+const LandingPage = lazy(() => import('./features/landing/LandingPage').then((m) => ({ default: m.LandingPage })));
+
 const DashboardPage = lazy(() =>
   import('./features/dashboard/DashboardPage').then((m) => ({ default: m.DashboardPage })),
 );
@@ -32,7 +34,12 @@ function RequireAuth() {
   const { status } = useAuth();
   const location = useLocation();
   if (status === 'loading') return <FullPageSpinner />;
-  if (status === 'anonymous') return <Navigate to="/login" replace state={{ from: location.pathname }} />;
+  if (status === 'anonymous')
+    return location.pathname === '/' ? (
+      <Navigate to="/welcome" replace />
+    ) : (
+      <Navigate to="/login" replace state={{ from: location.pathname }} />
+    );
   return <Outlet />;
 }
 
@@ -62,6 +69,7 @@ export function App() {
     <BrowserRouter>
       <Suspense fallback={<FullPageSpinner />}>
         <Routes>
+          <Route path="/welcome" element={<LandingPage />} />
           <Route element={<GuestOnly />}>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />

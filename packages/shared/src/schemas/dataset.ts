@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Language, SummaryProvider } from '../constants';
+import { CURRENCY_CODES, type Language, type SummaryProvider } from '../constants';
 import { languageSchema } from './common';
 
 const header = z.string().max(200);
@@ -34,6 +34,8 @@ export const datasetImportFieldsSchema = z.object({
     })
     .pipe(columnMappingSchema),
   dateFormat: z.enum(['auto', 'YMD', 'DMY', 'MDY']).default('auto'),
+  /** Currency of the amounts in this file. Defaults to the company currency. */
+  currency: z.enum(CURRENCY_CODES).optional(),
 });
 
 export const summaryRequestSchema = z.object({

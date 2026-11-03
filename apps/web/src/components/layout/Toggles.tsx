@@ -2,36 +2,33 @@ import { Languages, Moon, Sun } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../lib/theme';
 import { cn } from '../../lib/cn';
+import { LANGUAGE_LABELS, resolveAppLanguage, SUPPORTED_LANGUAGES } from '../../i18n';
 
 export function LanguageToggle({ className }: { className?: string }) {
   const { i18n, t } = useTranslation();
-  const lang = i18n.resolvedLanguage?.startsWith('bn') ? 'bn' : 'en';
+  const lang = resolveAppLanguage(i18n.resolvedLanguage);
   return (
-    <div
+    <label
       className={cn(
-        'inline-flex items-center rounded-xl border border-slate-200 bg-white p-0.5 text-xs font-medium dark:border-slate-700 dark:bg-slate-900',
+        'relative inline-flex items-center rounded-xl border border-slate-200 bg-white text-xs font-medium dark:border-slate-700 dark:bg-slate-900',
         className,
       )}
-      role="group"
-      aria-label={t('common.language')}
     >
-      <Languages className="mx-1.5 size-3.5 text-slate-400" aria-hidden />
-      {(['en', 'bn'] as const).map((l) => (
-        <button
-          key={l}
-          onClick={() => void i18n.changeLanguage(l)}
-          aria-pressed={lang === l}
-          className={cn(
-            'rounded-lg px-2.5 py-1 transition-colors',
-            lang === l
-              ? 'bg-brand-600 text-white shadow-sm'
-              : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white',
-          )}
-        >
-          {l === 'en' ? 'EN' : 'বাং'}
-        </button>
-      ))}
-    </div>
+      <Languages className="pointer-events-none absolute start-2 size-3.5 text-slate-400" aria-hidden />
+      <span className="sr-only">{t('common.language')}</span>
+      <select
+        value={lang}
+        onChange={(e) => void i18n.changeLanguage(e.target.value)}
+        aria-label={t('common.language')}
+        className="h-9 cursor-pointer appearance-none rounded-xl bg-transparent ps-7 pe-3 text-slate-700 outline-none focus-visible:ring-2 focus-visible:ring-brand-500 dark:text-slate-200"
+      >
+        {SUPPORTED_LANGUAGES.map((l) => (
+          <option key={l} value={l} className="text-slate-900">
+            {LANGUAGE_LABELS[l]}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 }
 

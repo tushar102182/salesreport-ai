@@ -19,6 +19,10 @@ Everything a buyer typically changes, with the exact files to edit.
 
 ## Adding a language
 
+**UI-only language (fastest):** the web UI ships in `en`, `bn`, `es`, `fr`, `ar` (RTL), `hi` and `pt`. To add another UI language, copy `apps/web/src/i18n/locales/en.json` to `<code>.json`, translate the values, then add the code to `SUPPORTED_LANGUAGES`, `LANGUAGE_LABELS` and `resources` in `apps/web/src/i18n/index.ts` (add it to `RTL_LANGUAGES` for right-to-left scripts). The dropdown picks it up automatically.
+
+**Full language (UI + AI summaries + PDFs):** follow the steps below.
+
 The UI, AI summaries, rule-based summaries and PDFs are all language-aware. Example: adding Hindi (`hi`).
 
 1. **Shared** — `packages/shared/src/constants.ts`: add `'hi'` to `LANGUAGES`. In `format.ts` add month and weekday names to `MONTHS`, `MONTHS_LONG`, `WEEKDAYS` (and a digit converter if the script uses native digits, like `toBanglaDigits`).
