@@ -4,17 +4,19 @@ import { FileDown } from 'lucide-react';
 import { downloadFile } from '../../lib/api';
 import { errorMessage } from '../../lib/errors';
 import { useToast } from '../../lib/toast';
+import { useCurrency } from '../../lib/currency';
 import { Button } from '../../components/ui';
 
-/** Downloads a server-rendered PDF in English or Bangla. */
+/** Downloads a server-rendered PDF in English or Bangla, with amounts in the display currency. */
 export function PdfButtons({ path, fileBase, size = 'md' }: { path: string; fileBase: string; size?: 'sm' | 'md' }) {
   const { t } = useTranslation();
   const toast = useToast();
+  const { currency } = useCurrency();
   const [busy, setBusy] = useState<'en' | 'bn' | null>(null);
   const download = async (lang: 'en' | 'bn') => {
     setBusy(lang);
     try {
-      await downloadFile(path, `${fileBase}-${lang}.pdf`, { lang });
+      await downloadFile(path, `${fileBase}-${lang}-${currency}.pdf`, { lang, currency });
     } catch (err) {
       toast.error(errorMessage(err));
     } finally {

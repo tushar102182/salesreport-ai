@@ -10,4 +10,5 @@ export const toUserDto = (u: User): UserDto => ({
   organizationId: u.organizationId,
   createdAt: u.createdAt.toISOString(),
   lastLoginAt: iso(u.lastLoginAt),
+  displayCurrency: u.displayCurrency ?? null,
 });

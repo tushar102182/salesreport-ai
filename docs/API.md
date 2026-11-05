@@ -37,10 +37,13 @@ Validation messages are i18n keys (e.g. `password.upper`) translated by the web 
 
 ## Health & config
 
-| Method | Path      | Auth | Description                                                                      |
-| ------ | --------- | ---- | -------------------------------------------------------------------------------- |
-| GET    | `/health` | —    | `{ status, db, version, uptimeSeconds, demoMode, time }` — 503 if DB unreachable |
-| GET    | `/config` | —    | `{ appName, allowRegistration, demoMode, demoCredentials? }`                     |
+| Method | Path         | Auth | Description                                                                      |
+| ------ | ------------ | ---- | -------------------------------------------------------------------------------- |
+| GET    | `/health`    | —    | `{ status, db, version, uptimeSeconds, demoMode, time }` — 503 if DB unreachable |
+| GET    | `/config`    | —    | `{ appName, version, allowRegistration, demoMode, demoCredentials? }`            |
+| GET    | `/config/fx` | —    | `{ base: 'USD', rates, source: 'live' \| 'static', asOf, approximate: true }`    |
+
+**Display currency:** money endpoints accept `?currency=XXX` or the `X-Display-Currency` header (sent by the web app on every request): `/dashboard`, `/datasets/:id/analytics`, `/datasets/:id/summary` (GET query or POST body `currency`), `/datasets/:id/report.pdf`, `/invoices/:id/pdf`. Amounts are converted from their source currency at approximate rates. JSON invoice/product endpoints always return stored (source-currency) values.
 
 ## Auth
 
@@ -52,6 +55,7 @@ Validation messages are i18n keys (e.g. `password.upper`) translated by the web 
 | POST   | `/auth/refresh`         | refresh cookie + `X-CSRF-Token` | Rotates the refresh token → `AuthResponse`. Reuse of an old token → 401 `REFRESH_REUSED` and the session family is revoked |
 | POST   | `/auth/logout`          | refresh cookie + `X-CSRF-Token` | 204. Revokes the session family                                                                                            |
 | GET    | `/auth/me`              | Bearer                          | `{ user }`                                                                                                                 |
+| PATCH  | `/auth/me/preferences`  | Bearer                          | `{ displayCurrency: 'USD' \| null }` → `{ user }`                                                                          |
 | POST   | `/auth/change-password` | Bearer                          | `{ currentPassword, newPassword }` → `AuthResponse`. Signs out all other sessions                                          |
 
 `AuthResponse`: `{ accessToken, expiresIn, user: { id, email, name, role, organizationId, createdAt, lastLoginAt } }`. Login/register/refresh also set the `sr_rt` (httpOnly, path `/api/auth`) and `sr_csrf` cookies (`__Secure-`/`__Host-` prefixed when served over https).

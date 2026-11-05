@@ -41,6 +41,7 @@ CREATE TABLE "User" (
     "lockedUntil" DATETIME,
     "lastLoginAt" DATETIME,
     "passwordChangedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "displayCurrency" TEXT,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,
     CONSTRAINT "User_organizationId_fkey" FOREIGN KEY ("organizationId") REFERENCES "Organization" ("id") ON DELETE CASCADE ON UPDATE CASCADE
@@ -168,6 +169,7 @@ CREATE TABLE "DatasetSummary" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "datasetId" TEXT NOT NULL,
     "language" TEXT NOT NULL,
+    "currency" TEXT NOT NULL DEFAULT '',
     "provider" TEXT NOT NULL,
     "model" TEXT,
     "content" TEXT NOT NULL,
@@ -219,4 +221,4 @@ CREATE INDEX "Dataset_organizationId_createdAt_idx" ON "Dataset"("organizationId
 CREATE INDEX "SalesRecord_datasetId_date_idx" ON "SalesRecord"("datasetId", "date");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "DatasetSummary_datasetId_language_key" ON "DatasetSummary"("datasetId", "language");
+CREATE UNIQUE INDEX "DatasetSummary_datasetId_language_currency_key" ON "DatasetSummary"("datasetId", "language", "currency");

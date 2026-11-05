@@ -12,4 +12,5 @@ authRouter.post('/login', authLimiter, c.login);
 authRouter.post('/refresh', refreshLimiter, requireCsrf, c.refresh);
 authRouter.post('/logout', requireCsrf, c.logout);
 authRouter.get('/me', requireAuth, c.me);
+authRouter.patch('/me/preferences', requireAuth, c.updatePreferences);
 authRouter.post('/change-password', authLimiter, requireAuth, c.changePassword);

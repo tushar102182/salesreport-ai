@@ -68,8 +68,18 @@
       "fr": "Français",
       "ar": "العربية",
       "hi": "हिन्दी",
-      "pt": "Português"
-    }
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "Moneda",
+    "approxRates": "Tipos de cambio aproximados ({{date}})"
   },
   "auth": {
     "signIn": "Iniciar sesión",
@@ -256,7 +266,9 @@
     "paidOn": "Pagada el {{date}}",
     "noCustomers": "Primero añade un cliente",
     "details": "Detalles de la factura",
-    "removeItem": "Quitar línea"
+    "removeItem": "Quitar línea",
+    "convertedFrom": "Convertido desde {{currency}} · original {{amount}}",
+    "approxIn": "≈ {{amount}} en tu moneda de visualización"
   },
   "status": {
     "draft": "Borrador",
@@ -338,7 +350,10 @@
     "newPassword": "Nueva contraseña",
     "passwordChanged": "Contraseña cambiada. Se cerraron las demás sesiones.",
     "adminOnly": "Solo los administradores pueden cambiar esta configuración.",
-    "newUserPassword": "Contraseña inicial"
+    "newUserPassword": "Contraseña inicial",
+    "companyCurrencyHint": "Moneda predeterminada para nuevas facturas, cargas y precios de productos. Para cambiar cómo se muestran los importes, usa el selector de moneda de la barra superior.",
+    "preferences": "Preferencias de visualización",
+    "preferencesHint": "Los mismos selectores de idioma y moneda que en la barra superior."
   },
   "validation": {
     "required": "Este campo es obligatorio",
@@ -391,7 +406,7 @@
   "landing": {
     "badge": "Análisis de ventas con IA",
     "heroTitle": "Convierte tus hojas de ventas en informes claros en minutos",
-    "heroSubtitle": "Sube un archivo CSV o Excel y obtén paneles, un resumen redactado por IA e informes y facturas en PDF impecables, en 7 idiomas y más de 40 monedas.",
+    "heroSubtitle": "Sube un archivo CSV o Excel y obtén paneles, un resumen redactado por IA e informes y facturas en PDF impecables, en 15 idiomas y 60 monedas.",
     "liveDemo": "Demo en vivo",
     "seeFeatures": "Ver funciones",
     "demoNote": "Sin registro. El acceso de demostración ya viene rellenado.",
@@ -400,11 +415,11 @@
     "navBenefits": "Ventajas",
     "stats": [
       {
-        "value": "7",
+        "value": "15",
         "label": "Idiomas"
       },
       {
-        "value": "40+",
+        "value": "60",
         "label": "Monedas"
       },
       {
@@ -441,7 +456,7 @@
       },
       {
         "title": "Multilingüe y multimoneda",
-        "body": "Inglés, bengalí, español, francés, árabe, hindi y portugués, con más de 40 monedas."
+        "body": "15 idiomas, entre ellos inglés, bengalí, árabe, urdu, chino y japonés, y 60 monedas con conversión en un clic."
       },
       {
         "title": "Clientes y productos",

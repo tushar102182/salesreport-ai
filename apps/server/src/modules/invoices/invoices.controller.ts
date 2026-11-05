@@ -4,8 +4,10 @@ import {
   invoiceInputSchema,
   invoiceListQuerySchema,
   invoiceStatusUpdateSchema,
-  langQuerySchema,
+  convertInvoice,
+  documentQuerySchema,
 } from '@salesreport/shared';
+import { getFxTable, requestedDisplayCurrency } from '../../lib/fx';
 import { validate } from '../../lib/validate';
 import { getAuth } from '../../lib/http';
 import { contentDisposition } from '../../lib/csv';
@@ -39,9 +41,18 @@ export async function remove(req: Request, res: Response) {
 export async function pdf(req: Request, res: Response) {
   const orgId = getAuth(req).organizationId;
   const { id } = validate(idParamSchema, req.params);
-  const { lang } = validate(langQuerySchema, req.query);
-  const [invoice, org] = await Promise.all([service.get(orgId, id), getOrganization(orgId)]);
-  const buf = await renderInvoicePdf({ invoice, org, lang });
+  const { lang, currency } = validate(documentQuerySchema, req.query);
+  const display = requestedDisplayCurrency(req, currency);
+  const [original, org, fx] = await Promise.all([service.get(orgId, id), getOrganization(orgId), getFxTable()]);
+  // Rendered in the display currency when one is requested (approximate conversion, noted on the PDF).
+  const invoice = display ? convertInvoice(original, display, fx.rates) : original;
+  const buf = await renderInvoicePdf({
+    invoice,
+    org,
+    lang,
+    fx:
+      invoice.currency !== original.currency ? { from: original.currency, asOf: fx.asOf, rates: fx.rates } : undefined,
+  });
   res.setHeader('Content-Type', 'application/pdf');
   res.setHeader('Content-Disposition', contentDisposition(`${invoice.number}-${lang}.pdf`));
   res.setHeader('Cache-Control', 'no-store');

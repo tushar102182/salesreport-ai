@@ -68,8 +68,18 @@
       "fr": "Français",
       "ar": "العربية",
       "hi": "हिन्दी",
-      "pt": "Português"
-    }
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "Moeda",
+    "approxRates": "Taxas de câmbio aproximadas ({{date}})"
   },
   "auth": {
     "signIn": "Entrar",
@@ -256,7 +266,9 @@
     "paidOn": "Paga em {{date}}",
     "noCustomers": "Adicione um cliente primeiro",
     "details": "Detalhes da fatura",
-    "removeItem": "Remover item"
+    "removeItem": "Remover item",
+    "convertedFrom": "Convertido de {{currency}} · original {{amount}}",
+    "approxIn": "≈ {{amount}} na sua moeda de exibição"
   },
   "status": {
     "draft": "Rascunho",
@@ -338,7 +350,10 @@
     "newPassword": "Nova senha",
     "passwordChanged": "Senha alterada. As outras sessões foram encerradas.",
     "adminOnly": "Somente administradores podem alterar estas configurações.",
-    "newUserPassword": "Senha inicial"
+    "newUserPassword": "Senha inicial",
+    "companyCurrencyHint": "Moeda padrão para novas faturas, envios e preços de produtos. Para mudar como os valores aparecem, use o seletor de moeda na barra superior.",
+    "preferences": "Preferências de exibição",
+    "preferencesHint": "Os mesmos seletores de idioma e moeda da barra superior."
   },
   "validation": {
     "required": "Este campo é obrigatório",
@@ -391,7 +406,7 @@
   "landing": {
     "badge": "Análise de vendas com IA",
     "heroTitle": "Transforme suas planilhas de vendas em relatórios claros em minutos",
-    "heroSubtitle": "Envie um arquivo CSV ou Excel e obtenha painéis, um resumo escrito por IA, relatórios em PDF caprichados e faturas, em 7 idiomas e mais de 40 moedas.",
+    "heroSubtitle": "Envie um arquivo CSV ou Excel e obtenha painéis, um resumo escrito por IA, relatórios em PDF caprichados e faturas, em 15 idiomas e 60 moedas.",
     "liveDemo": "Demo ao vivo",
     "seeFeatures": "Ver recursos",
     "demoNote": "Sem cadastro. O acesso de demonstração já vem preenchido.",
@@ -400,11 +415,11 @@
     "navBenefits": "Vantagens",
     "stats": [
       {
-        "value": "7",
+        "value": "15",
         "label": "Idiomas"
       },
       {
-        "value": "40+",
+        "value": "60",
         "label": "Moedas"
       },
       {
@@ -441,7 +456,7 @@
       },
       {
         "title": "Vários idiomas e moedas",
-        "body": "Inglês, bengali, espanhol, francês, árabe, hindi e português, com mais de 40 moedas."
+        "body": "15 idiomas, incluindo inglês, bengali, árabe, urdu, chinês e japonês, e 60 moedas com conversão em um clique."
       },
       {
         "title": "Clientes e produtos",

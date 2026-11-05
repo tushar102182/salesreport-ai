@@ -11,12 +11,15 @@ import {
 import { contentWidth, createDoc, drawFooters, drawLogo, F, roundedRect, type Doc } from './base';
 import { oneLine, tableHeader, type Column } from './draw';
 import { pdfStrings } from './i18n';
+import { fxAsOfText, fxNoteText, type PdfFxNote } from './fx';
 import { THEME } from './theme';
 
 interface InvoiceInput {
   invoice: InvoiceDto;
   org: Organization;
   lang: Language;
+  /** Present when the amounts were converted to a display currency (approximate). */
+  fx?: PdfFxNote;
 }
 
 const STATUS_COLOR: Record<string, string> = {
@@ -49,7 +52,7 @@ function infoBlock(doc: Doc, lang: Language, title: string, lines: string[], x: 
   return cy;
 }
 
-export async function renderInvoicePdf({ invoice: inv, org, lang }: InvoiceInput): Promise<Buffer> {
+export async function renderInvoicePdf({ invoice: inv, org, lang, fx }: InvoiceInput): Promise<Buffer> {
   const t = pdfStrings(lang);
   const money = (n: number) => formatMoney(n, inv.currency, lang);
   const n = (v: number) => formatNumber(v, lang, { decimals: Number.isInteger(v) ? 0 : 2 });
@@ -115,6 +118,13 @@ export async function renderInvoicePdf({ invoice: inv, org, lang }: InvoiceInput
     [t.issueDate, formatDate(inv.issueDate, lang)],
     ...(inv.dueDate ? ([[t.dueDate, formatDate(inv.dueDate, lang)]] as [string, string][]) : []),
     [t.currency, `${getCurrency(inv.currency).code} (${getCurrency(inv.currency).symbol.trim()})`],
+    ...(fx
+      ? ([
+          [t.originalCurrency, fx.from],
+          [t.rate, fxNoteText(fx, inv.currency, lang)],
+          [t.ratesAsOf, fxAsOfText(fx, lang)],
+        ] as [string, string][])
+      : []),
     ...(inv.paidAt ? ([[t.paidOn, formatDate(inv.paidAt, lang)]] as [string, string][]) : []),
   ];
   const dx = x + half + 20;

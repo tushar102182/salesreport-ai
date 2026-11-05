@@ -10,6 +10,8 @@ interface AuthContextValue {
   register: (input: RegisterInput) => Promise<void>;
   logout: () => Promise<void>;
   applySession: (auth: AuthResponse) => void;
+  /** Replaces the cached user (e.g. after saving preferences). */
+  updateUser: (user: UserDto) => void;
   isAdmin: boolean;
 }
 
@@ -48,6 +50,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       status,
       isAdmin: user?.role === 'admin',
       applySession,
+      updateUser: (u) => setUser(u),
       login: async (input) => applySession(await authRequest<AuthResponse>('/auth/login', input)),
       register: async (input) => applySession(await authRequest<AuthResponse>('/auth/register', input)),
       logout: async () => {

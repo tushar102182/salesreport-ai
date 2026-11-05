@@ -1,0 +1,506 @@
+{
+  "app": {
+    "name": "SalesReport AI",
+    "tagline": "Verwandeln Sie Verkaufstabellen in Erkenntnisse, Berichte und Rechnungen – auf Bangla und Englisch.",
+    "demoBanner": "Öffentliche Demo – die Daten werden täglich zurückgesetzt. Das Speichern von API-Schlüsseln ist deaktiviert."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "datasets": "Verkaufsdaten",
+    "upload": "Daten hochladen",
+    "invoices": "Rechnungen",
+    "customers": "Kunden",
+    "products": "Produkte",
+    "settings": "Einstellungen",
+    "logout": "Abmelden",
+    "profile": "Profil",
+    "menu": "Menü",
+    "close": "Schließen"
+  },
+  "common": {
+    "save": "Speichern",
+    "saving": "Wird gespeichert…",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "add": "Hinzufügen",
+    "new": "Neu",
+    "back": "Zurück",
+    "next": "Weiter",
+    "search": "Suchen…",
+    "actions": "Aktionen",
+    "loading": "Wird geladen…",
+    "retry": "Erneut versuchen",
+    "view": "Ansehen",
+    "download": "Herunterladen",
+    "export": "CSV exportieren",
+    "all": "Alle",
+    "none": "Keine",
+    "yes": "Ja",
+    "no": "Nein",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "address": "Adresse",
+    "notes": "Notizen",
+    "optional": "optional",
+    "createdAt": "Erstellt",
+    "noResults": "Noch nichts vorhanden",
+    "noResultsHint": "Versuchen Sie eine andere Suche oder legen Sie Ihren ersten Eintrag an.",
+    "confirmDelete": "Sind Sie sicher? Das kann nicht rückgängig gemacht werden.",
+    "deleted": "Gelöscht",
+    "saved": "Erfolgreich gespeichert",
+    "page": "Seite {{page}} von {{total}}",
+    "previous": "Zurück",
+    "showing": "{{n}} insgesamt",
+    "language": "Sprache",
+    "theme": "Design",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "required": "Pflichtfeld",
+    "english": "English",
+    "bangla": "বাংলা",
+    "languageNames": {
+      "en": "English",
+      "bn": "বাংলা",
+      "es": "Español",
+      "fr": "Français",
+      "ar": "العربية",
+      "hi": "हिन्दी",
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "Währung",
+    "approxRates": "Ungefähre Wechselkurse ({{date}})"
+  },
+  "auth": {
+    "signIn": "Anmelden",
+    "signingIn": "Anmeldung läuft…",
+    "signUp": "Konto erstellen",
+    "signingUp": "Konto wird erstellt…",
+    "welcomeBack": "Willkommen zurück",
+    "signInSubtitle": "Melden Sie sich bei Ihrem SalesReport-AI-Arbeitsbereich an",
+    "createAccount": "Arbeitsbereich erstellen",
+    "createSubtitle": "Analysieren Sie Ihre Verkäufe in wenigen Minuten. Keine Kreditkarte nötig.",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "name": "Ihr Name",
+    "companyName": "Firmenname",
+    "noAccount": "Noch kein Konto?",
+    "haveAccount": "Sie haben bereits ein Konto?",
+    "demoHint": "Demo-Anmeldung",
+    "useDemo": "Demo-Konto verwenden",
+    "passwordHint": "Mindestens 10 Zeichen mit Groß- und Kleinbuchstaben, einer Ziffer und einem Sonderzeichen.",
+    "sessionExpired": "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.",
+    "heroTitle": "Ihre Verkäufe, verständlich erklärt.",
+    "heroPoints": [
+      "CSV oder Excel hochladen – Spalten werden automatisch erkannt",
+      "KI-Zusammenfassungen mit Erkenntnissen auf Bangla oder Englisch",
+      "Schöne PDF-Berichte und Rechnungen mit einem Klick"
+    ]
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Überblick über Ihre Geschäftsentwicklung",
+    "totalRevenue": "Gesamtumsatz",
+    "orders": "Bestellungen",
+    "aov": "Ø Bestellwert",
+    "unitsSold": "Verkaufte Einheiten",
+    "growth": "Wachstum (Vormonat)",
+    "vsPrev": "{{current}} vs. {{previous}}",
+    "bestProduct": "Bestseller",
+    "bestDay": "Bester Wochentag",
+    "bestDate": "Bester Tag",
+    "dailySales": "Tagesumsatz",
+    "monthlySales": "Monatsumsatz",
+    "topProducts": "Top-Produkte",
+    "byRevenue": "Nach Umsatz",
+    "byQuantity": "Nach Menge",
+    "weekday": "Umsatz nach Wochentag",
+    "invoicesOverview": "Rechnungen",
+    "outstanding": "Offen",
+    "paid": "Bezahlt",
+    "overdue": "Überfällig",
+    "recentInvoices": "Neueste Rechnungen",
+    "viewAll": "Alle anzeigen",
+    "noData": "Noch keine Verkaufsdaten",
+    "noDataHint": "Laden Sie eine CSV- oder Excel-Datei hoch, um Analysen, KI-Erkenntnisse und Berichte zu sehen.",
+    "datasetSelect": "Datensatz",
+    "units": "Einheiten",
+    "customers": "Kunden",
+    "products": "Produkte"
+  },
+  "datasets": {
+    "title": "Verkaufsdaten",
+    "subtitle": "Hochgeladene Datensätze und ihre Analysen",
+    "upload": "Daten hochladen",
+    "name": "Datensatz",
+    "rows": "Zeilen",
+    "period": "Zeitraum",
+    "revenue": "Umsatz",
+    "file": "Datei",
+    "empty": "Noch keine Datensätze",
+    "emptyHint": "Laden Sie Ihre erste Verkaufsdatei hoch, um loszulegen.",
+    "downloadReport": "PDF-Bericht",
+    "deleteConfirm": "Diesen Datensatz und alle seine Einträge löschen?",
+    "analytics": "Analysen",
+    "skipped": "{{n}} Zeilen übersprungen"
+  },
+  "upload": {
+    "title": "Verkaufsdaten hochladen",
+    "subtitle": "CSV oder Excel (.xlsx), bis 10 MB / 100.000 Zeilen",
+    "step1": "Datei wählen",
+    "step2": "Spalten zuordnen",
+    "step3": "Prüfen & importieren",
+    "dropHere": "Datei hierher ziehen und ablegen",
+    "or": "oder",
+    "browse": "Dateien durchsuchen",
+    "supported": "Unterstützt: .csv, .xlsx – UTF-8-CSV empfohlen (Bangla wird unterstützt)",
+    "sampleFiles": "Beispiel gefällig? Herunterladen:",
+    "parsing": "Datei wird gelesen…",
+    "importing": "Wird importiert…",
+    "mappingTitle": "Spalten zuordnen",
+    "mappingHint": "Diese Zuordnung wurde automatisch erkannt. Datum und Produkt sind Pflicht, dazu entweder Gesamt oder Menge + Stückpreis.",
+    "field": {
+      "date": "Datum",
+      "product": "Produkt",
+      "quantity": "Menge",
+      "unitPrice": "Stückpreis",
+      "total": "Gesamt",
+      "customer": "Kunde"
+    },
+    "notMapped": "— Nicht in der Datei —",
+    "dateFormat": "Datumsformat",
+    "dateFormatAuto": "Automatisch erkennen",
+    "datasetName": "Name des Datensatzes",
+    "preview": "Vorschau (erste {{n}} von {{total}} Zeilen)",
+    "import": "{{n}} Zeilen importieren",
+    "success": "{{imported}} Zeilen importiert",
+    "successSkipped": "{{imported}} Zeilen importiert, {{skipped}} übersprungen",
+    "rowErrors": "Einige Zeilen wurden übersprungen",
+    "row": "Zeile {{row}}",
+    "changeFile": "Andere Datei wählen"
+  },
+  "analytics": {
+    "title": "Analysen",
+    "kpis": "Kennzahlen",
+    "period": "{{start}} – {{end}}",
+    "productsCount": "{{n}} Produkte",
+    "customersCount": "{{n}} Kunden",
+    "share": "Anteil",
+    "revenue": "Umsatz",
+    "quantity": "Menge",
+    "orders": "Bestellungen",
+    "topCustomers": "Top-Kunden"
+  },
+  "summary": {
+    "title": "KI-Zusammenfassung",
+    "generate": "Zusammenfassung erstellen",
+    "regenerate": "Neu erstellen",
+    "generating": "Ihre Daten werden analysiert…",
+    "insights": "Wichtige Erkenntnisse",
+    "recommendations": "Empfehlungen",
+    "provider": "Erstellt von {{provider}}",
+    "ruleBased": "integrierte Analyse-Engine",
+    "fallback": "Der KI-Anbieter war nicht erreichbar, daher wurde die integrierte Engine verwendet: {{reason}}",
+    "empty": "Erhalten Sie eine schriftliche Zusammenfassung mit Erkenntnissen und Empfehlungen.",
+    "language": "Sprache der Zusammenfassung",
+    "configureHint": "Hinterlegen Sie unter Einstellungen → KI einen OpenAI-, Gemini- oder Anthropic-Schlüssel für ausführlichere KI-Zusammenfassungen."
+  },
+  "report": {
+    "download": "PDF-Bericht herunterladen",
+    "downloading": "PDF wird vorbereitet…",
+    "english": "PDF auf Englisch",
+    "bangla": "বাংলা PDF"
+  },
+  "invoices": {
+    "title": "Rechnungen",
+    "subtitle": "Rechnungen erstellen, versenden und verfolgen",
+    "new": "Neue Rechnung",
+    "edit": "Rechnung bearbeiten",
+    "number": "Rechnungs-Nr.",
+    "customer": "Kunde",
+    "selectCustomer": "Kunden auswählen…",
+    "issueDate": "Rechnungsdatum",
+    "dueDate": "Fälligkeitsdatum",
+    "status": "Status",
+    "total": "Gesamt",
+    "amount": "Betrag",
+    "items": "Positionen",
+    "addItem": "Position hinzufügen",
+    "product": "Produkt",
+    "pickProduct": "Produkt wählen (optional)",
+    "description": "Beschreibung",
+    "quantity": "Menge",
+    "unitPrice": "Stückpreis",
+    "lineTotal": "Positionssumme",
+    "subtotal": "Zwischensumme",
+    "discount": "Rabatt",
+    "discountType": "Rabattart",
+    "fixed": "Fester Betrag",
+    "percent": "Prozent (%)",
+    "tax": "Steuer",
+    "taxRate": "Steuersatz (%)",
+    "grandTotal": "Gesamtbetrag",
+    "currency": "Währung",
+    "language": "Rechnungssprache",
+    "notes": "Hinweise für den Kunden",
+    "billTo": "Rechnung an",
+    "from": "Von",
+    "markAs": "Markieren als",
+    "downloadPdf": "PDF herunterladen",
+    "allStatuses": "Alle Status",
+    "deleteConfirm": "Diese Rechnung löschen?",
+    "created": "Rechnung {{number}} erstellt",
+    "updated": "Rechnung aktualisiert",
+    "empty": "Noch keine Rechnungen",
+    "emptyHint": "Erstellen Sie Ihre erste Rechnung in Sekunden.",
+    "paidOn": "Bezahlt am {{date}}",
+    "noCustomers": "Legen Sie zuerst einen Kunden an",
+    "details": "Rechnungsdetails",
+    "removeItem": "Position entfernen",
+    "convertedFrom": "Umgerechnet aus {{currency}} · Original {{amount}}",
+    "approxIn": "≈ {{amount}} in Ihrer Anzeigewährung"
+  },
+  "status": {
+    "draft": "Entwurf",
+    "sent": "Versendet",
+    "paid": "Bezahlt",
+    "overdue": "Überfällig"
+  },
+  "customers": {
+    "title": "Kunden",
+    "subtitle": "Personen und Unternehmen, an die Sie verkaufen",
+    "new": "Neuer Kunde",
+    "edit": "Kunden bearbeiten",
+    "invoices": "Rechnungen",
+    "empty": "Noch keine Kunden",
+    "deleteConfirm": "Diesen Kunden löschen?"
+  },
+  "products": {
+    "title": "Produkte",
+    "subtitle": "Ihr Katalog für die Rechnungsstellung",
+    "new": "Neues Produkt",
+    "edit": "Produkt bearbeiten",
+    "sku": "Artikelnr.",
+    "unit": "Einheit",
+    "unitPrice": "Stückpreis",
+    "description": "Beschreibung",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "empty": "Noch keine Produkte",
+    "deleteConfirm": "Dieses Produkt löschen?"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "subtitle": "Firmenprofil, KI-Anbieter, Team und Konto",
+    "company": "Firma",
+    "ai": "KI-Anbieter",
+    "users": "Team",
+    "profile": "Mein Konto",
+    "companyName": "Firmenname",
+    "website": "Website",
+    "taxId": "Steuernummer / USt-IdNr.",
+    "currency": "Währung",
+    "defaultLanguage": "Standardsprache für Dokumente",
+    "invoicePrefix": "Präfix der Rechnungsnummer",
+    "nextNumber": "Nächste Rechnungsnummer: {{number}}",
+    "defaultTaxRate": "Standard-Steuersatz (%)",
+    "invoiceFooter": "Rechnungsfußzeile (z. B. Bankverbindung)",
+    "invoiceNotes": "Standardhinweise / Bedingungen auf Rechnungen",
+    "logo": "Logo",
+    "logoHint": "PNG oder JPEG, max. 1 MB. Wird auf Rechnungen und Berichten verwendet.",
+    "uploadLogo": "Logo hochladen",
+    "removeLogo": "Entfernen",
+    "aiTitle": "KI-Anbieter",
+    "aiSubtitle": "Wählen Sie, welches LLM Ihre Zusammenfassungen schreibt. Schlüssel werden verschlüsselt (AES-256-GCM) und nie wieder angezeigt.",
+    "provider": "Anbieter",
+    "useEnv": "Server-Standard verwenden (.env)",
+    "model": "Modell (optional)",
+    "modelPlaceholder": "Standard: {{model}}",
+    "apiKey": "API-Schlüssel",
+    "apiKeyPlaceholder": "Neuen Schlüssel einfügen, um den gespeicherten zu ersetzen",
+    "storedKey": "Gespeicherter Schlüssel",
+    "removeKey": "Gespeicherten Schlüssel entfernen",
+    "testConnection": "Verbindung testen",
+    "testing": "Wird getestet…",
+    "effective": "Derzeit in Verwendung",
+    "sourceOrganization": "aus den Einstellungen",
+    "sourceEnvironment": "aus der Server-.env",
+    "sourceNone": "kein Schlüssel konfiguriert – integrierte Engine",
+    "getKey": "Wo bekomme ich einen Schlüssel?",
+    "usersTitle": "Teammitglieder",
+    "addUser": "Mitglied hinzufügen",
+    "role": "Rolle",
+    "admin": "Admin",
+    "staff": "Mitarbeiter",
+    "lastLogin": "Letzte Anmeldung",
+    "never": "Nie",
+    "you": "Sie",
+    "changePassword": "Passwort ändern",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "passwordChanged": "Passwort geändert. Andere Sitzungen wurden abgemeldet.",
+    "adminOnly": "Nur Admins können diese Einstellungen ändern.",
+    "newUserPassword": "Anfangspasswort",
+    "companyCurrencyHint": "Standardwährung für neue Rechnungen, Uploads und Produktpreise. Wie Beträge angezeigt werden, ändern Sie mit dem Währungsumschalter in der oberen Leiste.",
+    "preferences": "Anzeigeeinstellungen",
+    "preferencesHint": "Dieselben Sprach- und Währungsumschalter wie in der oberen Leiste."
+  },
+  "validation": {
+    "required": "Dieses Feld ist erforderlich",
+    "email": {
+      "invalid": "Geben Sie eine gültige E-Mail-Adresse ein"
+    },
+    "name": {
+      "tooShort": "Zu kurz"
+    },
+    "password": {
+      "tooShort": "Mindestens 10 Zeichen",
+      "tooLong": "Zu lang",
+      "lower": "Fügen Sie einen Kleinbuchstaben hinzu",
+      "upper": "Fügen Sie einen Großbuchstaben hinzu",
+      "digit": "Fügen Sie eine Ziffer hinzu",
+      "symbol": "Fügen Sie ein Sonderzeichen hinzu (z. B. @ # !)",
+      "sameAsOld": "Das neue Passwort muss sich unterscheiden",
+      "incorrect": "Das aktuelle Passwort ist falsch"
+    },
+    "number": {
+      "min0": "Muss 0 oder größer sein",
+      "positive": "Muss größer als 0 sein"
+    },
+    "date": {
+      "invalid": "Ungültiges Datum"
+    },
+    "invoice": {
+      "itemsRequired": "Fügen Sie mindestens eine Position hinzu",
+      "dueBeforeIssue": "Das Fälligkeitsdatum darf nicht vor dem Rechnungsdatum liegen",
+      "discountPercentMax": "Ein Prozentrabatt darf 100 nicht überschreiten",
+      "prefixInvalid": "Nur Buchstaben, Ziffern, / _ -",
+      "customerNotFound": "Kunde nicht gefunden"
+    },
+    "mapping": {
+      "required": "Pflichtfeld",
+      "totalOrQtyPrice": "Ordnen Sie Gesamt zu oder sowohl Menge als auch Stückpreis"
+    },
+    "ai": {
+      "keyTooShort": "Dieser Schlüssel scheint zu kurz zu sein"
+    }
+  },
+  "errors": {
+    "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "network": "Netzwerkfehler – prüfen Sie Ihre Verbindung.",
+    "notFound": "Seite nicht gefunden",
+    "notFoundHint": "Die gesuchte Seite existiert nicht.",
+    "goHome": "Zum Dashboard",
+    "forbidden": "Dazu haben Sie keine Berechtigung."
+  },
+  "landing": {
+    "badge": "KI-gestützte Verkaufsanalyse",
+    "heroTitle": "Machen Sie aus Verkaufstabellen in Minuten klare Berichte",
+    "heroSubtitle": "Laden Sie eine CSV- oder Excel-Datei hoch und erhalten Sie Dashboards, eine KI-Zusammenfassung, schöne PDF-Berichte und Rechnungen – in 15 Sprachen und 60 Währungen.",
+    "liveDemo": "Live-Demo",
+    "seeFeatures": "Funktionen ansehen",
+    "demoNote": "Keine Registrierung nötig. Die Demo-Anmeldung ist bereits ausgefüllt.",
+    "navFeatures": "Funktionen",
+    "navScreens": "Screenshots",
+    "navBenefits": "Vorteile",
+    "stats": [
+      {
+        "value": "15",
+        "label": "Sprachen"
+      },
+      {
+        "value": "60",
+        "label": "Währungen"
+      },
+      {
+        "value": "100k",
+        "label": "Zeilen pro Upload"
+      },
+      {
+        "value": "3",
+        "label": "KI-Anbieter"
+      }
+    ],
+    "featuresTitle": "Alles, was Sie brauchen, um Ihre Verkäufe zu verstehen",
+    "featuresSubtitle": "Ein Werkzeug für Analyse, Berichte und Abrechnung – für kleine Unternehmen und Agenturen.",
+    "features": [
+      {
+        "title": "CSV- & Excel-Upload",
+        "body": "Datei per Drag & Drop ablegen; Spalten werden automatisch erkannt und zugeordnet."
+      },
+      {
+        "title": "KI-Verkaufszusammenfassung",
+        "body": "Verständliche Erkenntnisse von OpenAI, Gemini oder Claude, mit kostenloser regelbasierter Alternative."
+      },
+      {
+        "title": "Interaktive Diagramme",
+        "body": "Tägliche und monatliche Trends, Top-Produkte, beste Wochentage und Top-Kunden."
+      },
+      {
+        "title": "PDF-Berichte",
+        "body": "Druckfertige Verkaufsberichte mit Ihrem Logo und Ihren Farben."
+      },
+      {
+        "title": "Rechnungen",
+        "body": "Professionelle PDF-Rechnungen in jeder Währung erstellen, verfolgen und herunterladen."
+      },
+      {
+        "title": "Mehrsprachig & mehrere Währungen",
+        "body": "15 Sprachen, darunter Englisch, Bangla, Arabisch, Urdu, Chinesisch und Japanisch – und 60 Währungen mit Umrechnung per Klick."
+      },
+      {
+        "title": "Kunden & Produkte",
+        "body": "Eine einfache Verwaltung für Ihren Katalog und Ihre Kundenliste."
+      },
+      {
+        "title": "Standardmäßig sicher",
+        "body": "Rollen, CSRF-Schutz, Ratenbegrenzung, verschlüsselte API-Schlüssel und Kontosperre."
+      }
+    ],
+    "screensTitle": "So sieht es aus",
+    "screensSubtitle": "Echte Ansichten aus der Live-Demo.",
+    "shots": {
+      "dashboard": "Verkaufs-Dashboard",
+      "summary": "KI-Zusammenfassung",
+      "charts": "Trends und Top-Produkte",
+      "invoices": "Rechnungsliste",
+      "invoice": "Rechnungsdetails und PDF",
+      "dark": "Dunkelmodus auf Bangla"
+    },
+    "benefitsTitle": "Warum sich Teams für SalesReport AI entscheiden",
+    "benefits": [
+      "Sparen Sie jeden Monat Stunden manueller Tabellenarbeit",
+      "Teilen Sie klare Berichte im eigenen Design mit Kunden und Vorgesetzten",
+      "Stellen Sie Kunden Rechnungen in ihrer eigenen Währung",
+      "Nutzen Sie Ihren eigenen KI-Schlüssel – kein zusätzliches Abo",
+      "Überall selbst hosten: Render, ein VPS oder Docker",
+      "Sauberer, dokumentierter TypeScript-Code, der sich leicht anpassen lässt"
+    ],
+    "steps": [
+      {
+        "title": "Verkaufsdatei hochladen",
+        "body": "CSV oder XLSX, bis zu 100.000 Zeilen."
+      },
+      {
+        "title": "Dashboards und KI-Zusammenfassung ansehen",
+        "body": "Erkennen Sie sofort Ihre besten Produkte, Tage und Kunden."
+      },
+      {
+        "title": "PDF herunterladen oder Rechnung senden",
+        "body": "Dokumente in Ihrem Design, bereit zum Teilen."
+      }
+    ],
+    "ctaTitle": "Testen Sie SalesReport AI jetzt",
+    "ctaSubtitle": "Erkunden Sie die gesamte App mit Beispieldaten in der Live-Demo."
+  }
+}

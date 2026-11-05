@@ -68,8 +68,18 @@
       "fr": "Français",
       "ar": "العربية",
       "hi": "हिन्दी",
-      "pt": "Português"
-    }
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "Currency",
+    "approxRates": "Approximate exchange rates ({{date}})"
   },
   "auth": {
     "signIn": "Sign in",
@@ -256,7 +266,9 @@
     "paidOn": "Paid on {{date}}",
     "noCustomers": "Add a customer first",
     "details": "Invoice details",
-    "removeItem": "Remove line"
+    "removeItem": "Remove line",
+    "convertedFrom": "Converted from {{currency}} · original {{amount}}",
+    "approxIn": "≈ {{amount}} in your display currency"
   },
   "status": {
     "draft": "Draft",
@@ -338,7 +350,10 @@
     "newPassword": "New password",
     "passwordChanged": "Password changed. Other sessions were signed out.",
     "adminOnly": "Only admins can change these settings.",
-    "newUserPassword": "Initial password"
+    "newUserPassword": "Initial password",
+    "companyCurrencyHint": "Default currency for new invoices, uploads and product prices. To change how amounts are shown, use the currency switcher in the top bar.",
+    "preferences": "Display preferences",
+    "preferencesHint": "The same language and currency switchers as in the top bar."
   },
   "validation": {
     "required": "This field is required",
@@ -391,7 +406,7 @@
   "landing": {
     "badge": "AI-powered sales analytics",
     "heroTitle": "Turn your sales sheets into clear reports in minutes",
-    "heroSubtitle": "Upload a CSV or Excel file and get dashboards, an AI-written summary, beautiful PDF reports and invoices — in 7 languages and 40+ currencies.",
+    "heroSubtitle": "Upload a CSV or Excel file and get dashboards, an AI-written summary, beautiful PDF reports and invoices — in 15 languages and 60 currencies.",
     "liveDemo": "Live Demo",
     "seeFeatures": "See features",
     "demoNote": "No sign-up needed. Demo login is filled in for you.",
@@ -400,11 +415,11 @@
     "navBenefits": "Benefits",
     "stats": [
       {
-        "value": "7",
+        "value": "15",
         "label": "Languages"
       },
       {
-        "value": "40+",
+        "value": "60",
         "label": "Currencies"
       },
       {
@@ -441,7 +456,7 @@
       },
       {
         "title": "Multi-language & multi-currency",
-        "body": "English, Bangla, Spanish, French, Arabic, Hindi and Portuguese, with 40+ currencies."
+        "body": "15 languages including English, Bangla, Arabic, Urdu, Chinese and Japanese — and 60 currencies with one-click conversion."
       },
       {
         "title": "Customers & products",

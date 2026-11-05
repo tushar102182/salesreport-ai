@@ -68,7 +68,7 @@ export const invoicesRepository = {
 
   totalsByStatus: (organizationId: string) =>
     prisma.invoice.groupBy({
-      by: ['status'],
+      by: ['status', 'currency'],
       where: { organizationId },
       _count: { _all: true },
       _sum: { total: true },

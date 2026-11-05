@@ -4,10 +4,11 @@ import { Award, CalendarDays, CalendarHeart, Package, ShoppingCart, TrendingUp, 
 import type { Analytics } from '@salesreport/shared';
 import { Card, CardHeader, StatCard } from '../../components/ui';
 import { DailySalesChart, MonthlySalesChart, TopProductsChart, WeekdayChart } from '../../components/charts/Charts';
-import { useFormat } from '../../lib/format';
+import { useDisplayAnalytics, useFormat } from '../../lib/format';
 import { cn } from '../../lib/cn';
 
-export function KpiGrid({ a }: { a: Analytics }) {
+export function KpiGrid({ a: source }: { a: Analytics }) {
+  const a = useDisplayAnalytics(source);
   const { t } = useTranslation();
   const f = useFormat();
   const g = a.monthOverMonthGrowth;
@@ -79,7 +80,8 @@ export function KpiGrid({ a }: { a: Analytics }) {
   );
 }
 
-export function ChartsGrid({ a }: { a: Analytics }) {
+export function ChartsGrid({ a: source }: { a: Analytics }) {
+  const a = useDisplayAnalytics(source);
   const { t } = useTranslation();
   const [metric, setMetric] = useState<'revenue' | 'quantity'>('revenue');
   return (
@@ -132,7 +134,8 @@ export function ChartsGrid({ a }: { a: Analytics }) {
   );
 }
 
-export function TopTables({ a }: { a: Analytics }) {
+export function TopTables({ a: source }: { a: Analytics }) {
+  const a = useDisplayAnalytics(source);
   const { t } = useTranslation();
   const f = useFormat();
   return (

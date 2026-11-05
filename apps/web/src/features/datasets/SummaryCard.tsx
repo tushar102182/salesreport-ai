@@ -26,15 +26,19 @@ export function SummaryCard({ datasetId }: { datasetId: string }) {
   const [fallback, setFallback] = useState<string | null>(null);
 
   const existing = useQuery({
-    queryKey: qk.summary(datasetId, lang),
-    queryFn: () => api<{ summary: AiSummary | null }>(`/datasets/${datasetId}/summary`, { query: { lang } }),
+    queryKey: qk.summary(datasetId, lang, f.currency),
+    queryFn: () =>
+      api<{ summary: AiSummary | null }>(`/datasets/${datasetId}/summary`, { query: { lang, currency: f.currency } }),
   });
 
   const generate = useMutation({
     mutationFn: (regenerate: boolean) =>
-      api<SummaryResponse>(`/datasets/${datasetId}/summary`, { method: 'POST', body: { language: lang, regenerate } }),
+      api<SummaryResponse>(`/datasets/${datasetId}/summary`, {
+        method: 'POST',
+        body: { language: lang, regenerate, currency: f.currency },
+      }),
     onSuccess: (res) => {
-      qc.setQueryData(qk.summary(datasetId, lang), { summary: res.summary });
+      qc.setQueryData(qk.summary(datasetId, lang, f.currency), { summary: res.summary });
       setFallback(res.fallbackReason ?? null);
     },
     onError: (err) => toast.error(errorMessage(err)),

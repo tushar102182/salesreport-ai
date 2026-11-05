@@ -1,4 +1,5 @@
 import { getCurrency, type Language } from './constants';
+import { convertAmount, displayCurrencyFor, type FxRates, STATIC_USD_RATES } from './fx';
 
 const BN_DIGITS = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
 
@@ -50,6 +51,22 @@ export function formatMoney(amount: number, currencyCode: string, lang: Language
   const c = getCurrency(currencyCode);
   const southAsian = lang === 'bn' || c.code === 'BDT' || c.code === 'INR';
   return `${c.symbol}${formatNumber(amount, lang, { decimals: c.decimals, southAsian })}`;
+}
+
+/**
+ * Converts `amount` from its source currency to the display currency (approximate,
+ * via USD rates) and formats it there. When either currency has no known rate the
+ * amount is shown in its source currency, so a wrong symbol is never printed.
+ */
+export function formatMoneyIn(
+  amount: number,
+  fromCurrency: string,
+  displayCurrency: string | null | undefined,
+  lang: Language = 'en',
+  rates: FxRates = STATIC_USD_RATES,
+): string {
+  const to = displayCurrencyFor(fromCurrency, displayCurrency, rates);
+  return formatMoney(convertAmount(amount, fromCurrency, to, rates), to, lang);
 }
 
 export function formatPercent(value: number | null, lang: Language = 'en', decimals = 1): string {

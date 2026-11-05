@@ -25,6 +25,7 @@ import {
 } from './base';
 import { barChart, kpiGrid, lineChart, oneLine, shareBar, tableHeader, truncate, type Column } from './draw';
 import { pdfStrings } from './i18n';
+import { fxAsOfText, fxNoteText, type PdfFxNote } from './fx';
 import { THEME } from './theme';
 
 interface ReportInput {
@@ -33,6 +34,8 @@ interface ReportInput {
   analytics: Analytics;
   summary: AiSummary;
   lang: Language;
+  /** Present when amounts were converted to a display currency. */
+  fx?: PdfFxNote;
 }
 
 function header(doc: Doc, input: ReportInput, t: ReturnType<typeof pdfStrings>) {
@@ -83,6 +86,16 @@ function header(doc: Doc, input: ReportInput, t: ReturnType<typeof pdfStrings>) 
   const period = `${a.periodStart ? formatDate(a.periodStart, lang) : '—'} – ${a.periodEnd ? formatDate(a.periodEnd, lang) : '—'}`;
   oneLine(doc, `${t.period}: ${period}`, rx, 72, rw, 'right');
   oneLine(doc, `${t.generatedOn}: ${formatDate(new Date(), lang)}`, rx, 86, rw, 'right');
+  oneLine(
+    doc,
+    input.fx
+      ? `${t.currency}: ${a.currency} · ${t.convertedFrom} ${input.fx.from} · ${fxNoteText(input.fx, a.currency, lang)} (${fxAsOfText(input.fx, lang)})`
+      : `${t.currency}: ${a.currency}`,
+    x + w * 0.3,
+    100,
+    w * 0.7,
+    'right',
+  );
 
   doc.y = h + 22;
   doc.x = x;

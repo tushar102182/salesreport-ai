@@ -5,6 +5,7 @@ import './i18n';
 import './index.css';
 import { App } from './App';
 import { AuthProvider } from './lib/auth';
+import { CurrencyProvider } from './lib/currency';
 import { ThemeProvider } from './lib/theme';
 import { ToastProvider } from './lib/toast';
 import { ApiError } from './lib/api';
@@ -25,7 +26,9 @@ createRoot(document.getElementById('root')!).render(
       <ThemeProvider>
         <ToastProvider>
           <AuthProvider>
-            <App />
+            <CurrencyProvider>
+              <App />
+            </CurrencyProvider>
           </AuthProvider>
         </ToastProvider>
       </ThemeProvider>

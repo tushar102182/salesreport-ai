@@ -1,0 +1,506 @@
+{
+  "app": {
+    "name": "SalesReport AI",
+    "tagline": "売上スプレッドシートを分析・レポート・請求書に。ベンガル語と英語に対応。",
+    "demoBanner": "公開デモ — データは毎日リセットされます。API キーの保存は無効です。"
+  },
+  "nav": {
+    "dashboard": "ダッシュボード",
+    "datasets": "売上データ",
+    "upload": "データをアップロード",
+    "invoices": "請求書",
+    "customers": "顧客",
+    "products": "商品",
+    "settings": "設定",
+    "logout": "ログアウト",
+    "profile": "プロフィール",
+    "menu": "メニュー",
+    "close": "閉じる"
+  },
+  "common": {
+    "save": "保存",
+    "saving": "保存中…",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "edit": "編集",
+    "create": "作成",
+    "add": "追加",
+    "new": "新規",
+    "back": "戻る",
+    "next": "次へ",
+    "search": "検索…",
+    "actions": "操作",
+    "loading": "読み込み中…",
+    "retry": "再試行",
+    "view": "表示",
+    "download": "ダウンロード",
+    "export": "CSV をエクスポート",
+    "all": "すべて",
+    "none": "なし",
+    "yes": "はい",
+    "no": "いいえ",
+    "name": "名前",
+    "email": "メール",
+    "phone": "電話番号",
+    "address": "住所",
+    "notes": "メモ",
+    "optional": "任意",
+    "createdAt": "作成日",
+    "noResults": "まだ何もありません",
+    "noResultsHint": "別の検索を試すか、最初の項目を追加してください。",
+    "confirmDelete": "よろしいですか？この操作は元に戻せません。",
+    "deleted": "削除しました",
+    "saved": "保存しました",
+    "page": "{{page}} / {{total}} ページ",
+    "previous": "前へ",
+    "showing": "全 {{n}} 件",
+    "language": "言語",
+    "theme": "テーマ",
+    "light": "ライト",
+    "dark": "ダーク",
+    "required": "必須",
+    "english": "English",
+    "bangla": "বাংলা",
+    "languageNames": {
+      "en": "English",
+      "bn": "বাংলা",
+      "es": "Español",
+      "fr": "Français",
+      "ar": "العربية",
+      "hi": "हिन्दी",
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "通貨",
+    "approxRates": "概算為替レート（{{date}}）"
+  },
+  "auth": {
+    "signIn": "ログイン",
+    "signingIn": "ログイン中…",
+    "signUp": "アカウントを作成",
+    "signingUp": "アカウントを作成中…",
+    "welcomeBack": "おかえりなさい",
+    "signInSubtitle": "SalesReport AI のワークスペースにログイン",
+    "createAccount": "ワークスペースを作成",
+    "createSubtitle": "数分で売上分析を始められます。クレジットカードは不要です。",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "name": "お名前",
+    "companyName": "会社名",
+    "noAccount": "アカウントをお持ちでないですか？",
+    "haveAccount": "すでにアカウントをお持ちですか？",
+    "demoHint": "デモ用ログイン",
+    "useDemo": "デモアカウントを使う",
+    "passwordHint": "大文字・小文字・数字・記号を含む 10 文字以上。",
+    "sessionExpired": "セッションの有効期限が切れました。もう一度ログインしてください。",
+    "heroTitle": "あなたの売上を、わかりやすく。",
+    "heroPoints": [
+      "CSV や Excel をアップロード — 列は自動で検出",
+      "ベンガル語または英語による AI 要約とインサイト",
+      "美しい PDF レポートと請求書をワンクリックで"
+    ]
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "subtitle": "ビジネスの業績の概要",
+    "totalRevenue": "総売上",
+    "orders": "注文数",
+    "aov": "平均注文額",
+    "unitsSold": "販売数量",
+    "growth": "成長率（前月比）",
+    "vsPrev": "{{current}} 対 {{previous}}",
+    "bestProduct": "売れ筋商品",
+    "bestDay": "最も売れる曜日",
+    "bestDate": "最も売れた日",
+    "dailySales": "日別売上",
+    "monthlySales": "月別売上",
+    "topProducts": "上位商品",
+    "byRevenue": "売上順",
+    "byQuantity": "数量順",
+    "weekday": "曜日別売上",
+    "invoicesOverview": "請求書",
+    "outstanding": "未回収",
+    "paid": "支払済み",
+    "overdue": "期限超過",
+    "recentInvoices": "最近の請求書",
+    "viewAll": "すべて表示",
+    "noData": "売上データがまだありません",
+    "noDataHint": "CSV または Excel ファイルをアップロードすると、分析・AI インサイト・レポートが表示されます。",
+    "datasetSelect": "データセット",
+    "units": "個",
+    "customers": "顧客",
+    "products": "商品"
+  },
+  "datasets": {
+    "title": "売上データ",
+    "subtitle": "アップロードしたデータセットとその分析",
+    "upload": "データをアップロード",
+    "name": "データセット",
+    "rows": "行",
+    "period": "期間",
+    "revenue": "売上",
+    "file": "ファイル",
+    "empty": "データセットがまだありません",
+    "emptyHint": "最初の売上ファイルをアップロードして始めましょう。",
+    "downloadReport": "PDF レポート",
+    "deleteConfirm": "このデータセットとすべてのレコードを削除しますか？",
+    "analytics": "分析",
+    "skipped": "{{n}} 行をスキップ"
+  },
+  "upload": {
+    "title": "売上データをアップロード",
+    "subtitle": "CSV または Excel（.xlsx）、最大 10 MB / 100,000 行",
+    "step1": "ファイルを選択",
+    "step2": "列を対応付け",
+    "step3": "確認してインポート",
+    "dropHere": "ここにファイルをドラッグ＆ドロップ",
+    "or": "または",
+    "browse": "ファイルを参照",
+    "supported": "対応形式：.csv、.xlsx — UTF-8 の CSV を推奨（ベンガル語対応）",
+    "sampleFiles": "サンプルが必要ですか？ダウンロード：",
+    "parsing": "ファイルを読み込み中…",
+    "importing": "インポート中…",
+    "mappingTitle": "列を対応付けてください",
+    "mappingHint": "自動で検出しました。日付と商品は必須で、合計、または数量＋単価のいずれかが必要です。",
+    "field": {
+      "date": "日付",
+      "product": "商品",
+      "quantity": "数量",
+      "unitPrice": "単価",
+      "total": "合計",
+      "customer": "顧客"
+    },
+    "notMapped": "— ファイルにありません —",
+    "dateFormat": "日付形式",
+    "dateFormatAuto": "自動検出",
+    "datasetName": "データセット名",
+    "preview": "プレビュー（全 {{total}} 行のうち先頭 {{n}} 行）",
+    "import": "{{n}} 行をインポート",
+    "success": "{{imported}} 行をインポートしました",
+    "successSkipped": "{{imported}} 行をインポートし、{{skipped}} 行をスキップしました",
+    "rowErrors": "一部の行がスキップされました",
+    "row": "{{row}} 行目",
+    "changeFile": "別のファイルを選択"
+  },
+  "analytics": {
+    "title": "分析",
+    "kpis": "主要指標",
+    "period": "{{start}} – {{end}}",
+    "productsCount": "{{n}} 商品",
+    "customersCount": "{{n}} 顧客",
+    "share": "構成比",
+    "revenue": "売上",
+    "quantity": "数量",
+    "orders": "注文数",
+    "topCustomers": "上位顧客"
+  },
+  "summary": {
+    "title": "AI 要約",
+    "generate": "要約を作成",
+    "regenerate": "再作成",
+    "generating": "データを分析しています…",
+    "insights": "主なインサイト",
+    "recommendations": "推奨事項",
+    "provider": "{{provider}} で生成",
+    "ruleBased": "組み込み分析エンジン",
+    "fallback": "AI プロバイダーが利用できなかったため、組み込みエンジンを使用しました：{{reason}}",
+    "empty": "インサイトと推奨事項をまとめた要約を作成します。",
+    "language": "要約の言語",
+    "configureHint": "設定 → AI で OpenAI、Gemini、Anthropic のキーを追加すると、より詳しい AI 要約が得られます。"
+  },
+  "report": {
+    "download": "PDF レポートをダウンロード",
+    "downloading": "PDF を準備中…",
+    "english": "英語 PDF",
+    "bangla": "বাংলা PDF"
+  },
+  "invoices": {
+    "title": "請求書",
+    "subtitle": "請求書の作成・送付・管理",
+    "new": "新しい請求書",
+    "edit": "請求書を編集",
+    "number": "請求書番号",
+    "customer": "顧客",
+    "selectCustomer": "顧客を選択…",
+    "issueDate": "発行日",
+    "dueDate": "支払期日",
+    "status": "ステータス",
+    "total": "合計",
+    "amount": "金額",
+    "items": "明細",
+    "addItem": "明細を追加",
+    "product": "商品",
+    "pickProduct": "商品を選択（任意）",
+    "description": "内容",
+    "quantity": "数量",
+    "unitPrice": "単価",
+    "lineTotal": "明細合計",
+    "subtotal": "小計",
+    "discount": "割引",
+    "discountType": "割引の種類",
+    "fixed": "固定額",
+    "percent": "割合（%）",
+    "tax": "税",
+    "taxRate": "税率（%）",
+    "grandTotal": "総合計",
+    "currency": "通貨",
+    "language": "請求書の言語",
+    "notes": "顧客へのメモ",
+    "billTo": "請求先",
+    "from": "請求元",
+    "markAs": "ステータスを変更",
+    "downloadPdf": "PDF をダウンロード",
+    "allStatuses": "すべてのステータス",
+    "deleteConfirm": "この請求書を削除しますか？",
+    "created": "請求書 {{number}} を作成しました",
+    "updated": "請求書を更新しました",
+    "empty": "請求書がまだありません",
+    "emptyHint": "最初の請求書を数秒で作成しましょう。",
+    "paidOn": "{{date}} に支払済み",
+    "noCustomers": "先に顧客を追加してください",
+    "details": "請求書の詳細",
+    "removeItem": "明細を削除",
+    "convertedFrom": "{{currency}} から換算 · 元の金額 {{amount}}",
+    "approxIn": "表示通貨で約 {{amount}}"
+  },
+  "status": {
+    "draft": "下書き",
+    "sent": "送付済み",
+    "paid": "支払済み",
+    "overdue": "期限超過"
+  },
+  "customers": {
+    "title": "顧客",
+    "subtitle": "販売先の個人・企業",
+    "new": "新しい顧客",
+    "edit": "顧客を編集",
+    "invoices": "請求書",
+    "empty": "顧客がまだいません",
+    "deleteConfirm": "この顧客を削除しますか？"
+  },
+  "products": {
+    "title": "商品",
+    "subtitle": "請求書用の商品カタログ",
+    "new": "新しい商品",
+    "edit": "商品を編集",
+    "sku": "SKU",
+    "unit": "単位",
+    "unitPrice": "単価",
+    "description": "説明",
+    "active": "有効",
+    "inactive": "無効",
+    "empty": "商品がまだありません",
+    "deleteConfirm": "この商品を削除しますか？"
+  },
+  "settings": {
+    "title": "設定",
+    "subtitle": "会社情報、AI プロバイダー、チーム、アカウント",
+    "company": "会社",
+    "ai": "AI プロバイダー",
+    "users": "チーム",
+    "profile": "マイアカウント",
+    "companyName": "会社名",
+    "website": "ウェブサイト",
+    "taxId": "税番号 / 登録番号",
+    "currency": "通貨",
+    "defaultLanguage": "書類の既定言語",
+    "invoicePrefix": "請求書番号の接頭辞",
+    "nextNumber": "次の請求書番号：{{number}}",
+    "defaultTaxRate": "既定の税率（%）",
+    "invoiceFooter": "請求書のフッター（振込先など）",
+    "invoiceNotes": "請求書の既定メモ / 条件",
+    "logo": "ロゴ",
+    "logoHint": "PNG または JPEG、最大 1 MB。請求書とレポートに使用されます。",
+    "uploadLogo": "ロゴをアップロード",
+    "removeLogo": "削除",
+    "aiTitle": "AI プロバイダー",
+    "aiSubtitle": "要約を作成する LLM を選択します。キーは暗号化（AES-256-GCM）され、再表示されません。",
+    "provider": "プロバイダー",
+    "useEnv": "サーバーの既定値を使用（.env）",
+    "model": "モデル（任意）",
+    "modelPlaceholder": "既定：{{model}}",
+    "apiKey": "API キー",
+    "apiKeyPlaceholder": "新しいキーを貼り付けると保存済みのキーを置き換えます",
+    "storedKey": "保存済みのキー",
+    "removeKey": "保存済みのキーを削除",
+    "testConnection": "接続をテスト",
+    "testing": "テスト中…",
+    "effective": "現在使用中",
+    "sourceOrganization": "設定から",
+    "sourceEnvironment": "サーバーの .env から",
+    "sourceNone": "キー未設定 — 組み込みエンジン",
+    "getKey": "キーの入手方法",
+    "usersTitle": "チームメンバー",
+    "addUser": "メンバーを追加",
+    "role": "役割",
+    "admin": "管理者",
+    "staff": "スタッフ",
+    "lastLogin": "最終ログイン",
+    "never": "なし",
+    "you": "あなた",
+    "changePassword": "パスワードを変更",
+    "currentPassword": "現在のパスワード",
+    "newPassword": "新しいパスワード",
+    "passwordChanged": "パスワードを変更しました。他のセッションはログアウトされました。",
+    "adminOnly": "これらの設定を変更できるのは管理者のみです。",
+    "newUserPassword": "初期パスワード",
+    "companyCurrencyHint": "新しい請求書、アップロード、商品価格の既定通貨です。金額の表示通貨を変えるには、上部バーの通貨切り替えを使ってください。",
+    "preferences": "表示設定",
+    "preferencesHint": "上部バーの言語・通貨切り替えと同じです。"
+  },
+  "validation": {
+    "required": "この項目は必須です",
+    "email": {
+      "invalid": "有効なメールアドレスを入力してください"
+    },
+    "name": {
+      "tooShort": "短すぎます"
+    },
+    "password": {
+      "tooShort": "10 文字以上",
+      "tooLong": "長すぎます",
+      "lower": "小文字を含めてください",
+      "upper": "大文字を含めてください",
+      "digit": "数字を含めてください",
+      "symbol": "記号を含めてください（例：@ # !）",
+      "sameAsOld": "新しいパスワードは現在のものと異なる必要があります",
+      "incorrect": "現在のパスワードが正しくありません"
+    },
+    "number": {
+      "min0": "0 以上である必要があります",
+      "positive": "0 より大きい必要があります"
+    },
+    "date": {
+      "invalid": "無効な日付です"
+    },
+    "invoice": {
+      "itemsRequired": "明細を 1 行以上追加してください",
+      "dueBeforeIssue": "支払期日を発行日より前にすることはできません",
+      "discountPercentMax": "割合の割引は 100 を超えられません",
+      "prefixInvalid": "英字・数字・/ _ - のみ",
+      "customerNotFound": "顧客が見つかりません"
+    },
+    "mapping": {
+      "required": "必須",
+      "totalOrQtyPrice": "合計、または数量と単価の両方を対応付けてください"
+    },
+    "ai": {
+      "keyTooShort": "キーが短すぎるようです"
+    }
+  },
+  "errors": {
+    "generic": "問題が発生しました。もう一度お試しください。",
+    "network": "ネットワークエラー — 接続を確認してください。",
+    "notFound": "ページが見つかりません",
+    "notFoundHint": "お探しのページは存在しません。",
+    "goHome": "ダッシュボードへ",
+    "forbidden": "この操作を行う権限がありません。"
+  },
+  "landing": {
+    "badge": "AI による売上分析",
+    "heroTitle": "売上シートを数分でわかりやすいレポートに",
+    "heroSubtitle": "CSV や Excel ファイルをアップロードするだけで、ダッシュボード、AI が書いた要約、美しい PDF レポートと請求書を作成 — 15 言語・60 通貨に対応。",
+    "liveDemo": "ライブデモ",
+    "seeFeatures": "機能を見る",
+    "demoNote": "登録不要。デモ用ログインは入力済みです。",
+    "navFeatures": "機能",
+    "navScreens": "スクリーンショット",
+    "navBenefits": "メリット",
+    "stats": [
+      {
+        "value": "15",
+        "label": "言語"
+      },
+      {
+        "value": "60",
+        "label": "通貨"
+      },
+      {
+        "value": "100k",
+        "label": "1 回あたりの行数"
+      },
+      {
+        "value": "3",
+        "label": "AI プロバイダー"
+      }
+    ],
+    "featuresTitle": "売上を理解するために必要なすべて",
+    "featuresSubtitle": "分析・レポート・請求をひとつのツールで。小規模事業者や代理店向け。",
+    "features": [
+      {
+        "title": "CSV・Excel アップロード",
+        "body": "ファイルをドラッグ＆ドロップするだけで、列を自動検出して対応付けます。"
+      },
+      {
+        "title": "AI 売上要約",
+        "body": "OpenAI、Gemini、Claude によるわかりやすいインサイト。無料のルールベース代替機能付き。"
+      },
+      {
+        "title": "インタラクティブなグラフ",
+        "body": "日別・月別の推移、上位商品、売れる曜日、上位顧客。"
+      },
+      {
+        "title": "PDF レポート",
+        "body": "ロゴとブランドカラー入りの、印刷できる売上レポート。"
+      },
+      {
+        "title": "請求書",
+        "body": "あらゆる通貨でプロ品質の PDF 請求書を作成・管理・ダウンロード。"
+      },
+      {
+        "title": "多言語・多通貨",
+        "body": "英語、ベンガル語、アラビア語、ウルドゥー語、中国語、日本語を含む 15 言語 — そしてワンクリックで換算できる 60 通貨。"
+      },
+      {
+        "title": "顧客と商品",
+        "body": "カタログと顧客リストを管理できるシンプルな管理画面。"
+      },
+      {
+        "title": "標準で安全",
+        "body": "ロール、CSRF 対策、レート制限、暗号化された API キー、アカウントロック。"
+      }
+    ],
+    "screensTitle": "実際の画面",
+    "screensSubtitle": "ライブデモの実際の画面です。",
+    "shots": {
+      "dashboard": "売上ダッシュボード",
+      "summary": "AI が書いた要約",
+      "charts": "推移と上位商品",
+      "invoices": "請求書一覧",
+      "invoice": "請求書の詳細と PDF",
+      "dark": "ベンガル語のダークモード"
+    },
+    "benefitsTitle": "SalesReport AI が選ばれる理由",
+    "benefits": [
+      "毎月何時間もの手作業のスプレッドシート作業を削減",
+      "わかりやすいブランド入りレポートを顧客や上司と共有",
+      "顧客の通貨で請求",
+      "自分の AI キーを使用 — 追加のサブスクリプション不要",
+      "どこでもセルフホスト：Render、VPS、Docker",
+      "カスタマイズしやすい、整理されドキュメント化された TypeScript コード"
+    ],
+    "steps": [
+      {
+        "title": "売上ファイルをアップロード",
+        "body": "CSV または XLSX、最大 100,000 行。"
+      },
+      {
+        "title": "ダッシュボードと AI 要約を確認",
+        "body": "売れ筋商品、曜日、顧客がすぐにわかります。"
+      },
+      {
+        "title": "PDF をダウンロード、または請求書を送付",
+        "body": "共有できるブランド入りの書類。"
+      }
+    ],
+    "ctaTitle": "今すぐ SalesReport AI を試す",
+    "ctaSubtitle": "ライブデモでサンプルデータを使ってアプリ全体をお試しください。"
+  }
+}

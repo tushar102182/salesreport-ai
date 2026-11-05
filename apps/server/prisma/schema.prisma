@@ -62,6 +62,8 @@ model User {
   lockedUntil      DateTime?
   lastLoginAt      DateTime?
   passwordChangedAt DateTime @default(now())
+  /// Preferred display currency chosen in the top bar (null = company currency).
+  displayCurrency  String?
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
 
@@ -216,6 +218,8 @@ model DatasetSummary {
   id        String   @id @default(cuid())
   datasetId String
   language  String // en | bn
+  /// Display currency the amounts in the text are written in ("" = the dataset's own currency).
+  currency  String   @default("")
   provider  String // openai | gemini | anthropic | rule-based
   model     String?
   content   String // JSON: AiSummary
@@ -224,5 +228,5 @@ model DatasetSummary {
 
   dataset Dataset @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
-  @@unique([datasetId, language])
+  @@unique([datasetId, language, currency])
 }

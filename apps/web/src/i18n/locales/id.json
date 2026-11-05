@@ -1,0 +1,506 @@
+{
+  "app": {
+    "name": "SalesReport AI",
+    "tagline": "Ubah spreadsheet penjualan menjadi wawasan, laporan, dan faktur — dalam bahasa Bangla & Inggris.",
+    "demoBanner": "Demo publik — data diatur ulang setiap hari. Penyimpanan kunci API dinonaktifkan."
+  },
+  "nav": {
+    "dashboard": "Dasbor",
+    "datasets": "Data penjualan",
+    "upload": "Unggah data",
+    "invoices": "Faktur",
+    "customers": "Pelanggan",
+    "products": "Produk",
+    "settings": "Pengaturan",
+    "logout": "Keluar",
+    "profile": "Profil",
+    "menu": "Menu",
+    "close": "Tutup"
+  },
+  "common": {
+    "save": "Simpan",
+    "saving": "Menyimpan…",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Ubah",
+    "create": "Buat",
+    "add": "Tambah",
+    "new": "Baru",
+    "back": "Kembali",
+    "next": "Berikutnya",
+    "search": "Cari…",
+    "actions": "Tindakan",
+    "loading": "Memuat…",
+    "retry": "Coba lagi",
+    "view": "Lihat",
+    "download": "Unduh",
+    "export": "Ekspor CSV",
+    "all": "Semua",
+    "none": "Tidak ada",
+    "yes": "Ya",
+    "no": "Tidak",
+    "name": "Nama",
+    "email": "Email",
+    "phone": "Telepon",
+    "address": "Alamat",
+    "notes": "Catatan",
+    "optional": "opsional",
+    "createdAt": "Dibuat",
+    "noResults": "Belum ada apa pun di sini",
+    "noResultsHint": "Coba pencarian lain atau tambahkan item pertama Anda.",
+    "confirmDelete": "Anda yakin? Tindakan ini tidak dapat dibatalkan.",
+    "deleted": "Dihapus",
+    "saved": "Berhasil disimpan",
+    "page": "Halaman {{page}} dari {{total}}",
+    "previous": "Sebelumnya",
+    "showing": "Total {{n}}",
+    "language": "Bahasa",
+    "theme": "Tema",
+    "light": "Terang",
+    "dark": "Gelap",
+    "required": "Wajib",
+    "english": "English",
+    "bangla": "বাংলা",
+    "languageNames": {
+      "en": "English",
+      "bn": "বাংলা",
+      "es": "Español",
+      "fr": "Français",
+      "ar": "العربية",
+      "hi": "हिन्दी",
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "Mata uang",
+    "approxRates": "Kurs perkiraan ({{date}})"
+  },
+  "auth": {
+    "signIn": "Masuk",
+    "signingIn": "Sedang masuk…",
+    "signUp": "Buat akun",
+    "signingUp": "Membuat akun…",
+    "welcomeBack": "Selamat datang kembali",
+    "signInSubtitle": "Masuk ke ruang kerja SalesReport AI Anda",
+    "createAccount": "Buat ruang kerja Anda",
+    "createSubtitle": "Mulai analisis penjualan Anda dalam hitungan menit. Tanpa kartu kredit.",
+    "email": "Alamat email",
+    "password": "Kata sandi",
+    "name": "Nama Anda",
+    "companyName": "Nama perusahaan",
+    "noAccount": "Belum punya akun?",
+    "haveAccount": "Sudah punya akun?",
+    "demoHint": "Login demo",
+    "useDemo": "Gunakan akun demo",
+    "passwordHint": "Minimal 10 karakter dengan huruf besar & kecil, angka, dan simbol.",
+    "sessionExpired": "Sesi Anda telah berakhir. Silakan masuk lagi.",
+    "heroTitle": "Penjualan Anda, dijelaskan.",
+    "heroPoints": [
+      "Unggah CSV atau Excel — kolom terdeteksi otomatis",
+      "Ringkasan AI dengan wawasan dalam bahasa Bangla atau Inggris",
+      "Laporan PDF dan faktur yang menarik dalam satu klik"
+    ]
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "subtitle": "Ringkasan kinerja bisnis Anda",
+    "totalRevenue": "Total pendapatan",
+    "orders": "Pesanan",
+    "aov": "Rata-rata nilai pesanan",
+    "unitsSold": "Unit terjual",
+    "growth": "Pertumbuhan (bulanan)",
+    "vsPrev": "{{current}} vs {{previous}}",
+    "bestProduct": "Produk terlaris",
+    "bestDay": "Hari terbaik dalam seminggu",
+    "bestDate": "Tanggal terbaik",
+    "dailySales": "Penjualan harian",
+    "monthlySales": "Penjualan bulanan",
+    "topProducts": "Produk teratas",
+    "byRevenue": "Menurut pendapatan",
+    "byQuantity": "Menurut jumlah",
+    "weekday": "Penjualan per hari",
+    "invoicesOverview": "Faktur",
+    "outstanding": "Belum dibayar",
+    "paid": "Lunas",
+    "overdue": "Jatuh tempo",
+    "recentInvoices": "Faktur terbaru",
+    "viewAll": "Lihat semua",
+    "noData": "Belum ada data penjualan",
+    "noDataHint": "Unggah file CSV atau Excel untuk melihat analitik, wawasan AI, dan laporan.",
+    "datasetSelect": "Dataset",
+    "units": "unit",
+    "customers": "Pelanggan",
+    "products": "Produk"
+  },
+  "datasets": {
+    "title": "Data penjualan",
+    "subtitle": "Dataset yang diunggah dan analitiknya",
+    "upload": "Unggah data",
+    "name": "Dataset",
+    "rows": "baris",
+    "period": "Periode",
+    "revenue": "Pendapatan",
+    "file": "File",
+    "empty": "Belum ada dataset",
+    "emptyHint": "Unggah file penjualan pertama Anda untuk memulai.",
+    "downloadReport": "Laporan PDF",
+    "deleteConfirm": "Hapus dataset ini beserta semua catatannya?",
+    "analytics": "Analitik",
+    "skipped": "{{n}} baris dilewati"
+  },
+  "upload": {
+    "title": "Unggah data penjualan",
+    "subtitle": "CSV atau Excel (.xlsx), hingga 10 MB / 100.000 baris",
+    "step1": "Pilih file",
+    "step2": "Petakan kolom",
+    "step3": "Tinjau & impor",
+    "dropHere": "Seret & lepas file Anda di sini",
+    "or": "atau",
+    "browse": "Jelajahi file",
+    "supported": "Didukung: .csv, .xlsx — disarankan CSV UTF-8 (bahasa Bangla didukung)",
+    "sampleFiles": "Butuh contoh? Unduh:",
+    "parsing": "Membaca file…",
+    "importing": "Mengimpor…",
+    "mappingTitle": "Cocokkan kolom Anda",
+    "mappingHint": "Kami mendeteksinya secara otomatis. Tanggal dan produk wajib, ditambah Total atau Jumlah + Harga satuan.",
+    "field": {
+      "date": "Tanggal",
+      "product": "Produk",
+      "quantity": "Jumlah",
+      "unitPrice": "Harga satuan",
+      "total": "Total",
+      "customer": "Pelanggan"
+    },
+    "notMapped": "— Tidak ada di file —",
+    "dateFormat": "Format tanggal",
+    "dateFormatAuto": "Deteksi otomatis",
+    "datasetName": "Nama dataset",
+    "preview": "Pratinjau ({{n}} baris pertama dari {{total}})",
+    "import": "Impor {{n}} baris",
+    "success": "{{imported}} baris diimpor",
+    "successSkipped": "{{imported}} baris diimpor, {{skipped}} dilewati",
+    "rowErrors": "Beberapa baris dilewati",
+    "row": "Baris {{row}}",
+    "changeFile": "Pilih file lain"
+  },
+  "analytics": {
+    "title": "Analitik",
+    "kpis": "Metrik utama",
+    "period": "{{start}} – {{end}}",
+    "productsCount": "{{n}} produk",
+    "customersCount": "{{n}} pelanggan",
+    "share": "Porsi",
+    "revenue": "Pendapatan",
+    "quantity": "Jumlah",
+    "orders": "Pesanan",
+    "topCustomers": "Pelanggan teratas"
+  },
+  "summary": {
+    "title": "Ringkasan AI",
+    "generate": "Buat ringkasan",
+    "regenerate": "Buat ulang",
+    "generating": "Menganalisis data Anda…",
+    "insights": "Wawasan utama",
+    "recommendations": "Rekomendasi",
+    "provider": "Dibuat oleh {{provider}}",
+    "ruleBased": "mesin analisis bawaan",
+    "fallback": "Penyedia AI tidak tersedia, jadi mesin bawaan digunakan: {{reason}}",
+    "empty": "Dapatkan ringkasan tertulis berisi wawasan dan rekomendasi.",
+    "language": "Bahasa ringkasan",
+    "configureHint": "Tambahkan kunci OpenAI, Gemini, atau Anthropic di Pengaturan → AI untuk ringkasan AI yang lebih lengkap."
+  },
+  "report": {
+    "download": "Unduh laporan PDF",
+    "downloading": "Menyiapkan PDF…",
+    "english": "PDF bahasa Inggris",
+    "bangla": "বাংলা PDF"
+  },
+  "invoices": {
+    "title": "Faktur",
+    "subtitle": "Buat, kirim, dan lacak faktur",
+    "new": "Faktur baru",
+    "edit": "Ubah faktur",
+    "number": "No. faktur",
+    "customer": "Pelanggan",
+    "selectCustomer": "Pilih pelanggan…",
+    "issueDate": "Tanggal terbit",
+    "dueDate": "Jatuh tempo",
+    "status": "Status",
+    "total": "Total",
+    "amount": "Jumlah",
+    "items": "Item baris",
+    "addItem": "Tambah baris",
+    "product": "Produk",
+    "pickProduct": "Pilih produk (opsional)",
+    "description": "Deskripsi",
+    "quantity": "Jml",
+    "unitPrice": "Harga satuan",
+    "lineTotal": "Total baris",
+    "subtotal": "Subtotal",
+    "discount": "Diskon",
+    "discountType": "Jenis diskon",
+    "fixed": "Nominal tetap",
+    "percent": "Persen (%)",
+    "tax": "Pajak",
+    "taxRate": "Tarif pajak (%)",
+    "grandTotal": "Total keseluruhan",
+    "currency": "Mata uang",
+    "language": "Bahasa faktur",
+    "notes": "Catatan untuk pelanggan",
+    "billTo": "Ditagihkan kepada",
+    "from": "Dari",
+    "markAs": "Tandai sebagai",
+    "downloadPdf": "Unduh PDF",
+    "allStatuses": "Semua status",
+    "deleteConfirm": "Hapus faktur ini?",
+    "created": "Faktur {{number}} dibuat",
+    "updated": "Faktur diperbarui",
+    "empty": "Belum ada faktur",
+    "emptyHint": "Buat faktur pertama Anda dalam hitungan detik.",
+    "paidOn": "Dibayar pada {{date}}",
+    "noCustomers": "Tambahkan pelanggan terlebih dahulu",
+    "details": "Detail faktur",
+    "removeItem": "Hapus baris",
+    "convertedFrom": "Dikonversi dari {{currency}} · asli {{amount}}",
+    "approxIn": "≈ {{amount}} dalam mata uang tampilan Anda"
+  },
+  "status": {
+    "draft": "Draf",
+    "sent": "Terkirim",
+    "paid": "Lunas",
+    "overdue": "Jatuh tempo"
+  },
+  "customers": {
+    "title": "Pelanggan",
+    "subtitle": "Orang dan bisnis tempat Anda berjualan",
+    "new": "Pelanggan baru",
+    "edit": "Ubah pelanggan",
+    "invoices": "Faktur",
+    "empty": "Belum ada pelanggan",
+    "deleteConfirm": "Hapus pelanggan ini?"
+  },
+  "products": {
+    "title": "Produk",
+    "subtitle": "Katalog Anda untuk penagihan",
+    "new": "Produk baru",
+    "edit": "Ubah produk",
+    "sku": "SKU",
+    "unit": "Satuan",
+    "unitPrice": "Harga satuan",
+    "description": "Deskripsi",
+    "active": "Aktif",
+    "inactive": "Nonaktif",
+    "empty": "Belum ada produk",
+    "deleteConfirm": "Hapus produk ini?"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "subtitle": "Profil perusahaan, penyedia AI, tim, dan akun",
+    "company": "Perusahaan",
+    "ai": "Penyedia AI",
+    "users": "Tim",
+    "profile": "Akun saya",
+    "companyName": "Nama perusahaan",
+    "website": "Situs web",
+    "taxId": "NPWP / ID pajak",
+    "currency": "Mata uang",
+    "defaultLanguage": "Bahasa dokumen bawaan",
+    "invoicePrefix": "Awalan nomor faktur",
+    "nextNumber": "Nomor faktur berikutnya: {{number}}",
+    "defaultTaxRate": "Tarif pajak bawaan (%)",
+    "invoiceFooter": "Catatan kaki faktur (mis. detail bank)",
+    "invoiceNotes": "Catatan / ketentuan faktur bawaan",
+    "logo": "Logo",
+    "logoHint": "PNG atau JPEG, maks. 1 MB. Digunakan pada faktur dan laporan.",
+    "uploadLogo": "Unggah logo",
+    "removeLogo": "Hapus",
+    "aiTitle": "Penyedia AI",
+    "aiSubtitle": "Pilih LLM yang menulis ringkasan Anda. Kunci dienkripsi (AES-256-GCM) dan tidak akan ditampilkan lagi.",
+    "provider": "Penyedia",
+    "useEnv": "Gunakan bawaan server (.env)",
+    "model": "Model (opsional)",
+    "modelPlaceholder": "Bawaan: {{model}}",
+    "apiKey": "Kunci API",
+    "apiKeyPlaceholder": "Tempel kunci baru untuk mengganti yang tersimpan",
+    "storedKey": "Kunci tersimpan",
+    "removeKey": "Hapus kunci tersimpan",
+    "testConnection": "Uji koneksi",
+    "testing": "Menguji…",
+    "effective": "Sedang digunakan",
+    "sourceOrganization": "dari Pengaturan",
+    "sourceEnvironment": "dari .env server",
+    "sourceNone": "tidak ada kunci — mesin bawaan",
+    "getKey": "Di mana saya mendapatkan kunci?",
+    "usersTitle": "Anggota tim",
+    "addUser": "Tambah anggota",
+    "role": "Peran",
+    "admin": "Admin",
+    "staff": "Staf",
+    "lastLogin": "Login terakhir",
+    "never": "Belum pernah",
+    "you": "Anda",
+    "changePassword": "Ubah kata sandi",
+    "currentPassword": "Kata sandi saat ini",
+    "newPassword": "Kata sandi baru",
+    "passwordChanged": "Kata sandi diubah. Sesi lain telah dikeluarkan.",
+    "adminOnly": "Hanya admin yang dapat mengubah pengaturan ini.",
+    "newUserPassword": "Kata sandi awal",
+    "companyCurrencyHint": "Mata uang bawaan untuk faktur baru, unggahan, dan harga produk. Untuk mengubah cara jumlah ditampilkan, gunakan pemilih mata uang di bilah atas.",
+    "preferences": "Preferensi tampilan",
+    "preferencesHint": "Sama dengan pemilih bahasa dan mata uang di bilah atas."
+  },
+  "validation": {
+    "required": "Kolom ini wajib diisi",
+    "email": {
+      "invalid": "Masukkan alamat email yang valid"
+    },
+    "name": {
+      "tooShort": "Terlalu pendek"
+    },
+    "password": {
+      "tooShort": "Minimal 10 karakter",
+      "tooLong": "Terlalu panjang",
+      "lower": "Tambahkan huruf kecil",
+      "upper": "Tambahkan huruf besar",
+      "digit": "Tambahkan angka",
+      "symbol": "Tambahkan simbol (mis. @ # !)",
+      "sameAsOld": "Kata sandi baru harus berbeda",
+      "incorrect": "Kata sandi saat ini salah"
+    },
+    "number": {
+      "min0": "Harus 0 atau lebih",
+      "positive": "Harus lebih dari 0"
+    },
+    "date": {
+      "invalid": "Tanggal tidak valid"
+    },
+    "invoice": {
+      "itemsRequired": "Tambahkan setidaknya satu baris",
+      "dueBeforeIssue": "Jatuh tempo tidak boleh sebelum tanggal terbit",
+      "discountPercentMax": "Diskon persen tidak boleh melebihi 100",
+      "prefixInvalid": "Hanya huruf, angka, / _ -",
+      "customerNotFound": "Pelanggan tidak ditemukan"
+    },
+    "mapping": {
+      "required": "Wajib",
+      "totalOrQtyPrice": "Petakan Total, atau Jumlah dan Harga satuan"
+    },
+    "ai": {
+      "keyTooShort": "Kunci itu tampaknya terlalu pendek"
+    }
+  },
+  "errors": {
+    "generic": "Terjadi kesalahan. Silakan coba lagi.",
+    "network": "Kesalahan jaringan — periksa koneksi Anda.",
+    "notFound": "Halaman tidak ditemukan",
+    "notFoundHint": "Halaman yang Anda cari tidak ada.",
+    "goHome": "Ke dasbor",
+    "forbidden": "Anda tidak memiliki izin untuk melakukannya."
+  },
+  "landing": {
+    "badge": "Analitik penjualan bertenaga AI",
+    "heroTitle": "Ubah lembar penjualan Anda menjadi laporan yang jelas dalam hitungan menit",
+    "heroSubtitle": "Unggah file CSV atau Excel dan dapatkan dasbor, ringkasan yang ditulis AI, laporan PDF dan faktur yang menarik — dalam 15 bahasa dan 60 mata uang.",
+    "liveDemo": "Demo langsung",
+    "seeFeatures": "Lihat fitur",
+    "demoNote": "Tanpa pendaftaran. Login demo sudah diisi untuk Anda.",
+    "navFeatures": "Fitur",
+    "navScreens": "Tangkapan layar",
+    "navBenefits": "Manfaat",
+    "stats": [
+      {
+        "value": "15",
+        "label": "Bahasa"
+      },
+      {
+        "value": "60",
+        "label": "Mata uang"
+      },
+      {
+        "value": "100k",
+        "label": "Baris per unggahan"
+      },
+      {
+        "value": "3",
+        "label": "Penyedia AI"
+      }
+    ],
+    "featuresTitle": "Semua yang Anda perlukan untuk memahami penjualan",
+    "featuresSubtitle": "Satu alat untuk analisis, pelaporan, dan penagihan — dibuat untuk usaha kecil dan agensi.",
+    "features": [
+      {
+        "title": "Unggah CSV & Excel",
+        "body": "Seret dan lepas file; kolom terdeteksi dan dipetakan secara otomatis."
+      },
+      {
+        "title": "Ringkasan penjualan AI",
+        "body": "Wawasan berbahasa sederhana dari OpenAI, Gemini, atau Claude, dengan cadangan berbasis aturan gratis."
+      },
+      {
+        "title": "Grafik interaktif",
+        "body": "Tren harian dan bulanan, produk teratas, hari terbaik, dan pelanggan teratas."
+      },
+      {
+        "title": "Laporan PDF",
+        "body": "Laporan penjualan siap cetak dengan logo dan warna Anda."
+      },
+      {
+        "title": "Faktur",
+        "body": "Buat, lacak, dan unduh faktur PDF profesional dalam mata uang apa pun."
+      },
+      {
+        "title": "Multibahasa & multimata uang",
+        "body": "15 bahasa termasuk Inggris, Bangla, Arab, Urdu, Mandarin, dan Jepang — serta 60 mata uang dengan konversi sekali klik."
+      },
+      {
+        "title": "Pelanggan & produk",
+        "body": "Panel admin sederhana untuk mengelola katalog dan daftar klien Anda."
+      },
+      {
+        "title": "Aman secara bawaan",
+        "body": "Peran, perlindungan CSRF, pembatasan laju, kunci API terenkripsi, dan penguncian akun."
+      }
+    ],
+    "screensTitle": "Lihat cara kerjanya",
+    "screensSubtitle": "Layar asli dari demo langsung.",
+    "shots": {
+      "dashboard": "Dasbor penjualan",
+      "summary": "Ringkasan yang ditulis AI",
+      "charts": "Tren dan produk teratas",
+      "invoices": "Daftar faktur",
+      "invoice": "Detail faktur dan PDF",
+      "dark": "Mode gelap dalam bahasa Bangla"
+    },
+    "benefitsTitle": "Mengapa tim memilih SalesReport AI",
+    "benefits": [
+      "Hemat berjam-jam pekerjaan spreadsheet manual setiap bulan",
+      "Bagikan laporan yang jelas dan bermerek kepada klien dan manajer",
+      "Tagih pelanggan dalam mata uang mereka sendiri",
+      "Gunakan kunci AI Anda sendiri — tanpa langganan tambahan",
+      "Host di mana saja: Render, VPS, atau Docker",
+      "Kode TypeScript yang rapi, terdokumentasi, dan mudah disesuaikan"
+    ],
+    "steps": [
+      {
+        "title": "Unggah file penjualan Anda",
+        "body": "CSV atau XLSX, hingga 100.000 baris."
+      },
+      {
+        "title": "Tinjau dasbor dan ringkasan AI",
+        "body": "Temukan produk, hari, dan pelanggan terbaik Anda seketika."
+      },
+      {
+        "title": "Unduh PDF atau kirim faktur",
+        "body": "Dokumen bermerek yang siap dibagikan."
+      }
+    ],
+    "ctaTitle": "Coba SalesReport AI sekarang",
+    "ctaSubtitle": "Jelajahi aplikasi lengkap dengan data contoh di demo langsung."
+  }
+}

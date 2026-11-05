@@ -10,3 +10,4 @@ export * from './schemas/product';
 export * from './schemas/invoice';
 export * from './schemas/organization';
 export * from './schemas/dataset';
+export * from './fx';

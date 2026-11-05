@@ -22,6 +22,12 @@ let accessToken: string | null = null;
 let onSessionChange: ((auth: AuthResponse | null) => void) | null = null;
 let refreshing: Promise<AuthResponse | null> | null = null;
 
+/** Display currency sent with every request (X-Display-Currency) so server-rendered money matches the UI. */
+let displayCurrency: string | null = null;
+export const setDisplayCurrencyHeader = (code: string | null) => {
+  displayCurrency = code;
+};
+
 export const setAccessToken = (t: string | null) => {
   accessToken = t;
 };
@@ -98,6 +104,7 @@ async function rawRequest(path: string, opts: RequestOptions = {}, retry = true)
     : '';
   const headers: Record<string, string> = {};
   if (accessToken) headers.Authorization = `Bearer ${accessToken}`;
+  if (displayCurrency) headers['X-Display-Currency'] = displayCurrency;
   if (opts.body !== undefined) headers['Content-Type'] = 'application/json';
 
   let res: Response;

@@ -293,7 +293,7 @@ function InvoiceForm({
                   />
                   <div className="col-span-3 flex items-center justify-end gap-2 md:col-span-5">
                     <span className="text-sm font-semibold whitespace-nowrap text-slate-900 dark:text-white">
-                      {f.money(totals.lineTotals[index] ?? 0, currency)}
+                      {f.moneyExact(totals.lineTotals[index] ?? 0, currency)}
                     </span>
                     <Button
                       variant="ghost"
@@ -356,20 +356,25 @@ function InvoiceForm({
               <dl className="space-y-2 border-t border-slate-100 pt-4 text-sm dark:border-slate-800">
                 <div className="flex justify-between text-slate-600 dark:text-slate-300">
                   <dt>{t('invoices.subtotal')}</dt>
-                  <dd>{f.money(totals.subtotal, currency)}</dd>
+                  <dd>{f.moneyExact(totals.subtotal, currency)}</dd>
                 </div>
                 <div className="flex justify-between text-slate-600 dark:text-slate-300">
                   <dt>{t('invoices.discount')}</dt>
-                  <dd>- {f.money(totals.discountTotal, currency)}</dd>
+                  <dd>- {f.moneyExact(totals.discountTotal, currency)}</dd>
                 </div>
                 <div className="flex justify-between text-slate-600 dark:text-slate-300">
                   <dt>{t('invoices.tax')}</dt>
-                  <dd>{f.money(totals.taxTotal, currency)}</dd>
+                  <dd>{f.moneyExact(totals.taxTotal, currency)}</dd>
                 </div>
                 <div className="flex justify-between rounded-xl bg-brand-600 px-4 py-3 text-base font-bold text-white">
                   <dt>{t('invoices.grandTotal')}</dt>
-                  <dd>{f.money(totals.total, currency)}</dd>
+                  <dd>{f.moneyExact(totals.total, currency)}</dd>
                 </div>
+                {currency !== f.currency && (
+                  <p className="text-end text-xs text-slate-500" data-testid="invoice-form-approx">
+                    {t('invoices.approxIn', { amount: f.money(totals.total, currency) })}
+                  </p>
+                )}
               </dl>
               <Button type="submit" className="w-full" loading={save.isPending}>
                 {t('common.save')}

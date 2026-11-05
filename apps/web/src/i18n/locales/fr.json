@@ -68,8 +68,18 @@
       "fr": "Français",
       "ar": "العربية",
       "hi": "हिन्दी",
-      "pt": "Português"
-    }
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "Devise",
+    "approxRates": "Taux de change approximatifs ({{date}})"
   },
   "auth": {
     "signIn": "Se connecter",
@@ -256,7 +266,9 @@
     "paidOn": "Payée le {{date}}",
     "noCustomers": "Ajoutez d’abord un client",
     "details": "Détails de la facture",
-    "removeItem": "Supprimer la ligne"
+    "removeItem": "Supprimer la ligne",
+    "convertedFrom": "Converti depuis {{currency}} · original {{amount}}",
+    "approxIn": "≈ {{amount}} dans votre devise d’affichage"
   },
   "status": {
     "draft": "Brouillon",
@@ -338,7 +350,10 @@
     "newPassword": "Nouveau mot de passe",
     "passwordChanged": "Mot de passe modifié. Les autres sessions ont été déconnectées.",
     "adminOnly": "Seuls les administrateurs peuvent modifier ces paramètres.",
-    "newUserPassword": "Mot de passe initial"
+    "newUserPassword": "Mot de passe initial",
+    "companyCurrencyHint": "Devise par défaut des nouvelles factures, importations et prix des produits. Pour changer l’affichage des montants, utilisez le sélecteur de devise de la barre supérieure.",
+    "preferences": "Préférences d’affichage",
+    "preferencesHint": "Les mêmes sélecteurs de langue et de devise que dans la barre supérieure."
   },
   "validation": {
     "required": "Ce champ est obligatoire",
@@ -391,7 +406,7 @@
   "landing": {
     "badge": "Analyse des ventes par IA",
     "heroTitle": "Transformez vos tableurs de ventes en rapports clairs en quelques minutes",
-    "heroSubtitle": "Importez un fichier CSV ou Excel et obtenez des tableaux de bord, un résumé rédigé par l’IA, de superbes rapports PDF et des factures, en 7 langues et plus de 40 devises.",
+    "heroSubtitle": "Importez un fichier CSV ou Excel et obtenez des tableaux de bord, un résumé rédigé par l’IA, de superbes rapports PDF et des factures, en 15 langues et 60 devises.",
     "liveDemo": "Démo en direct",
     "seeFeatures": "Voir les fonctionnalités",
     "demoNote": "Aucune inscription requise. Les identifiants de démo sont préremplis.",
@@ -400,11 +415,11 @@
     "navBenefits": "Avantages",
     "stats": [
       {
-        "value": "7",
+        "value": "15",
         "label": "Langues"
       },
       {
-        "value": "40+",
+        "value": "60",
         "label": "Devises"
       },
       {
@@ -441,7 +456,7 @@
       },
       {
         "title": "Multilingue et multidevise",
-        "body": "Anglais, bengali, espagnol, français, arabe, hindi et portugais, avec plus de 40 devises."
+        "body": "15 langues dont l’anglais, le bengali, l’arabe, l’ourdou, le chinois et le japonais, et 60 devises converties en un clic."
       },
       {
         "title": "Clients et produits",

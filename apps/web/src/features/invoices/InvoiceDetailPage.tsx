@@ -3,7 +3,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, Pencil, Trash2 } from 'lucide-react';
-import { INVOICE_STATUSES, type InvoiceDto, type InvoiceStatus } from '@salesreport/shared';
+import { INVOICE_STATUSES, type InvoiceDto, type InvoiceStatus, canConvert } from '@salesreport/shared';
 import { api } from '../../lib/api';
 import { qk, useLogoUrl, useOrganization } from '../../lib/queries';
 import { useAuth } from '../../lib/auth';
@@ -164,7 +164,21 @@ export function InvoiceDetailPage() {
               </div>
               <div className="flex justify-between">
                 <dt className="text-slate-500">{t('invoices.currency')}</dt>
-                <dd className="font-medium">{inv.currency}</dd>
+                <dd className="text-end font-medium" data-testid="invoice-currency">
+                  {f.currency !== inv.currency && canConvert(inv.currency, f.currency, f.rates) ? (
+                    <>
+                      {f.currency}
+                      <span className="block text-xs font-normal text-slate-500">
+                        {t('invoices.convertedFrom', {
+                          currency: inv.currency,
+                          amount: f.moneyExact(inv.total, inv.currency),
+                        })}
+                      </span>
+                    </>
+                  ) : (
+                    inv.currency
+                  )}
+                </dd>
               </div>
             </dl>
           </div>

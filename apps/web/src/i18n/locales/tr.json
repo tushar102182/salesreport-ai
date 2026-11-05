@@ -1,0 +1,506 @@
+{
+  "app": {
+    "name": "SalesReport AI",
+    "tagline": "Satış tablolarını içgörülere, raporlara ve faturalara dönüştürün — Bengalce ve İngilizce.",
+    "demoBanner": "Herkese açık demo — veriler her gün sıfırlanır. API anahtarı kaydetme devre dışıdır."
+  },
+  "nav": {
+    "dashboard": "Gösterge paneli",
+    "datasets": "Satış verileri",
+    "upload": "Veri yükle",
+    "invoices": "Faturalar",
+    "customers": "Müşteriler",
+    "products": "Ürünler",
+    "settings": "Ayarlar",
+    "logout": "Çıkış yap",
+    "profile": "Profil",
+    "menu": "Menü",
+    "close": "Kapat"
+  },
+  "common": {
+    "save": "Kaydet",
+    "saving": "Kaydediliyor…",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "create": "Oluştur",
+    "add": "Ekle",
+    "new": "Yeni",
+    "back": "Geri",
+    "next": "İleri",
+    "search": "Ara…",
+    "actions": "İşlemler",
+    "loading": "Yükleniyor…",
+    "retry": "Tekrar dene",
+    "view": "Görüntüle",
+    "download": "İndir",
+    "export": "CSV dışa aktar",
+    "all": "Tümü",
+    "none": "Hiçbiri",
+    "yes": "Evet",
+    "no": "Hayır",
+    "name": "Ad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "address": "Adres",
+    "notes": "Notlar",
+    "optional": "isteğe bağlı",
+    "createdAt": "Oluşturulma",
+    "noResults": "Henüz burada bir şey yok",
+    "noResultsHint": "Farklı bir arama deneyin veya ilk kaydınızı ekleyin.",
+    "confirmDelete": "Emin misiniz? Bu işlem geri alınamaz.",
+    "deleted": "Silindi",
+    "saved": "Başarıyla kaydedildi",
+    "page": "Sayfa {{page}} / {{total}}",
+    "previous": "Önceki",
+    "showing": "Toplam {{n}}",
+    "language": "Dil",
+    "theme": "Tema",
+    "light": "Açık",
+    "dark": "Koyu",
+    "required": "Zorunlu",
+    "english": "English",
+    "bangla": "বাংলা",
+    "languageNames": {
+      "en": "English",
+      "bn": "বাংলা",
+      "es": "Español",
+      "fr": "Français",
+      "ar": "العربية",
+      "hi": "हिन्दी",
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "Para birimi",
+    "approxRates": "Yaklaşık döviz kurları ({{date}})"
+  },
+  "auth": {
+    "signIn": "Giriş yap",
+    "signingIn": "Giriş yapılıyor…",
+    "signUp": "Hesap oluştur",
+    "signingUp": "Hesap oluşturuluyor…",
+    "welcomeBack": "Tekrar hoş geldiniz",
+    "signInSubtitle": "SalesReport AI çalışma alanınıza giriş yapın",
+    "createAccount": "Çalışma alanınızı oluşturun",
+    "createSubtitle": "Satışlarınızı dakikalar içinde analiz etmeye başlayın. Kredi kartı gerekmez.",
+    "email": "E-posta adresi",
+    "password": "Şifre",
+    "name": "Adınız",
+    "companyName": "Şirket adı",
+    "noAccount": "Hesabınız yok mu?",
+    "haveAccount": "Zaten hesabınız var mı?",
+    "demoHint": "Demo girişi",
+    "useDemo": "Demo hesabını kullan",
+    "passwordHint": "Büyük ve küçük harf, bir rakam ve bir sembol içeren en az 10 karakter.",
+    "sessionExpired": "Oturumunuzun süresi doldu. Lütfen tekrar giriş yapın.",
+    "heroTitle": "Satışlarınız, anlaşılır biçimde.",
+    "heroPoints": [
+      "CSV veya Excel yükleyin — sütunlar otomatik algılanır",
+      "Bengalce veya İngilizce içgörülerle yapay zekâ özetleri",
+      "Tek tıkla şık PDF raporları ve faturalar"
+    ]
+  },
+  "dashboard": {
+    "title": "Gösterge paneli",
+    "subtitle": "İşletmenizin performansına genel bakış",
+    "totalRevenue": "Toplam gelir",
+    "orders": "Siparişler",
+    "aov": "Ort. sipariş değeri",
+    "unitsSold": "Satılan adet",
+    "growth": "Büyüme (aylık)",
+    "vsPrev": "{{current}} / {{previous}}",
+    "bestProduct": "En çok satan ürün",
+    "bestDay": "Haftanın en iyi günü",
+    "bestDate": "En iyi tarih",
+    "dailySales": "Günlük satışlar",
+    "monthlySales": "Aylık satışlar",
+    "topProducts": "En iyi ürünler",
+    "byRevenue": "Gelire göre",
+    "byQuantity": "Adede göre",
+    "weekday": "Haftanın günlerine göre satışlar",
+    "invoicesOverview": "Faturalar",
+    "outstanding": "Ödenmemiş",
+    "paid": "Ödendi",
+    "overdue": "Vadesi geçmiş",
+    "recentInvoices": "Son faturalar",
+    "viewAll": "Tümünü gör",
+    "noData": "Henüz satış verisi yok",
+    "noDataHint": "Analizleri, yapay zekâ içgörülerini ve raporları görmek için bir CSV veya Excel dosyası yükleyin.",
+    "datasetSelect": "Veri kümesi",
+    "units": "adet",
+    "customers": "Müşteriler",
+    "products": "Ürünler"
+  },
+  "datasets": {
+    "title": "Satış verileri",
+    "subtitle": "Yüklenen veri kümeleri ve analizleri",
+    "upload": "Veri yükle",
+    "name": "Veri kümesi",
+    "rows": "satır",
+    "period": "Dönem",
+    "revenue": "Gelir",
+    "file": "Dosya",
+    "empty": "Henüz veri kümesi yok",
+    "emptyHint": "Başlamak için ilk satış dosyanızı yükleyin.",
+    "downloadReport": "PDF raporu",
+    "deleteConfirm": "Bu veri kümesi ve tüm kayıtları silinsin mi?",
+    "analytics": "Analiz",
+    "skipped": "{{n}} satır atlandı"
+  },
+  "upload": {
+    "title": "Satış verisi yükle",
+    "subtitle": "CSV veya Excel (.xlsx), en fazla 10 MB / 100.000 satır",
+    "step1": "Dosya seç",
+    "step2": "Sütunları eşleştir",
+    "step3": "Gözden geçir ve içe aktar",
+    "dropHere": "Dosyanızı buraya sürükleyip bırakın",
+    "or": "veya",
+    "browse": "Dosyalara göz at",
+    "supported": "Desteklenenler: .csv, .xlsx — UTF-8 CSV önerilir (Bengalce desteklenir)",
+    "sampleFiles": "Örnek mi lazım? İndirin:",
+    "parsing": "Dosya okunuyor…",
+    "importing": "İçe aktarılıyor…",
+    "mappingTitle": "Sütunlarınızı eşleştirin",
+    "mappingHint": "Bunları otomatik algıladık. Tarih ve ürün zorunludur; ayrıca Toplam ya da Miktar + Birim fiyat gerekir.",
+    "field": {
+      "date": "Tarih",
+      "product": "Ürün",
+      "quantity": "Miktar",
+      "unitPrice": "Birim fiyat",
+      "total": "Toplam",
+      "customer": "Müşteri"
+    },
+    "notMapped": "— Dosyada yok —",
+    "dateFormat": "Tarih biçimi",
+    "dateFormatAuto": "Otomatik algıla",
+    "datasetName": "Veri kümesi adı",
+    "preview": "Önizleme ({{total}} satırın ilk {{n}} satırı)",
+    "import": "{{n}} satırı içe aktar",
+    "success": "{{imported}} satır içe aktarıldı",
+    "successSkipped": "{{imported}} satır içe aktarıldı, {{skipped}} satır atlandı",
+    "rowErrors": "Bazı satırlar atlandı",
+    "row": "Satır {{row}}",
+    "changeFile": "Başka bir dosya seç"
+  },
+  "analytics": {
+    "title": "Analiz",
+    "kpis": "Temel metrikler",
+    "period": "{{start}} – {{end}}",
+    "productsCount": "{{n}} ürün",
+    "customersCount": "{{n}} müşteri",
+    "share": "Pay",
+    "revenue": "Gelir",
+    "quantity": "Miktar",
+    "orders": "Siparişler",
+    "topCustomers": "En iyi müşteriler"
+  },
+  "summary": {
+    "title": "Yapay zekâ özeti",
+    "generate": "Özet oluştur",
+    "regenerate": "Yeniden oluştur",
+    "generating": "Verileriniz analiz ediliyor…",
+    "insights": "Temel içgörüler",
+    "recommendations": "Öneriler",
+    "provider": "{{provider}} tarafından oluşturuldu",
+    "ruleBased": "yerleşik analiz motoru",
+    "fallback": "Yapay zekâ sağlayıcısına ulaşılamadı, bu yüzden yerleşik motor kullanıldı: {{reason}}",
+    "empty": "İçgörüler ve önerilerle yazılı bir özet alın.",
+    "language": "Özet dili",
+    "configureHint": "Daha zengin yapay zekâ özetleri için Ayarlar → Yapay zekâ bölümüne OpenAI, Gemini veya Anthropic anahtarı ekleyin."
+  },
+  "report": {
+    "download": "PDF raporunu indir",
+    "downloading": "PDF hazırlanıyor…",
+    "english": "İngilizce PDF",
+    "bangla": "বাংলা PDF"
+  },
+  "invoices": {
+    "title": "Faturalar",
+    "subtitle": "Fatura oluşturun, gönderin ve takip edin",
+    "new": "Yeni fatura",
+    "edit": "Faturayı düzenle",
+    "number": "Fatura no",
+    "customer": "Müşteri",
+    "selectCustomer": "Bir müşteri seçin…",
+    "issueDate": "Düzenleme tarihi",
+    "dueDate": "Vade tarihi",
+    "status": "Durum",
+    "total": "Toplam",
+    "amount": "Tutar",
+    "items": "Kalemler",
+    "addItem": "Satır ekle",
+    "product": "Ürün",
+    "pickProduct": "Bir ürün seçin (isteğe bağlı)",
+    "description": "Açıklama",
+    "quantity": "Adet",
+    "unitPrice": "Birim fiyat",
+    "lineTotal": "Satır toplamı",
+    "subtotal": "Ara toplam",
+    "discount": "İndirim",
+    "discountType": "İndirim türü",
+    "fixed": "Sabit tutar",
+    "percent": "Yüzde (%)",
+    "tax": "Vergi",
+    "taxRate": "Vergi oranı (%)",
+    "grandTotal": "Genel toplam",
+    "currency": "Para birimi",
+    "language": "Fatura dili",
+    "notes": "Müşteri için notlar",
+    "billTo": "Fatura edilen",
+    "from": "Gönderen",
+    "markAs": "Şu şekilde işaretle",
+    "downloadPdf": "PDF indir",
+    "allStatuses": "Tüm durumlar",
+    "deleteConfirm": "Bu fatura silinsin mi?",
+    "created": "{{number}} numaralı fatura oluşturuldu",
+    "updated": "Fatura güncellendi",
+    "empty": "Henüz fatura yok",
+    "emptyHint": "İlk faturanızı saniyeler içinde oluşturun.",
+    "paidOn": "{{date}} tarihinde ödendi",
+    "noCustomers": "Önce bir müşteri ekleyin",
+    "details": "Fatura ayrıntıları",
+    "removeItem": "Satırı kaldır",
+    "convertedFrom": "{{currency}} biriminden çevrildi · orijinal {{amount}}",
+    "approxIn": "Görüntüleme para biriminizde ≈ {{amount}}"
+  },
+  "status": {
+    "draft": "Taslak",
+    "sent": "Gönderildi",
+    "paid": "Ödendi",
+    "overdue": "Vadesi geçmiş"
+  },
+  "customers": {
+    "title": "Müşteriler",
+    "subtitle": "Satış yaptığınız kişiler ve işletmeler",
+    "new": "Yeni müşteri",
+    "edit": "Müşteriyi düzenle",
+    "invoices": "Faturalar",
+    "empty": "Henüz müşteri yok",
+    "deleteConfirm": "Bu müşteri silinsin mi?"
+  },
+  "products": {
+    "title": "Ürünler",
+    "subtitle": "Faturalama için ürün kataloğunuz",
+    "new": "Yeni ürün",
+    "edit": "Ürünü düzenle",
+    "sku": "Stok kodu",
+    "unit": "Birim",
+    "unitPrice": "Birim fiyat",
+    "description": "Açıklama",
+    "active": "Aktif",
+    "inactive": "Pasif",
+    "empty": "Henüz ürün yok",
+    "deleteConfirm": "Bu ürün silinsin mi?"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "subtitle": "Şirket profili, yapay zekâ sağlayıcısı, ekip ve hesap",
+    "company": "Şirket",
+    "ai": "Yapay zekâ sağlayıcısı",
+    "users": "Ekip",
+    "profile": "Hesabım",
+    "companyName": "Şirket adı",
+    "website": "Web sitesi",
+    "taxId": "Vergi numarası",
+    "currency": "Para birimi",
+    "defaultLanguage": "Varsayılan belge dili",
+    "invoicePrefix": "Fatura numarası öneki",
+    "nextNumber": "Sonraki fatura numarası: {{number}}",
+    "defaultTaxRate": "Varsayılan vergi oranı (%)",
+    "invoiceFooter": "Fatura alt bilgisi (ör. banka bilgileri)",
+    "invoiceNotes": "Varsayılan fatura notları / koşulları",
+    "logo": "Logo",
+    "logoHint": "PNG veya JPEG, en fazla 1 MB. Faturalarda ve raporlarda kullanılır.",
+    "uploadLogo": "Logo yükle",
+    "removeLogo": "Kaldır",
+    "aiTitle": "Yapay zekâ sağlayıcısı",
+    "aiSubtitle": "Özetlerinizi hangi LLM'nin yazacağını seçin. Anahtarlar şifrelenir (AES-256-GCM) ve bir daha gösterilmez.",
+    "provider": "Sağlayıcı",
+    "useEnv": "Sunucu varsayılanını kullan (.env)",
+    "model": "Model (isteğe bağlı)",
+    "modelPlaceholder": "Varsayılan: {{model}}",
+    "apiKey": "API anahtarı",
+    "apiKeyPlaceholder": "Kayıtlı anahtarı değiştirmek için yeni bir anahtar yapıştırın",
+    "storedKey": "Kayıtlı anahtar",
+    "removeKey": "Kayıtlı anahtarı kaldır",
+    "testConnection": "Bağlantıyı test et",
+    "testing": "Test ediliyor…",
+    "effective": "Şu anda kullanılan",
+    "sourceOrganization": "Ayarlar'dan",
+    "sourceEnvironment": "sunucu .env dosyasından",
+    "sourceNone": "anahtar yapılandırılmadı — yerleşik motor",
+    "getKey": "Anahtarı nereden alırım?",
+    "usersTitle": "Ekip üyeleri",
+    "addUser": "Üye ekle",
+    "role": "Rol",
+    "admin": "Yönetici",
+    "staff": "Personel",
+    "lastLogin": "Son giriş",
+    "never": "Hiç",
+    "you": "Siz",
+    "changePassword": "Şifreyi değiştir",
+    "currentPassword": "Mevcut şifre",
+    "newPassword": "Yeni şifre",
+    "passwordChanged": "Şifre değiştirildi. Diğer oturumlar kapatıldı.",
+    "adminOnly": "Bu ayarları yalnızca yöneticiler değiştirebilir.",
+    "newUserPassword": "İlk şifre",
+    "companyCurrencyHint": "Yeni faturalar, yüklemeler ve ürün fiyatları için varsayılan para birimi. Tutarların nasıl gösterileceğini değiştirmek için üst çubuktaki para birimi seçiciyi kullanın.",
+    "preferences": "Görüntüleme tercihleri",
+    "preferencesHint": "Üst çubuktaki dil ve para birimi seçicilerle aynıdır."
+  },
+  "validation": {
+    "required": "Bu alan zorunludur",
+    "email": {
+      "invalid": "Geçerli bir e-posta adresi girin"
+    },
+    "name": {
+      "tooShort": "Çok kısa"
+    },
+    "password": {
+      "tooShort": "En az 10 karakter",
+      "tooLong": "Çok uzun",
+      "lower": "Bir küçük harf ekleyin",
+      "upper": "Bir büyük harf ekleyin",
+      "digit": "Bir rakam ekleyin",
+      "symbol": "Bir sembol ekleyin (ör. @ # !)",
+      "sameAsOld": "Yeni şifre farklı olmalıdır",
+      "incorrect": "Mevcut şifre yanlış"
+    },
+    "number": {
+      "min0": "0 veya daha büyük olmalı",
+      "positive": "0'dan büyük olmalı"
+    },
+    "date": {
+      "invalid": "Geçersiz tarih"
+    },
+    "invoice": {
+      "itemsRequired": "En az bir kalem ekleyin",
+      "dueBeforeIssue": "Vade tarihi düzenleme tarihinden önce olamaz",
+      "discountPercentMax": "Yüzde indirim 100'ü geçemez",
+      "prefixInvalid": "Yalnızca harf, rakam, / _ -",
+      "customerNotFound": "Müşteri bulunamadı"
+    },
+    "mapping": {
+      "required": "Zorunlu",
+      "totalOrQtyPrice": "Toplam'ı veya hem Miktar hem Birim fiyatı eşleştirin"
+    },
+    "ai": {
+      "keyTooShort": "Bu anahtar çok kısa görünüyor"
+    }
+  },
+  "errors": {
+    "generic": "Bir sorun oluştu. Lütfen tekrar deneyin.",
+    "network": "Ağ hatası — bağlantınızı kontrol edin.",
+    "notFound": "Sayfa bulunamadı",
+    "notFoundHint": "Aradığınız sayfa mevcut değil.",
+    "goHome": "Gösterge paneline git",
+    "forbidden": "Bunu yapma izniniz yok."
+  },
+  "landing": {
+    "badge": "Yapay zekâ destekli satış analizi",
+    "heroTitle": "Satış tablolarınızı dakikalar içinde net raporlara dönüştürün",
+    "heroSubtitle": "Bir CSV veya Excel dosyası yükleyin; gösterge panelleri, yapay zekânın yazdığı bir özet, şık PDF raporları ve faturalar alın — 15 dilde ve 60 para biriminde.",
+    "liveDemo": "Canlı demo",
+    "seeFeatures": "Özellikleri gör",
+    "demoNote": "Kayıt gerekmez. Demo girişi sizin için doldurulur.",
+    "navFeatures": "Özellikler",
+    "navScreens": "Ekran görüntüleri",
+    "navBenefits": "Avantajlar",
+    "stats": [
+      {
+        "value": "15",
+        "label": "Dil"
+      },
+      {
+        "value": "60",
+        "label": "Para birimi"
+      },
+      {
+        "value": "100k",
+        "label": "Yükleme başına satır"
+      },
+      {
+        "value": "3",
+        "label": "Yapay zekâ sağlayıcısı"
+      }
+    ],
+    "featuresTitle": "Satışlarınızı anlamak için ihtiyacınız olan her şey",
+    "featuresSubtitle": "Analiz, raporlama ve faturalama için tek araç — küçük işletmeler ve ajanslar için.",
+    "features": [
+      {
+        "title": "CSV ve Excel yükleme",
+        "body": "Dosyayı sürükleyip bırakın; sütunlar otomatik olarak algılanır ve eşleştirilir."
+      },
+      {
+        "title": "Yapay zekâ satış özeti",
+        "body": "OpenAI, Gemini veya Claude'dan sade dilde içgörüler, ücretsiz kural tabanlı yedekle."
+      },
+      {
+        "title": "Etkileşimli grafikler",
+        "body": "Günlük ve aylık eğilimler, en iyi ürünler, en iyi günler ve en iyi müşteriler."
+      },
+      {
+        "title": "PDF raporları",
+        "body": "Logonuz ve renklerinizle baskıya hazır satış raporları."
+      },
+      {
+        "title": "Faturalar",
+        "body": "Her para biriminde profesyonel PDF faturaları oluşturun, takip edin ve indirin."
+      },
+      {
+        "title": "Çok dilli ve çok para birimli",
+        "body": "İngilizce, Bengalce, Arapça, Urduca, Çince ve Japonca dahil 15 dil — ve tek tıkla çeviri yapılan 60 para birimi."
+      },
+      {
+        "title": "Müşteriler ve ürünler",
+        "body": "Kataloğunuzu ve müşteri listenizi yönetmek için basit bir panel."
+      },
+      {
+        "title": "Varsayılan olarak güvenli",
+        "body": "Roller, CSRF koruması, istek sınırlama, şifreli API anahtarları ve hesap kilitleme."
+      }
+    ],
+    "screensTitle": "Uygulamada görün",
+    "screensSubtitle": "Canlı demodan gerçek ekranlar.",
+    "shots": {
+      "dashboard": "Satış gösterge paneli",
+      "summary": "Yapay zekâ özeti",
+      "charts": "Eğilimler ve en iyi ürünler",
+      "invoices": "Fatura listesi",
+      "invoice": "Fatura ayrıntısı ve PDF",
+      "dark": "Bengalce karanlık mod"
+    },
+    "benefitsTitle": "Ekipler neden SalesReport AI'ı seçiyor",
+    "benefits": [
+      "Her ay saatlerce süren manuel tablo işinden tasarruf edin",
+      "Müşteriler ve yöneticilerle net, markalı raporlar paylaşın",
+      "Müşterilerinize kendi para birimlerinde fatura kesin",
+      "Kendi yapay zekâ anahtarınızı kullanın — ek abonelik yok",
+      "Her yerde barındırın: Render, bir VPS veya Docker",
+      "Özelleştirmesi kolay, temiz ve belgelenmiş TypeScript kodu"
+    ],
+    "steps": [
+      {
+        "title": "Satış dosyanızı yükleyin",
+        "body": "CSV veya XLSX, en fazla 100.000 satır."
+      },
+      {
+        "title": "Gösterge panellerini ve yapay zekâ özetini inceleyin",
+        "body": "En iyi ürünlerinizi, günlerinizi ve müşterilerinizi anında görün."
+      },
+      {
+        "title": "PDF'yi indirin veya fatura gönderin",
+        "body": "Paylaşmaya hazır, markalı belgeler."
+      }
+    ],
+    "ctaTitle": "SalesReport AI'ı şimdi deneyin",
+    "ctaSubtitle": "Canlı demoda örnek verilerle uygulamanın tamamını keşfedin."
+  }
+}

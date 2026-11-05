@@ -1,6 +1,6 @@
 {
   "name": "@salesreport/server",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "description": "SalesReport AI REST API (Express + Prisma).",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.19.0",
-    "@salesreport/shared": "1.0.0",
+    "@salesreport/shared": "1.1.1",
     "argon2": "^0.44.0",
     "compression": "^1.8.1",
     "cookie-parser": "^1.4.7",

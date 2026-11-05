@@ -2,7 +2,8 @@ import type { Request, Response } from 'express';
 import {
   datasetImportFieldsSchema,
   idParamSchema,
-  langQuerySchema,
+  currencyQuerySchema,
+  documentQuerySchema,
   paginationQuerySchema,
   summaryRequestSchema,
 } from '@salesreport/shared';
@@ -10,6 +11,7 @@ import { validate } from '../../lib/validate';
 import { getAuth } from '../../lib/http';
 import { badRequest } from '../../lib/errors';
 import { contentDisposition } from '../../lib/csv';
+import { getFxTable, requestedDisplayCurrency } from '../../lib/fx';
 import { getOrganization } from '../organization/organization.service';
 import { renderReportPdf } from '../pdf/report.pdf';
 import * as service from './datasets.service';
@@ -35,32 +37,63 @@ export async function get(req: Request, res: Response) {
 }
 
 export async function analytics(req: Request, res: Response) {
-  res.json(await service.analytics(getAuth(req).organizationId, validate(idParamSchema, req.params).id));
+  const { currency } = validate(currencyQuerySchema, req.query);
+  res.json(
+    await service.analytics(
+      getAuth(req).organizationId,
+      validate(idParamSchema, req.params).id,
+      requestedDisplayCurrency(req, currency),
+    ),
+  );
 }
 
 export async function getSummary(req: Request, res: Response) {
   const { id } = validate(idParamSchema, req.params);
-  const { lang } = validate(langQuerySchema, req.query);
-  res.json({ summary: await service.getSummaryIfExists(getAuth(req).organizationId, id, lang) });
+  const { lang, currency } = validate(documentQuerySchema, req.query);
+  res.json({
+    summary: await service.getSummaryIfExists(
+      getAuth(req).organizationId,
+      id,
+      lang,
+      requestedDisplayCurrency(req, currency),
+    ),
+  });
 }
 
 export async function createSummary(req: Request, res: Response) {
   const { id } = validate(idParamSchema, req.params);
-  const { language, regenerate } = validate(summaryRequestSchema, req.body);
-  res.json(await service.summary(getAuth(req).organizationId, id, language, regenerate));
+  const { language, regenerate, currency } = validate(summaryRequestSchema, req.body);
+  res.json(
+    await service.summary(
+      getAuth(req).organizationId,
+      id,
+      language,
+      regenerate,
+      requestedDisplayCurrency(req, currency),
+    ),
+  );
 }
 
 export async function reportPdf(req: Request, res: Response) {
   const orgId = getAuth(req).organizationId;
   const { id } = validate(idParamSchema, req.params);
-  const { lang } = validate(langQuerySchema, req.query);
+  const { lang, currency } = validate(documentQuerySchema, req.query);
+  const display = requestedDisplayCurrency(req, currency);
   const ds = await service.getEntity(orgId, id);
-  const [analytics, org, { summary }] = await Promise.all([
-    service.analyticsFor(ds),
+  const [analytics, org, { summary }, fx] = await Promise.all([
+    service.analyticsIn(ds, display),
     getOrganization(orgId),
-    service.summary(orgId, id, lang, false),
+    service.summary(orgId, id, lang, false, display),
+    getFxTable(),
   ]);
-  const pdf = await renderReportPdf({ org, dataset: service.toDatasetDto(ds), analytics, summary, lang });
+  const pdf = await renderReportPdf({
+    org,
+    dataset: service.toDatasetDto(ds),
+    analytics,
+    summary,
+    lang,
+    fx: analytics.currency !== ds.currency ? { from: ds.currency, asOf: fx.asOf, rates: fx.rates } : undefined,
+  });
   res.setHeader('Content-Type', 'application/pdf');
   res.setHeader('Content-Disposition', contentDisposition(`${ds.name} - report-${lang}.pdf`));
   res.setHeader('Cache-Control', 'no-store');

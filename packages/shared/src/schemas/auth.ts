@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { ROLES } from '../constants';
+import { displayCurrencySchema } from './common';
 
 export const PASSWORD_RULES = {
   minLength: 10,
@@ -71,7 +72,14 @@ export interface UserDto {
   organizationId: string;
   createdAt: string;
   lastLoginAt: string | null;
+  /** Preferred display currency (top-bar switcher). null = company currency. */
+  displayCurrency: string | null;
 }
+
+export const userPreferencesSchema = z.object({
+  displayCurrency: displayCurrencySchema.nullable().optional(),
+});
+export type UserPreferencesInput = z.infer<typeof userPreferencesSchema>;
 
 export interface AuthResponse {
   accessToken: string;

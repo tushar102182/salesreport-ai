@@ -8,10 +8,14 @@ import { useAuth } from '../../lib/auth';
 import { useToast } from '../../lib/toast';
 import { useFieldError } from '../../lib/format';
 import { applyServerErrors, errorMessage } from '../../lib/errors';
-import { Badge, Button, Card, CardHeader, Input } from '../../components/ui';
+import { Badge, Button, Card, CardHeader, Input, Select } from '../../components/ui';
+import { CURRENCIES } from '@salesreport/shared';
+import { useCurrency } from '../../lib/currency';
+import { LANGUAGE_LABELS, resolveAppLanguage, SUPPORTED_LANGUAGES } from '../../i18n';
 
 export function ProfileSettings() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { currency, setCurrency, fx } = useCurrency();
   const fe = useFieldError();
   const toast = useToast();
   const { user, applySession } = useAuth();
@@ -54,6 +58,36 @@ export function ProfileSettings() {
             </dd>
           </div>
         </dl>
+      </Card>
+      <Card>
+        <CardHeader title={t('settings.preferences')} subtitle={t('settings.preferencesHint')} />
+        <div className="grid max-w-xl gap-4 p-5 sm:grid-cols-2">
+          <Select
+            label={t('common.language')}
+            value={resolveAppLanguage(i18n.resolvedLanguage)}
+            onChange={(e) => void i18n.changeLanguage(e.target.value)}
+            data-testid="settings-language"
+          >
+            {SUPPORTED_LANGUAGES.map((l) => (
+              <option key={l} value={l}>
+                {LANGUAGE_LABELS[l]}
+              </option>
+            ))}
+          </Select>
+          <Select
+            label={t('common.displayCurrency')}
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value)}
+            hint={t('common.approxRates', { date: fx.asOf })}
+            data-testid="settings-currency"
+          >
+            {CURRENCIES.map((c) => (
+              <option key={c.code} value={c.code}>
+                {c.code} — {c.name}
+              </option>
+            ))}
+          </Select>
+        </div>
       </Card>
       <Card>
         <CardHeader title={t('settings.changePassword')} />

@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { APP_VERSION } from '@salesreport/shared';
 import { prisma } from '../../lib/prisma';
 import { env } from '../../config/env';
 
@@ -16,7 +17,7 @@ healthRouter.get('/', async (_req, res) => {
   res.status(db === 'ok' ? 200 : 503).json({
     status: db === 'ok' ? 'ok' : 'degraded',
     db,
-    version: process.env.npm_package_version ?? '1.0.0',
+    version: APP_VERSION,
     uptimeSeconds: Math.round((Date.now() - startedAt) / 1000),
     demoMode: env.DEMO_MODE,
     time: new Date().toISOString(),

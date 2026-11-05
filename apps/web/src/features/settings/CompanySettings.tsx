@@ -134,7 +134,7 @@ export function CompanySettings({ org }: { org: OrganizationDto }) {
             <Input label={t('common.email')} type="email" {...register('email')} error={fe(errors.email?.message)} />
             <Input label={t('settings.website')} {...register('website')} />
             <Input label={t('settings.taxId')} {...register('taxId')} />
-            <Select label={t('settings.currency')} {...register('currency')}>
+            <Select label={t('settings.currency')} hint={t('settings.companyCurrencyHint')} {...register('currency')}>
               {CURRENCIES.map((c) => (
                 <option key={c.code} value={c.code}>
                   {c.symbol.trim()} {c.code} — {c.name}

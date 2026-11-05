@@ -1,6 +1,6 @@
 # SalesReport AI
 
-**Upload sales data → get an AI summary → download beautiful PDF reports and invoices. UI in 7 languages (English, বাংলা, Español, Français, العربية, हिन्दी, Português) and 44 currencies.**
+**Upload sales data → get an AI summary → download beautiful PDF reports and invoices. UI in 15 languages (English, বাংলা, Español, Français, العربية, हिन्दी, Português, Deutsch, Italiano, Türkçe, Bahasa Indonesia, Русский, 中文, 日本語, اردو) and 60 currencies, switchable from the top bar on every page.**
 
 SalesReport AI is a production-ready, self-hosted SaaS starter for small businesses, distributors and shops. Drop in a CSV or Excel file, map the columns once, and get KPIs, charts, an AI-written narrative with insights and recommendations, and a branded PDF report — in **বাংলা** or **English**. A full invoicing module (customers, products, invoices with tax/discount and PDF) is included.
 
@@ -51,14 +51,15 @@ SalesReport AI is a production-ready, self-hosted SaaS starter for small busines
 
 - Customers, products and invoices CRUD with search, filters and pagination.
 - Invoices: line items (pick from catalogue or free text), tax, discount, status (draft/sent/paid/overdue — sent invoices past due become overdue automatically), sequential numbering with a custom prefix (`INV-000001`), CSV export.
-- Company settings: logo upload, name, address, phone, e-mail, website, tax ID/BIN, currency (BDT ৳ default; 44 currencies incl. USD, EUR, GBP, INR, AED, SAR, JPY, CNY, BRL, NGN — see `packages/shared/src/constants.ts`), per-upload and per-invoice currency, default document language, default tax rate, invoice notes & footer.
+- Company settings: logo upload, name, address, phone, e-mail, website, tax ID/BIN, currency (BDT ৳ default; 60 currencies incl. USD, EUR, GBP, INR, AED, SAR, JPY, CNY, BRL, NGN — see `packages/shared/src/constants.ts`), per-upload and per-invoice currency, default document language, default tax rate, invoice notes & footer.
 - Team: admin & staff roles, invite users, change roles.
 - Dashboard with KPI cards, daily/monthly charts, top products, weekday chart, invoice totals and recent invoices.
 
 **UX**
 
 - Landing page at `/welcome` with a Live Demo button.
-- UI in English, Bangla, Spanish, French, Arabic (RTL), Hindi and Portuguese with a persisted language dropdown; PDF reports and AI summaries in English or Bangla, Bangla digits and lakh/crore grouping (`৳১২,৩৪,৫৬৭.০০`).
+- **Display currency switcher in the top bar:** pick any of 60 currencies and every amount (dashboard KPIs and charts, sales data, invoices, products, AI summary text and PDFs) is converted from its own currency at approximate exchange rates (bundled USD-based table, refreshed from a free key-less API when reachable). Saved per browser and per user.
+- UI in 15 languages (English, Bangla, Spanish, French, Arabic (RTL), Hindi, Portuguese, German, Italian, Turkish, Indonesian, Russian, Chinese, Japanese, Urdu (RTL)) with a language dropdown in the top bar; PDF reports and AI summaries in English or Bangla, Bangla digits and lakh/crore grouping (`৳১২,৩৪,৫৬৭.০০`).
 - Dark / light mode (persisted, no flash), responsive layout (mobile drawer), accessible components, skeleton loaders, toasts.
 
 **Production & security** (see [Security](#security))
@@ -212,7 +213,7 @@ Restart the server after editing `.env`.
 | **Google Gemini** | 1. Open <https://aistudio.google.com/app/apikey> 2. **Create API key** (choose or create a Google Cloud project) 3. Copy the key. A free tier is available in many regions.             |
 | **Anthropic**     | 1. Sign in at <https://console.anthropic.com> 2. **Plans & Billing**: add credit 3. <https://console.anthropic.com/settings/keys> → **Create Key** 4. Copy `sk-ant-…`                   |
 
-Cost tip: a summary prompt is ~1–2k tokens. With the default small models this costs a fraction of a cent per summary. Summaries are cached per dataset and language; **Regenerate** creates a fresh one.
+Cost tip: a summary prompt is ~1–2k tokens. With the default small models this costs a fraction of a cent per summary. Summaries are cached per dataset, language and display currency; **Regenerate** creates a fresh one.
 
 If a call fails (bad key, quota, timeout) the app falls back to the built-in engine and shows the reason — it never breaks the page.
 

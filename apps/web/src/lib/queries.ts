@@ -5,11 +5,11 @@ import { useAuth } from './auth';
 
 export const qk = {
   org: ['organization'] as const,
-  dashboard: (datasetId?: string) => ['dashboard', datasetId ?? 'latest'] as const,
+  dashboard: (datasetId?: string, currency?: string) => ['dashboard', datasetId ?? 'latest', currency ?? ''] as const,
   datasets: (params: object) => ['datasets', params] as const,
   dataset: (id: string) => ['dataset', id] as const,
   analytics: (id: string) => ['dataset', id, 'analytics'] as const,
-  summary: (id: string, lang: string) => ['dataset', id, 'summary', lang] as const,
+  summary: (id: string, lang: string, currency = '') => ['dataset', id, 'summary', lang, currency] as const,
   customers: (params: object) => ['customers', params] as const,
   products: (params: object) => ['products', params] as const,
   invoices: (params: object) => ['invoices', params] as const,

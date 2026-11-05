@@ -1,0 +1,502 @@
+{
+  "app": {
+    "name": "SalesReport AI",
+    "tagline": "把销售表格变成洞察、报告和发票——支持孟加拉语和英语。",
+    "demoBanner": "公开演示——数据每天重置。已禁用保存 API 密钥。"
+  },
+  "nav": {
+    "dashboard": "仪表板",
+    "datasets": "销售数据",
+    "upload": "上传数据",
+    "invoices": "发票",
+    "customers": "客户",
+    "products": "产品",
+    "settings": "设置",
+    "logout": "退出登录",
+    "profile": "个人资料",
+    "menu": "菜单",
+    "close": "关闭"
+  },
+  "common": {
+    "save": "保存",
+    "saving": "正在保存…",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "create": "创建",
+    "add": "添加",
+    "new": "新建",
+    "back": "返回",
+    "next": "下一步",
+    "search": "搜索…",
+    "actions": "操作",
+    "loading": "加载中…",
+    "retry": "重试",
+    "view": "查看",
+    "download": "下载",
+    "export": "导出 CSV",
+    "all": "全部",
+    "none": "无",
+    "yes": "是",
+    "no": "否",
+    "name": "名称",
+    "email": "电子邮件",
+    "phone": "电话",
+    "address": "地址",
+    "notes": "备注",
+    "optional": "可选",
+    "createdAt": "创建时间",
+    "noResults": "这里还没有内容",
+    "noResultsHint": "换个搜索词，或添加第一条记录。",
+    "confirmDelete": "确定吗？此操作无法撤销。",
+    "deleted": "已删除",
+    "saved": "保存成功",
+    "page": "第 {{page}} 页，共 {{total}} 页",
+    "previous": "上一页",
+    "showing": "共 {{n}} 条",
+    "language": "语言",
+    "theme": "主题",
+    "light": "浅色",
+    "dark": "深色",
+    "required": "必填",
+    "english": "English",
+    "bangla": "বাংলা",
+    "languageNames": {
+      "en": "English",
+      "bn": "বাংলা",
+      "es": "Español",
+      "fr": "Français",
+      "ar": "العربية",
+      "hi": "हिन्दी",
+      "pt": "Português",
+      "de": "Deutsch",
+      "it": "Italiano",
+      "tr": "Türkçe",
+      "id": "Bahasa Indonesia",
+      "ru": "Русский",
+      "zh": "中文",
+      "ja": "日本語",
+      "ur": "اردو"
+    },
+    "displayCurrency": "货币",
+    "approxRates": "参考汇率（{{date}}）"
+  },
+  "auth": {
+    "signIn": "登录",
+    "signingIn": "正在登录…",
+    "signUp": "创建账户",
+    "signingUp": "正在创建账户…",
+    "welcomeBack": "欢迎回来",
+    "signInSubtitle": "登录您的 SalesReport AI 工作区",
+    "createAccount": "创建您的工作区",
+    "createSubtitle": "几分钟内开始分析您的销售。无需信用卡。",
+    "email": "电子邮件地址",
+    "password": "密码",
+    "name": "您的姓名",
+    "companyName": "公司名称",
+    "noAccount": "还没有账户？",
+    "haveAccount": "已有账户？",
+    "demoHint": "演示登录",
+    "useDemo": "使用演示账户",
+    "passwordHint": "至少 10 个字符，包含大小写字母、数字和符号。",
+    "sessionExpired": "会话已过期，请重新登录。",
+    "heroTitle": "让销售数据一目了然。",
+    "heroPoints": ["上传 CSV 或 Excel——自动识别列", "孟加拉语或英语的 AI 摘要与洞察", "一键生成精美的 PDF 报告和发票"]
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "subtitle": "业务表现概览",
+    "totalRevenue": "总收入",
+    "orders": "订单",
+    "aov": "平均订单金额",
+    "unitsSold": "售出数量",
+    "growth": "环比增长",
+    "vsPrev": "{{current}} 对比 {{previous}}",
+    "bestProduct": "最畅销产品",
+    "bestDay": "一周中最佳的一天",
+    "bestDate": "最佳日期",
+    "dailySales": "每日销售",
+    "monthlySales": "每月销售",
+    "topProducts": "热销产品",
+    "byRevenue": "按收入",
+    "byQuantity": "按数量",
+    "weekday": "按星期的销售",
+    "invoicesOverview": "发票",
+    "outstanding": "待收款",
+    "paid": "已付款",
+    "overdue": "已逾期",
+    "recentInvoices": "最近的发票",
+    "viewAll": "查看全部",
+    "noData": "暂无销售数据",
+    "noDataHint": "上传 CSV 或 Excel 文件，即可查看分析、AI 洞察和报告。",
+    "datasetSelect": "数据集",
+    "units": "件",
+    "customers": "客户",
+    "products": "产品"
+  },
+  "datasets": {
+    "title": "销售数据",
+    "subtitle": "已上传的数据集及其分析",
+    "upload": "上传数据",
+    "name": "数据集",
+    "rows": "行",
+    "period": "期间",
+    "revenue": "收入",
+    "file": "文件",
+    "empty": "暂无数据集",
+    "emptyHint": "上传第一个销售文件即可开始。",
+    "downloadReport": "PDF 报告",
+    "deleteConfirm": "删除此数据集及其所有记录？",
+    "analytics": "分析",
+    "skipped": "已跳过 {{n}} 行"
+  },
+  "upload": {
+    "title": "上传销售数据",
+    "subtitle": "CSV 或 Excel（.xlsx），最大 10 MB / 100,000 行",
+    "step1": "选择文件",
+    "step2": "匹配列",
+    "step3": "检查并导入",
+    "dropHere": "将文件拖放到此处",
+    "or": "或",
+    "browse": "浏览文件",
+    "supported": "支持：.csv、.xlsx——建议使用 UTF-8 编码的 CSV（支持孟加拉语）",
+    "sampleFiles": "需要示例？下载：",
+    "parsing": "正在读取文件…",
+    "importing": "正在导入…",
+    "mappingTitle": "匹配您的列",
+    "mappingHint": "我们已自动识别。日期和产品为必填，另需“总额”或“数量 + 单价”。",
+    "field": {
+      "date": "日期",
+      "product": "产品",
+      "quantity": "数量",
+      "unitPrice": "单价",
+      "total": "总额",
+      "customer": "客户"
+    },
+    "notMapped": "— 文件中没有 —",
+    "dateFormat": "日期格式",
+    "dateFormatAuto": "自动识别",
+    "datasetName": "数据集名称",
+    "preview": "预览（共 {{total}} 行中的前 {{n}} 行）",
+    "import": "导入 {{n}} 行",
+    "success": "已导入 {{imported}} 行",
+    "successSkipped": "已导入 {{imported}} 行，跳过 {{skipped}} 行",
+    "rowErrors": "部分行已被跳过",
+    "row": "第 {{row}} 行",
+    "changeFile": "选择其他文件"
+  },
+  "analytics": {
+    "title": "分析",
+    "kpis": "关键指标",
+    "period": "{{start}} – {{end}}",
+    "productsCount": "{{n}} 个产品",
+    "customersCount": "{{n}} 位客户",
+    "share": "占比",
+    "revenue": "收入",
+    "quantity": "数量",
+    "orders": "订单",
+    "topCustomers": "重要客户"
+  },
+  "summary": {
+    "title": "AI 摘要",
+    "generate": "生成摘要",
+    "regenerate": "重新生成",
+    "generating": "正在分析您的数据…",
+    "insights": "关键洞察",
+    "recommendations": "建议",
+    "provider": "由 {{provider}} 生成",
+    "ruleBased": "内置分析引擎",
+    "fallback": "AI 服务不可用，已改用内置引擎：{{reason}}",
+    "empty": "获取包含洞察和建议的书面摘要。",
+    "language": "摘要语言",
+    "configureHint": "在“设置 → AI”中添加 OpenAI、Gemini 或 Anthropic 密钥，可获得更丰富的 AI 摘要。"
+  },
+  "report": {
+    "download": "下载 PDF 报告",
+    "downloading": "正在准备 PDF…",
+    "english": "英文 PDF",
+    "bangla": "বাংলা PDF"
+  },
+  "invoices": {
+    "title": "发票",
+    "subtitle": "创建、发送和跟踪发票",
+    "new": "新建发票",
+    "edit": "编辑发票",
+    "number": "发票号",
+    "customer": "客户",
+    "selectCustomer": "选择客户…",
+    "issueDate": "开票日期",
+    "dueDate": "到期日",
+    "status": "状态",
+    "total": "合计",
+    "amount": "金额",
+    "items": "明细",
+    "addItem": "添加明细",
+    "product": "产品",
+    "pickProduct": "选择产品（可选）",
+    "description": "描述",
+    "quantity": "数量",
+    "unitPrice": "单价",
+    "lineTotal": "小计",
+    "subtotal": "小计",
+    "discount": "折扣",
+    "discountType": "折扣类型",
+    "fixed": "固定金额",
+    "percent": "百分比（%）",
+    "tax": "税额",
+    "taxRate": "税率（%）",
+    "grandTotal": "总计",
+    "currency": "货币",
+    "language": "发票语言",
+    "notes": "给客户的备注",
+    "billTo": "收票方",
+    "from": "开票方",
+    "markAs": "标记为",
+    "downloadPdf": "下载 PDF",
+    "allStatuses": "全部状态",
+    "deleteConfirm": "删除此发票？",
+    "created": "已创建发票 {{number}}",
+    "updated": "发票已更新",
+    "empty": "暂无发票",
+    "emptyHint": "几秒钟即可创建第一张发票。",
+    "paidOn": "付款日期：{{date}}",
+    "noCustomers": "请先添加客户",
+    "details": "发票详情",
+    "removeItem": "删除明细",
+    "convertedFrom": "由 {{currency}} 换算 · 原金额 {{amount}}",
+    "approxIn": "按显示货币约为 {{amount}}"
+  },
+  "status": {
+    "draft": "草稿",
+    "sent": "已发送",
+    "paid": "已付款",
+    "overdue": "已逾期"
+  },
+  "customers": {
+    "title": "客户",
+    "subtitle": "您销售的个人和企业",
+    "new": "新建客户",
+    "edit": "编辑客户",
+    "invoices": "发票",
+    "empty": "暂无客户",
+    "deleteConfirm": "删除此客户？"
+  },
+  "products": {
+    "title": "产品",
+    "subtitle": "用于开票的产品目录",
+    "new": "新建产品",
+    "edit": "编辑产品",
+    "sku": "SKU",
+    "unit": "单位",
+    "unitPrice": "单价",
+    "description": "描述",
+    "active": "启用",
+    "inactive": "停用",
+    "empty": "暂无产品",
+    "deleteConfirm": "删除此产品？"
+  },
+  "settings": {
+    "title": "设置",
+    "subtitle": "公司资料、AI 服务、团队和账户",
+    "company": "公司",
+    "ai": "AI 服务",
+    "users": "团队",
+    "profile": "我的账户",
+    "companyName": "公司名称",
+    "website": "网站",
+    "taxId": "税号",
+    "currency": "货币",
+    "defaultLanguage": "默认文档语言",
+    "invoicePrefix": "发票号前缀",
+    "nextNumber": "下一个发票号：{{number}}",
+    "defaultTaxRate": "默认税率（%）",
+    "invoiceFooter": "发票页脚（如银行信息）",
+    "invoiceNotes": "默认发票备注 / 条款",
+    "logo": "徽标",
+    "logoHint": "PNG 或 JPEG，最大 1 MB。用于发票和报告。",
+    "uploadLogo": "上传徽标",
+    "removeLogo": "移除",
+    "aiTitle": "AI 服务",
+    "aiSubtitle": "选择由哪个大语言模型撰写摘要。密钥经过加密（AES-256-GCM），且不会再次显示。",
+    "provider": "服务商",
+    "useEnv": "使用服务器默认设置（.env）",
+    "model": "模型（可选）",
+    "modelPlaceholder": "默认：{{model}}",
+    "apiKey": "API 密钥",
+    "apiKeyPlaceholder": "粘贴新密钥以替换已保存的密钥",
+    "storedKey": "已保存的密钥",
+    "removeKey": "移除已保存的密钥",
+    "testConnection": "测试连接",
+    "testing": "正在测试…",
+    "effective": "当前使用",
+    "sourceOrganization": "来自设置",
+    "sourceEnvironment": "来自服务器 .env",
+    "sourceNone": "未配置密钥——使用内置引擎",
+    "getKey": "在哪里获取密钥？",
+    "usersTitle": "团队成员",
+    "addUser": "添加成员",
+    "role": "角色",
+    "admin": "管理员",
+    "staff": "员工",
+    "lastLogin": "最近登录",
+    "never": "从未",
+    "you": "您",
+    "changePassword": "修改密码",
+    "currentPassword": "当前密码",
+    "newPassword": "新密码",
+    "passwordChanged": "密码已修改。其他会话已退出登录。",
+    "adminOnly": "只有管理员可以更改这些设置。",
+    "newUserPassword": "初始密码",
+    "companyCurrencyHint": "新发票、上传数据和产品价格的默认货币。要更改金额的显示货币，请使用顶栏中的货币切换器。",
+    "preferences": "显示偏好",
+    "preferencesHint": "与顶栏中的语言和货币切换器相同。"
+  },
+  "validation": {
+    "required": "此字段为必填项",
+    "email": {
+      "invalid": "请输入有效的电子邮件地址"
+    },
+    "name": {
+      "tooShort": "太短"
+    },
+    "password": {
+      "tooShort": "至少 10 个字符",
+      "tooLong": "太长",
+      "lower": "请添加小写字母",
+      "upper": "请添加大写字母",
+      "digit": "请添加数字",
+      "symbol": "请添加符号（如 @ # !）",
+      "sameAsOld": "新密码不能与旧密码相同",
+      "incorrect": "当前密码不正确"
+    },
+    "number": {
+      "min0": "必须大于或等于 0",
+      "positive": "必须大于 0"
+    },
+    "date": {
+      "invalid": "日期无效"
+    },
+    "invoice": {
+      "itemsRequired": "请至少添加一条明细",
+      "dueBeforeIssue": "到期日不能早于开票日期",
+      "discountPercentMax": "百分比折扣不能超过 100",
+      "prefixInvalid": "仅限字母、数字和 / _ -",
+      "customerNotFound": "未找到客户"
+    },
+    "mapping": {
+      "required": "必填",
+      "totalOrQtyPrice": "请匹配“总额”，或同时匹配“数量”和“单价”"
+    },
+    "ai": {
+      "keyTooShort": "该密钥似乎太短"
+    }
+  },
+  "errors": {
+    "generic": "出了点问题，请重试。",
+    "network": "网络错误——请检查您的连接。",
+    "notFound": "页面未找到",
+    "notFoundHint": "您要找的页面不存在。",
+    "goHome": "前往仪表板",
+    "forbidden": "您没有执行此操作的权限。"
+  },
+  "landing": {
+    "badge": "AI 驱动的销售分析",
+    "heroTitle": "几分钟内把销售表格变成清晰的报告",
+    "heroSubtitle": "上传 CSV 或 Excel 文件，即可获得仪表板、AI 撰写的摘要、精美的 PDF 报告和发票——支持 15 种语言和 60 种货币。",
+    "liveDemo": "在线演示",
+    "seeFeatures": "查看功能",
+    "demoNote": "无需注册，演示登录信息已为您填好。",
+    "navFeatures": "功能",
+    "navScreens": "截图",
+    "navBenefits": "优势",
+    "stats": [
+      {
+        "value": "15",
+        "label": "种语言"
+      },
+      {
+        "value": "60",
+        "label": "种货币"
+      },
+      {
+        "value": "100k",
+        "label": "每次上传行数"
+      },
+      {
+        "value": "3",
+        "label": "家 AI 服务商"
+      }
+    ],
+    "featuresTitle": "理解销售所需的一切",
+    "featuresSubtitle": "集分析、报告和开票于一体的工具——专为小企业和代理机构打造。",
+    "features": [
+      {
+        "title": "CSV 与 Excel 上传",
+        "body": "拖放文件，自动识别并匹配列。"
+      },
+      {
+        "title": "AI 销售摘要",
+        "body": "由 OpenAI、Gemini 或 Claude 提供通俗易懂的洞察，并配有免费的规则引擎备选。"
+      },
+      {
+        "title": "交互式图表",
+        "body": "每日和每月趋势、热销产品、最佳星期和重要客户。"
+      },
+      {
+        "title": "PDF 报告",
+        "body": "带有您的徽标和品牌色、可直接打印的销售报告。"
+      },
+      {
+        "title": "发票",
+        "body": "以任意货币创建、跟踪并下载专业的 PDF 发票。"
+      },
+      {
+        "title": "多语言、多货币",
+        "body": "15 种语言，包括英语、孟加拉语、阿拉伯语、乌尔都语、中文和日语——以及可一键换算的 60 种货币。"
+      },
+      {
+        "title": "客户与产品",
+        "body": "简单的管理面板，轻松管理产品目录和客户列表。"
+      },
+      {
+        "title": "默认安全",
+        "body": "角色权限、CSRF 防护、限流、加密 API 密钥和账户锁定。"
+      }
+    ],
+    "screensTitle": "实际效果",
+    "screensSubtitle": "来自在线演示的真实界面。",
+    "shots": {
+      "dashboard": "销售仪表板",
+      "summary": "AI 撰写的摘要",
+      "charts": "趋势与热销产品",
+      "invoices": "发票列表",
+      "invoice": "发票详情与 PDF",
+      "dark": "孟加拉语深色模式"
+    },
+    "benefitsTitle": "团队为何选择 SalesReport AI",
+    "benefits": [
+      "每月节省数小时的手工表格工作",
+      "与客户和管理者分享清晰的品牌化报告",
+      "用客户自己的货币开具发票",
+      "使用您自己的 AI 密钥——无需额外订阅",
+      "随处自托管：Render、VPS 或 Docker",
+      "代码整洁、文档完善的 TypeScript，易于定制"
+    ],
+    "steps": [
+      {
+        "title": "上传销售文件",
+        "body": "CSV 或 XLSX，最多 100,000 行。"
+      },
+      {
+        "title": "查看仪表板和 AI 摘要",
+        "body": "立即发现最佳产品、日期和客户。"
+      },
+      {
+        "title": "下载 PDF 或发送发票",
+        "body": "品牌化文档，随时可分享。"
+      }
+    ],
+    "ctaTitle": "立即试用 SalesReport AI",
+    "ctaSubtitle": "在在线演示中使用示例数据体验完整应用。"
+  }
+}

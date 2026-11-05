@@ -72,6 +72,10 @@ const schema = z
     SEED_DEMO_DATA: bool(false),
     DEMO_RESET_HOUR_UTC: z.coerce.number().int().min(0).max(23).default(0),
 
+    /** Refresh exchange rates from a free, key-less API (falls back to the bundled table). */
+    FX_LIVE_RATES: bool(true),
+    FX_RATES_URL: z.url().default('https://open.er-api.com/v6/latest/USD'),
+
     SERVE_WEB: bool(true),
     WEB_DIST_PATH: z.string().optional(),
     LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']).default('info'),

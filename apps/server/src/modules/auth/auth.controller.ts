@@ -1,5 +1,11 @@
 import type { CookieOptions, Request, Response } from 'express';
-import { changePasswordSchema, loginSchema, registerSchema, type AuthResponse } from '@salesreport/shared';
+import {
+  changePasswordSchema,
+  loginSchema,
+  registerSchema,
+  userPreferencesSchema,
+  type AuthResponse,
+} from '@salesreport/shared';
 import { env } from '../../config/env';
 import { validate } from '../../lib/validate';
 import { getAuth } from '../../lib/http';
@@ -73,6 +79,11 @@ export async function csrf(req: Request, res: Response) {
 
 export async function me(req: Request, res: Response) {
   res.json({ user: await auth.me(getAuth(req).id) });
+}
+
+export async function updatePreferences(req: Request, res: Response) {
+  const input = validate(userPreferencesSchema, req.body);
+  res.json({ user: await auth.updatePreferences(getAuth(req).id, input) });
 }
 
 export async function changePassword(req: Request, res: Response) {

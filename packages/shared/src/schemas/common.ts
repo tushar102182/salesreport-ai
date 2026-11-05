@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { LANGUAGES } from '../constants';
+import { CURRENCY_CODES, LANGUAGES } from '../constants';
 
 export const idSchema = z
   .string()
@@ -9,6 +9,9 @@ export const idSchema = z
 export const idParamSchema = z.object({ id: idSchema });
 
 export const languageSchema = z.enum(LANGUAGES);
+
+/** A supported ISO-4217 code used as the display currency (case-insensitive input). */
+export const displayCurrencySchema = z.string().trim().toUpperCase().pipe(z.enum(CURRENCY_CODES));
 
 /** Trims and turns empty strings into undefined (for optional form fields). */
 export const optionalText = (max = 500) =>

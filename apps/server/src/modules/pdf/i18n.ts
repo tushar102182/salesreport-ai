@@ -57,6 +57,11 @@ const en = {
   status_paid: 'PAID',
   status_overdue: 'OVERDUE',
   paidOn: 'Paid on',
+  rate: 'Exchange rate',
+  originalCurrency: 'Original currency',
+  ratesAsOf: 'Rate date',
+  approx: 'approx.',
+  convertedFrom: 'converted from',
 };
 
 const bn: typeof en = {
@@ -116,6 +121,11 @@ const bn: typeof en = {
   status_paid: 'পরিশোধিত',
   status_overdue: 'মেয়াদোত্তীর্ণ',
   paidOn: 'পরিশোধের তারিখ',
+  rate: 'বিনিময় হার',
+  originalCurrency: 'মূল মুদ্রা',
+  ratesAsOf: 'হারের তারিখ',
+  approx: 'আনুমানিক',
+  convertedFrom: 'রূপান্তরিত, মূল মুদ্রা',
 };
 
 export type PdfStrings = typeof en;

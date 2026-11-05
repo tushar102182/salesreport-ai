@@ -1,4 +1,4 @@
-import type { ChangePasswordInput, LoginInput, RegisterInput } from '@salesreport/shared';
+import type { ChangePasswordInput, LoginInput, RegisterInput, UserPreferencesInput } from '@salesreport/shared';
 import { env } from '../../config/env';
 import { prisma } from '../../lib/prisma';
 import { AppError, conflict, forbidden, unauthorized } from '../../lib/errors';
@@ -88,6 +88,14 @@ export async function refresh(presented: string, meta: ClientMeta) {
 export async function me(userId: string) {
   const user = await prisma.user.findUnique({ where: { id: userId } });
   if (!user) throw unauthorized();
+  return toUserDto(user);
+}
+
+export async function updatePreferences(userId: string, input: UserPreferencesInput) {
+  const user = await prisma.user.update({
+    where: { id: userId },
+    data: { ...(input.displayCurrency !== undefined ? { displayCurrency: input.displayCurrency } : {}) },
+  });
   return toUserDto(user);
 }
 

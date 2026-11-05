@@ -106,21 +106,34 @@ export async function generateSummary(
   }
 }
 
-export async function getCachedSummary(datasetId: string, lang: Language): Promise<AiSummary | null> {
-  const row = await prisma.datasetSummary.findUnique({ where: { datasetId_language: { datasetId, language: lang } } });
+/** Cache key for the currency: "" means the dataset's own currency (also what pre-1.1.1 rows use). */
+const currencyKey = (currency: string, datasetCurrency: string) => (currency === datasetCurrency ? '' : currency);
+
+export async function getCachedSummary(
+  datasetId: string,
+  lang: Language,
+  currency: string,
+  datasetCurrency: string,
+): Promise<AiSummary | null> {
+  const row = await prisma.datasetSummary.findUnique({
+    where: {
+      datasetId_language_currency: { datasetId, language: lang, currency: currencyKey(currency, datasetCurrency) },
+    },
+  });
   if (!row) return null;
   try {
-    return JSON.parse(row.content) as AiSummary;
+    return { ...(JSON.parse(row.content) as AiSummary), currency };
   } catch {
     return null;
   }
 }
 
-export async function saveSummary(datasetId: string, s: AiSummary) {
+export async function saveSummary(datasetId: string, s: AiSummary, datasetCurrency: string) {
   const content = JSON.stringify(s);
+  const currency = currencyKey(s.currency ?? datasetCurrency, datasetCurrency);
   await prisma.datasetSummary.upsert({
-    where: { datasetId_language: { datasetId, language: s.language } },
-    create: { datasetId, language: s.language, provider: s.provider, model: s.model, content },
+    where: { datasetId_language_currency: { datasetId, language: s.language, currency } },
+    create: { datasetId, language: s.language, currency, provider: s.provider, model: s.model, content },
     update: { provider: s.provider, model: s.model, content },
   });
 }

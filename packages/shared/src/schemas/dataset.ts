@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { CURRENCY_CODES, type Language, type SummaryProvider } from '../constants';
-import { languageSchema } from './common';
+import { displayCurrencySchema, languageSchema } from './common';
 
 const header = z.string().max(200);
 
@@ -41,9 +41,15 @@ export const datasetImportFieldsSchema = z.object({
 export const summaryRequestSchema = z.object({
   language: languageSchema,
   regenerate: z.boolean().default(false),
+  /** Display currency for the amounts written in the summary. Defaults to the dataset currency. */
+  currency: displayCurrencySchema.optional(),
 });
 
 export const langQuerySchema = z.object({ lang: languageSchema.default('en') });
+
+/** Query for rendered documents (PDFs, summaries): language plus optional display currency. */
+export const documentQuerySchema = langQuerySchema.extend({ currency: displayCurrencySchema.optional() });
+export const currencyQuerySchema = z.object({ currency: displayCurrencySchema.optional() });
 
 export interface UploadPreviewDto {
   fileName: string;
@@ -113,6 +119,8 @@ export interface Analytics {
 
 export interface AiSummary {
   language: Language;
+  /** Currency the amounts in the text are written in (absent on summaries cached before v1.1.1). */
+  currency?: string;
   provider: SummaryProvider;
   model: string | null;
   headline: string;

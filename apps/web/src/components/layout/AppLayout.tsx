@@ -18,7 +18,7 @@ import { useAuth } from '../../lib/auth';
 import { usePublicConfig, useOrganization, useLogoUrl } from '../../lib/queries';
 import { cn } from '../../lib/cn';
 import { Logo } from './Logo';
-import { LanguageToggle, ThemeToggle } from './Toggles';
+import { CurrencyToggle, LanguageToggle, ThemeToggle } from './Toggles';
 
 const NAV = [
   { to: '/', key: 'dashboard', icon: LayoutDashboard, end: true },
@@ -133,14 +133,15 @@ export function AppLayout() {
           >
             <Menu className="size-5" />
           </button>
-          <div className="lg:hidden">
+          <div className="hidden min-[400px]:block lg:hidden">
             <Logo compact />
           </div>
           <p className="hidden text-sm font-medium text-slate-500 sm:block dark:text-slate-400">
             {current ? t(`nav.${current.key}`) : ''}
           </p>
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ms-auto flex items-center gap-1.5 sm:gap-2">
             <LanguageToggle />
+            <CurrencyToggle />
             <ThemeToggle />
           </div>
         </header>

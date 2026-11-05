@@ -28,8 +28,8 @@ export function DashboardPage() {
   const { user } = useAuth();
   const [datasetId, setDatasetId] = useState<string | undefined>();
   const { data, isLoading } = useQuery({
-    queryKey: qk.dashboard(datasetId),
-    queryFn: () => api<DashboardDto>('/dashboard', { query: { datasetId } }),
+    queryKey: qk.dashboard(datasetId, f.currency),
+    queryFn: () => api<DashboardDto>('/dashboard', { query: { datasetId, currency: f.currency } }),
   });
   const datasets = useQuery({
     queryKey: qk.datasets({ page: 1, pageSize: 50 }),

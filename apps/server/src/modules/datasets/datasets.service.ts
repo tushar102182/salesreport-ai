@@ -1,6 +1,8 @@
 import type { Dataset } from '@prisma/client';
 import {
   autoDetectMapping,
+  convertAnalytics,
+  displayCurrencyFor,
   UPLOAD_LIMITS,
   type AiSummary,
   type Analytics,
@@ -12,6 +14,7 @@ import {
   type UploadPreviewDto,
 } from '@salesreport/shared';
 import { prisma } from '../../lib/prisma';
+import { getFxTable } from '../../lib/fx';
 import { badRequest, notFound, unprocessable } from '../../lib/errors';
 import { isoDay, paginate } from '../../lib/http';
 import { toCsv } from '../../lib/csv';
@@ -121,26 +124,53 @@ export async function analyticsFor(ds: Dataset): Promise<Analytics> {
   return computeAnalytics(await repo.records(ds.id), ds.currency);
 }
 
-export async function analytics(orgId: string, id: string) {
-  return analyticsFor(await getEntity(orgId, id));
+/** Analytics converted to `displayCurrency` (approximate rates); unchanged when absent or not convertible. */
+export async function analyticsIn(ds: Dataset, displayCurrency?: string): Promise<Analytics> {
+  const a = await analyticsFor(ds);
+  if (!displayCurrency) return a;
+  const { rates } = await getFxTable();
+  return convertAnalytics(a, displayCurrency, rates);
 }
 
-/** Returns the cached summary for the language, generating it on first request or when regenerate=true. */
-export async function summary(orgId: string, id: string, lang: Language, regenerate: boolean) {
+export async function analytics(orgId: string, id: string, displayCurrency?: string) {
+  return analyticsIn(await getEntity(orgId, id), displayCurrency);
+}
+
+/** The currency a summary/report for this dataset will be written in. */
+async function targetCurrency(ds: Dataset, displayCurrency?: string) {
+  if (!displayCurrency) return ds.currency;
+  const { rates } = await getFxTable();
+  return displayCurrencyFor(ds.currency, displayCurrency, rates);
+}
+
+/**
+ * Returns the cached summary for the language and display currency, generating it on
+ * first request or when regenerate=true. Amounts in the text are written in the display
+ * currency (converted at approximate rates); summaries are cached per currency.
+ */
+export async function summary(
+  orgId: string,
+  id: string,
+  lang: Language,
+  regenerate: boolean,
+  displayCurrency?: string,
+) {
   const ds = await getEntity(orgId, id);
+  const currency = await targetCurrency(ds, displayCurrency);
   if (!regenerate) {
-    const cached = await getCachedSummary(ds.id, lang);
+    const cached = await getCachedSummary(ds.id, lang, currency, ds.currency);
     if (cached) return { summary: cached, cached: true };
   }
-  const result = await generateSummary(orgId, await analyticsFor(ds), lang);
+  const result = await generateSummary(orgId, await analyticsIn(ds, currency), lang);
   const { fallbackReason, ...summaryData } = result;
-  await saveSummary(ds.id, summaryData);
-  return { summary: summaryData as AiSummary, cached: false, ...(fallbackReason ? { fallbackReason } : {}) };
+  const saved: AiSummary = { ...(summaryData as AiSummary), currency };
+  await saveSummary(ds.id, saved, ds.currency);
+  return { summary: saved, cached: false, ...(fallbackReason ? { fallbackReason } : {}) };
 }
 
-export async function getSummaryIfExists(orgId: string, id: string, lang: Language) {
+export async function getSummaryIfExists(orgId: string, id: string, lang: Language, displayCurrency?: string) {
   const ds = await getEntity(orgId, id);
-  return getCachedSummary(ds.id, lang);
+  return getCachedSummary(ds.id, lang, await targetCurrency(ds, displayCurrency), ds.currency);
 }
 
 export async function exportCsv(orgId: string, id: string) {

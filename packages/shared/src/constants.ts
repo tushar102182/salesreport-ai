@@ -1,3 +1,6 @@
+/** App version, reported by /api/health and /api/config. Keep in sync with package.json. */
+export const APP_VERSION = '1.1.1';
+
 export const LANGUAGES = ['en', 'bn'] as const;
 export type Language = (typeof LANGUAGES)[number];
 
@@ -75,6 +78,22 @@ export const CURRENCIES: CurrencyInfo[] = [
   { code: 'NOK', symbol: 'NOK ', name: 'Norwegian Krone', decimals: 2 },
   { code: 'DKK', symbol: 'DKK ', name: 'Danish Krone', decimals: 2 },
   { code: 'PLN', symbol: 'PLN ', name: 'Polish Zloty', decimals: 2 },
+  { code: 'RUB', symbol: 'RUB ', name: 'Russian Ruble', decimals: 2 },
+  { code: 'UAH', symbol: 'UAH ', name: 'Ukrainian Hryvnia', decimals: 2 },
+  { code: 'ILS', symbol: 'ILS ', name: 'Israeli New Shekel', decimals: 2 },
+  { code: 'CZK', symbol: 'CZK ', name: 'Czech Koruna', decimals: 2 },
+  { code: 'HUF', symbol: 'HUF ', name: 'Hungarian Forint', decimals: 2 },
+  { code: 'RON', symbol: 'RON ', name: 'Romanian Leu', decimals: 2 },
+  { code: 'TWD', symbol: 'NT$', name: 'New Taiwan Dollar', decimals: 2 },
+  { code: 'PEN', symbol: 'PEN ', name: 'Peruvian Sol', decimals: 2 },
+  { code: 'ETB', symbol: 'ETB ', name: 'Ethiopian Birr', decimals: 2 },
+  { code: 'TZS', symbol: 'TZS ', name: 'Tanzanian Shilling', decimals: 2 },
+  { code: 'UGX', symbol: 'UGX ', name: 'Ugandan Shilling', decimals: 0 },
+  { code: 'MMK', symbol: 'MMK ', name: 'Myanmar Kyat', decimals: 2 },
+  { code: 'KHR', symbol: 'KHR ', name: 'Cambodian Riel', decimals: 2 },
+  { code: 'JOD', symbol: 'JOD ', name: 'Jordanian Dinar', decimals: 3 },
+  { code: 'DZD', symbol: 'DZD ', name: 'Algerian Dinar', decimals: 2 },
+  { code: 'KZT', symbol: 'KZT ', name: 'Kazakhstani Tenge', decimals: 2 },
 ];
 export const CURRENCY_CODES = CURRENCIES.map((c) => c.code) as [string, ...string[]];
 

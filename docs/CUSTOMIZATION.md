@@ -19,7 +19,7 @@ Everything a buyer typically changes, with the exact files to edit.
 
 ## Adding a language
 
-**UI-only language (fastest):** the web UI ships in `en`, `bn`, `es`, `fr`, `ar` (RTL), `hi` and `pt`. To add another UI language, copy `apps/web/src/i18n/locales/en.json` to `<code>.json`, translate the values, then add the code to `SUPPORTED_LANGUAGES`, `LANGUAGE_LABELS` and `resources` in `apps/web/src/i18n/index.ts` (add it to `RTL_LANGUAGES` for right-to-left scripts). The dropdown picks it up automatically.
+**UI-only language (fastest):** the web UI ships in `en`, `bn`, `es`, `fr`, `ar` (RTL), `hi`, `pt`, `de`, `it`, `tr`, `id`, `ru`, `zh`, `ja` and `ur` (RTL). To add another UI language, copy `apps/web/src/i18n/locales/en.json` to `<code>.json`, translate the values, then add the code to `SUPPORTED_LANGUAGES`, `LANGUAGE_LABELS` and `resources` in `apps/web/src/i18n/index.ts` (add it to `RTL_LANGUAGES` for right-to-left scripts). The top-bar dropdown and Settings pick it up automatically. Run `npm test`: `apps/server/test/locales.test.ts` fails if any key of `en.json` is missing or extra, or a `{{placeholder}}` differs.
 
 **Full language (UI + AI summaries + PDFs):** follow the steps below.
 
@@ -37,7 +37,15 @@ The UI, AI summaries, rule-based summaries and PDFs are all language-aware. Exam
 - The default currency for an organization is chosen in **Settings → Company** (BDT by default for new orgs via the Prisma default in `schema.prisma` → `currency String @default("BDT")`).
 - The list of selectable currencies lives in `packages/shared/src/constants.ts` → `CURRENCIES` (`code`, `symbol`, `name`, `decimals`). Add an entry and it appears everywhere (validation, selects, formatting, PDFs).
 - Number grouping: BDT and INR use lakh/crore grouping (`12,34,567`); everything else uses thousands. Adjust in `formatMoney` / `compactNumber` in `packages/shared/src/format.ts`.
-- Datasets store the organization currency at import time; invoices store their own currency.
+- Datasets store their currency at import time (chosen per upload); invoices store their own currency; product prices are in the company currency.
+- New currencies also need a rate in `STATIC_USD_RATES` in `packages/shared/src/fx.ts` (units per 1 USD). A test checks that every currency has one.
+
+### Display currency and exchange rates
+
+- Amounts are **stored** in their source currency and **converted when shown**. The top-bar currency switcher (and Settings → My account → Display preferences) sets the display currency. It is saved in `localStorage` (`sr-currency`) and on the user (`User.displayCurrency`). Order of precedence: browser, then user, then company currency.
+- Frontend: always render money with `useFormat().money(amount, sourceCurrency)`. It converts and formats. Use `moneyExact` only where the user types amounts in a specific currency (the invoice form). Charts use `useDisplayAnalytics(a)`.
+- Backend: the web app sends `X-Display-Currency`. Endpoints also accept `?currency=XXX`. Use `requestedDisplayCurrency(req)` and `getFxTable()` from `apps/server/src/lib/fx.ts`, with `convertAnalytics` / `convertInvoice` / `convertAmount` from `@salesreport/shared`.
+- Rates: the bundled table (`STATIC_FX_AS_OF`) is used offline. With `FX_LIVE_RATES=true` (default) the server refreshes from `FX_RATES_URL` (default `https://open.er-api.com/v6/latest/USD`, free, no key) every 12 h and falls back to the last good or bundled table. Set `FX_LIVE_RATES=false` for fully offline installs. Rates are approximate. Invoices keep their legal currency; converted PDFs show the original currency and the rate.
 - Make sure the PDF font contains the currency symbol (the bundled font covers ৳ $ € £ ¥ ₹ and other symbols in U+20A0–20CF).
 
 ## Invoice numbering, tax and discounts
